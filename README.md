@@ -9,7 +9,7 @@
 
 <a name="video"></a>
 
-https://github.com/user-attachments/assets/94c1726e-6914-4ba9-8a60-9db431701599
+https://github.com/user-attachments/assets/860b39a8-7497-42ad-b739-49de536575f6
 
 <p align="center"><a href="docs/media/flight-preview.mp4">8-second clip</a> · <a href="https://spatialarena.dev/">Watch the full film</a></p>
 
