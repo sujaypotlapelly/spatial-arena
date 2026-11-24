@@ -1,0 +1,1322 @@
+{
+  "kind": "baseline-eval",
+  "at": "2026-11-14T02:36:45.910Z",
+  "simSrc": "0b6df16 + uncommitted edits (M  sim/src/app.js; A  sim/src/factory.js; M  sim/src/render.js)",
+  "note": "Non-LLM baselines on sim/scenarios/heldout.json (12 scenarios x 4 seeds = 48 trials), same metric definitions as Arena.evaluate. Wilson 95% intervals treat the 48 trials as independent; seeds within a scenario are correlated, so true uncertainty is wider. 'tuned' is selected on training scenarios only. 'oracle_fixed' is selected on held-out and is an upper bound, not a fair baseline.",
+  "fixedController": {
+    "cruise_speed": 4.2,
+    "corner_slowdown": 0.6,
+    "avoidance_distance": 6,
+    "evade_strength": 0.6,
+    "replan_when_bird_nearby": true
+  },
+  "trainingScenarios": [
+    {
+      "id": "recordings:T1",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "atrium_lo",
+        "strategy": "ambush",
+        "ambush_node": "atrium_lo",
+        "speed": 4.4,
+        "lead_time": 2.2,
+        "trigger_distance": 8,
+        "rationale": "The atrium is the shared choke point for every viable route, so ambushing there forces the drone to slow for the level change and gives the bird a clean intercept on R1-R4 and R5. Waiting until the drone is 8 m out avoids early commitment and lets the bird tire the drone with a 2.2 s lead, then retreat to rest and re-ambush."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "recordings:T2",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "hall_ne",
+        "strategy": "intercept",
+        "ambush_node": "hall_ne",
+        "speed": 4.6,
+        "lead_time": 2.8,
+        "trigger_distance": 18,
+        "rationale": "The defender overfits to ambush at atrium_lo and ignores the north-side route; starting at hall_ne with a long lead time forces the drone to commit to R2/R7 while the bird cuts across the atrium to the upper-floor window path."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "recordings:T3",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "hall_ne",
+        "strategy": "patrol",
+        "ambush_node": "exit_out",
+        "speed": 4.6,
+        "lead_time": 2.8,
+        "trigger_distance": 18,
+        "rationale": "The defender has only seen ambush and intercept; patrol is untested and forces the drone's avoidance logic to track a moving bird that never commits. Starting at hall_ne keeps the bird near the north upper route, so a fast drone taking the shortest south-door path must either slow for avoidance or risk a late interception."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "recordings:T4",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "f2_ne",
+        "strategy": "patrol",
+        "ambush_node": "f2_door",
+        "speed": 4.6,
+        "lead_time": 3,
+        "trigger_distance": 20,
+        "rationale": "The defender has shown it guesses ambush/intercept and pre-picks routes once, then replans late. Starting the bird on the upper floor at f2_ne and patrolling through f2_door targets the defender's blind spot: it will likely send the drone through the atrium and upstairs doorway, where the bird can appear just after the drone commits. A long lead and a wide trigger make the bird visible early enough to force an evade, but the patrol keeps it unpredictable."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "recordings:T5",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "hall_ne",
+        "strategy": "intercept",
+        "ambush_node": "hall_ne",
+        "speed": 4.6,
+        "lead_time": 2.8,
+        "trigger_distance": 18,
+        "rationale": "The defender keeps guessing ambush or patrol and picking R6/R1, while the bird should commit to a true intercept from hall_ne. This forces the drone to fly the long indoor route through the atrium and stairwell, where the bird can cut it off near the upper-floor corridor. The defender's avoidance and replan behavior should be stressed by a bird that does not wait, but actively leads the drone toward the danger point."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "recordings:T6",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "f2_door_s",
+        "strategy": "ambush",
+        "ambush_node": "f2_door_s",
+        "speed": 4.6,
+        "lead_time": 2.4,
+        "trigger_distance": 6,
+        "rationale": "The defender keeps misjudging ambush points near the atrium and upper-floor doorways, so placing the bird directly at f2_door_s [30,6.2,6] puts it on the most common R1/R2/R3/R4/R5 corridor just before the goal. A short trigger distance of 6 m forces the drone to commit to the final leg while the bird is already in position, exposing poor corner slowdown and avoidance tuning near the upper-floor exit."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "recordings:T7",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "atrium_hi",
+        "strategy": "ambush",
+        "ambush_node": "atrium_hi",
+        "speed": 4.6,
+        "lead_time": 2.2,
+        "trigger_distance": 8,
+        "rationale": "Ambush from atrium_hi targets the vertical atrium crossing used by R1-R5, where the drone is forced into a narrow column and cannot easily evade. The bird waits above the atrium and drops when the drone enters, exploiting the drone's limited vertical escape options."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "recordings:T8",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "f2_door_s",
+        "strategy": "ambush",
+        "ambush_node": "f2_door_s",
+        "speed": 4.6,
+        "lead_time": 2.4,
+        "trigger_distance": 6,
+        "rationale": "The defender has repeatedly guessed intercept or patrol and mispredicted the danger point by 13-21 m, so a low trigger distance ambush at f2_door_s forces it to react late on the shortest upper-floor route. Placing the bird directly on the goal-side corridor makes the drone's final approach the critical segment, where avoidance and replanning are hardest to execute before the episode timeout."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "current-930b632-20261113:T1",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "atrium_hi",
+        "strategy": "ambush",
+        "ambush_node": "atrium_hi",
+        "speed": 4.2,
+        "lead_time": 2.5,
+        "trigger_distance": 8,
+        "rationale": "All eight reference routes funnel through atrium_lo/atrium_hi, so a single ambush there catches every path. Waiting at atrium_hi lets the bird strike from above as the drone climbs, forcing a costly climb or a crash into the atrium walls instead of a clean route."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "current-930b632-20261113:T2",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "f2_door_s",
+        "strategy": "pursue",
+        "ambush_node": "f2_door_s",
+        "speed": 4.6,
+        "lead_time": 1.5,
+        "trigger_distance": 10,
+        "rationale": "The defender's history shows it commits to a single route and a single guessed ambush point, then fails to adapt when the bird's actual position differs. Starting the bird at f2_door_s, the point the drone must pass through on R5/R7/R8, forces the defender to choose between a long outside route (R6) and a much longer interior route, while the bird can pursue from a position the defender's predicted danger point never covers. A high top speed with a moderate lead time lets the bird close distance through the atrium and upstairs doorway before the drone can slow down for the window or stairwell."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "current-930b632-20261113:T3",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "window_in",
+        "strategy": "ambush",
+        "ambush_node": "window_in",
+        "speed": 4.6,
+        "lead_time": 1.5,
+        "trigger_distance": 12,
+        "rationale": "The defender's last two episodes both chose R6 (outside → window), so it has learned that route and may over-commit to it. Placing the bird at the window_in ambush node forces the drone to either accept a close-range intercept near the window or abandon its preferred route, exposing whether its replanner can recover without crashing."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "current-930b632-20261113:T4",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "f2_sw",
+        "strategy": "ambush",
+        "ambush_node": "f2_sw",
+        "speed": 4.6,
+        "lead_time": 2,
+        "trigger_distance": 10,
+        "rationale": "The defender has repeatedly guessed the bird's behavior correctly, so the weakness is its reliance on a single predicted danger point. Placing the bird at f2_sw and then at atrium_hi after the atrium leg creates two ambush points along the common R1-R4 corridor, forcing the drone to treat the atrium as dangerous from both ends. A 10 m trigger with 2 s lead catches the drone while it is slow near the atrium stair or doorway, where the defender's avoidance radius is already stretched."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "current-930b632-20261113:T5",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "f2_sw",
+        "strategy": "ambush",
+        "ambush_node": "f2_sw",
+        "speed": 4.6,
+        "lead_time": 2,
+        "trigger_distance": 10,
+        "rationale": "The defender keeps choosing the outside-to-window route R6, which passes the facade near window_in. Placing the bird at f2_sw with a close trigger forces it to commit early and exposes whether the drone's evasion and replanning can handle an ambush near the window approach rather than the atrium."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "current-930b632-20261113:T6",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "hall_ne",
+        "strategy": "pursue",
+        "ambush_node": "hall_ne",
+        "speed": 4.6,
+        "lead_time": 1.5,
+        "trigger_distance": 10,
+        "rationale": "Starting the bird at hall_ne places it directly on the north-door corridor that R2 and R7 use, so a pursue strategy forces the drone to commit early before it can confirm the bird's home node. The defender's prior episodes all guessed ambush and chose R6, so a pursue from hall_ne should invalidate that assumption and expose the planner's overreliance on the outside-window route."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "current-930b632-20261113:T7",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "stair_hi",
+        "strategy": "intercept",
+        "ambush_node": "stair_hi",
+        "speed": 4.6,
+        "lead_time": 2.5,
+        "trigger_distance": 18,
+        "rationale": "The defender has spent six episodes replaying the same outside-window escape and always guesses ambush at a fixed danger point near the atrium. A north-side intercept from the stairwell shaft forces the drone into R7, whose 62.9 m path passes the stairwell twice and gives the bird a second chance after the first miss. With a long 2.5 s lead the bird arrives at the upstairs doorway before the drone, and the 18 m trigger keeps the drone committed to R7 instead of letting it abort to the window."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "id": "current-930b632-20261113:T8",
+      "start": "start",
+      "goal": "goal",
+      "bird": {
+        "start": "door_n",
+        "strategy": "ambush",
+        "ambush_node": "door_n",
+        "speed": 4.6,
+        "lead_time": 2.5,
+        "trigger_distance": 2,
+        "rationale": "The defender has repeatedly guessed ambush at the wrong node and used R6, which flies out past the south wall and re-enters through the window. Starting the bird at the north ground-floor door forces the drone's R1/R2 corridor to pass within 1.8 m of the ambush point, and a 2 m trigger with 2.5 s lead gives the bird time to close before the drone can evade. This targets the defender's tendency to commit to a single route and a single danger point."
+      },
+      "seeds": [
+        101,
+        102,
+        103,
+        104
+      ]
+    }
+  ],
+  "sweep": {
+    "selectors": [
+      "rank1",
+      "rank2",
+      "rank3",
+      "rank4",
+      "rank5",
+      "rank6",
+      "rank7",
+      "rank8",
+      "clearance"
+    ],
+    "controllers": 375,
+    "configs": 3375,
+    "best": {
+      "sel": "clearance",
+      "ctrl": {
+        "cruise_speed": 4.2,
+        "corner_slowdown": 0.6,
+        "avoidance_distance": 4,
+        "evade_strength": 0.4,
+        "replan_when_bird_nearby": true
+      },
+      "train": {
+        "reached": 64,
+        "intercepted": 0,
+        "crashed": 0,
+        "trials": 64,
+        "solved": 16
+      },
+      "heldout": {
+        "reached": 40,
+        "intercepted": 8,
+        "crashed": 0,
+        "trials": 48,
+        "solved": 11
+      }
+    },
+    "oracle": {
+      "sel": "clearance",
+      "ctrl": {
+        "cruise_speed": 4.8,
+        "corner_slowdown": 0.9,
+        "avoidance_distance": 4,
+        "evade_strength": 0.7,
+        "replan_when_bird_nearby": true
+      },
+      "train": {
+        "reached": 60,
+        "intercepted": 0,
+        "crashed": 4,
+        "trials": 64,
+        "solved": 16
+      },
+      "heldout": {
+        "reached": 48,
+        "intercepted": 0,
+        "crashed": 0,
+        "trials": 48,
+        "solved": 12
+      }
+    },
+    "bestControllerOff": {
+      "sel": "clearance",
+      "ctrl": {
+        "cruise_speed": 4.2,
+        "corner_slowdown": 0.3,
+        "avoidance_distance": 0,
+        "evade_strength": 0,
+        "replan_when_bird_nearby": false
+      },
+      "train": {
+        "reached": 63,
+        "intercepted": 1,
+        "crashed": 0,
+        "trials": 64,
+        "solved": 16
+      },
+      "heldout": {
+        "reached": 36,
+        "intercepted": 11,
+        "crashed": 1,
+        "trials": 48,
+        "solved": 10
+      }
+    },
+    "top10ByTraining": [
+      {
+        "sel": "clearance",
+        "ctrl": {
+          "cruise_speed": 4.2,
+          "corner_slowdown": 0.6,
+          "avoidance_distance": 4,
+          "evade_strength": 0.4,
+          "replan_when_bird_nearby": true
+        },
+        "train": {
+          "reached": 64,
+          "intercepted": 0,
+          "crashed": 0,
+          "trials": 64,
+          "solved": 16
+        },
+        "heldout": {
+          "reached": 40,
+          "intercepted": 8,
+          "crashed": 0,
+          "trials": 48,
+          "solved": 11
+        }
+      },
+      {
+        "sel": "clearance",
+        "ctrl": {
+          "cruise_speed": 4.2,
+          "corner_slowdown": 0.9,
+          "avoidance_distance": 4,
+          "evade_strength": 0.4,
+          "replan_when_bird_nearby": true
+        },
+        "train": {
+          "reached": 64,
+          "intercepted": 0,
+          "crashed": 0,
+          "trials": 64,
+          "solved": 16
+        },
+        "heldout": {
+          "reached": 40,
+          "intercepted": 8,
+          "crashed": 0,
+          "trials": 48,
+          "solved": 11
+        }
+      },
+      {
+        "sel": "rank6",
+        "ctrl": {
+          "cruise_speed": 4.2,
+          "corner_slowdown": 0.9,
+          "avoidance_distance": 8,
+          "evade_strength": 0.4,
+          "replan_when_bird_nearby": false
+        },
+        "train": {
+          "reached": 63,
+          "intercepted": 1,
+          "crashed": 0,
+          "trials": 64,
+          "solved": 16
+        },
+        "heldout": {
+          "reached": 28,
+          "intercepted": 13,
+          "crashed": 7,
+          "trials": 48,
+          "solved": 7
+        }
+      },
+      {
+        "sel": "rank6",
+        "ctrl": {
+          "cruise_speed": 5.5,
+          "corner_slowdown": 0.6,
+          "avoidance_distance": 4,
+          "evade_strength": 1,
+          "replan_when_bird_nearby": false
+        },
+        "train": {
+          "reached": 63,
+          "intercepted": 1,
+          "crashed": 0,
+          "trials": 64,
+          "solved": 16
+        },
+        "heldout": {
+          "reached": 27,
+          "intercepted": 10,
+          "crashed": 11,
+          "trials": 48,
+          "solved": 7
+        }
+      },
+      {
+        "sel": "rank6",
+        "ctrl": {
+          "cruise_speed": 5.5,
+          "corner_slowdown": 0.6,
+          "avoidance_distance": 4,
+          "evade_strength": 1,
+          "replan_when_bird_nearby": true
+        },
+        "train": {
+          "reached": 63,
+          "intercepted": 1,
+          "crashed": 0,
+          "trials": 64,
+          "solved": 16
+        },
+        "heldout": {
+          "reached": 31,
+          "intercepted": 9,
+          "crashed": 8,
+          "trials": 48,
+          "solved": 10
+        }
+      },
+      {
+        "sel": "clearance",
+        "ctrl": {
+          "cruise_speed": 3.5,
+          "corner_slowdown": 0.3,
+          "avoidance_distance": 8,
+          "evade_strength": 0.4,
+          "replan_when_bird_nearby": true
+        },
+        "train": {
+          "reached": 63,
+          "intercepted": 1,
+          "crashed": 0,
+          "trials": 64,
+          "solved": 16
+        },
+        "heldout": {
+          "reached": 36,
+          "intercepted": 10,
+          "crashed": 2,
+          "trials": 48,
+          "solved": 10
+        }
+      },
+      {
+        "sel": "clearance",
+        "ctrl": {
+          "cruise_speed": 4.2,
+          "corner_slowdown": 0.3,
+          "avoidance_distance": 0,
+          "evade_strength": 0,
+          "replan_when_bird_nearby": false
+        },
+        "train": {
+          "reached": 63,
+          "intercepted": 1,
+          "crashed": 0,
+          "trials": 64,
+          "solved": 16
+        },
+        "heldout": {
+          "reached": 36,
+          "intercepted": 11,
+          "crashed": 1,
+          "trials": 48,
+          "solved": 10
+        }
+      },
+      {
+        "sel": "clearance",
+        "ctrl": {
+          "cruise_speed": 4.8,
+          "corner_slowdown": 0.9,
+          "avoidance_distance": 0,
+          "evade_strength": 0,
+          "replan_when_bird_nearby": false
+        },
+        "train": {
+          "reached": 63,
+          "intercepted": 1,
+          "crashed": 0,
+          "trials": 64,
+          "solved": 16
+        },
+        "heldout": {
+          "reached": 39,
+          "intercepted": 9,
+          "crashed": 0,
+          "trials": 48,
+          "solved": 10
+        }
+      },
+      {
+        "sel": "clearance",
+        "ctrl": {
+          "cruise_speed": 4.8,
+          "corner_slowdown": 0.9,
+          "avoidance_distance": 4,
+          "evade_strength": 0.4,
+          "replan_when_bird_nearby": false
+        },
+        "train": {
+          "reached": 63,
+          "intercepted": 0,
+          "crashed": 1,
+          "trials": 64,
+          "solved": 16
+        },
+        "heldout": {
+          "reached": 42,
+          "intercepted": 6,
+          "crashed": 0,
+          "trials": 48,
+          "solved": 11
+        }
+      },
+      {
+        "sel": "rank6",
+        "ctrl": {
+          "cruise_speed": 3.5,
+          "corner_slowdown": 0.3,
+          "avoidance_distance": 4,
+          "evade_strength": 0.4,
+          "replan_when_bird_nearby": false
+        },
+        "train": {
+          "reached": 62,
+          "intercepted": 2,
+          "crashed": 0,
+          "trials": 64,
+          "solved": 16
+        },
+        "heldout": {
+          "reached": 31,
+          "intercepted": 16,
+          "crashed": 1,
+          "trials": 48,
+          "solved": 8
+        }
+      }
+    ]
+  },
+  "baselines": {
+    "shortest": {
+      "label": "Shortest-path comparator (controller OFF)",
+      "scenarios": 12,
+      "trials": 48,
+      "counts": {
+        "reached": 4,
+        "intercepted": 44,
+        "crashed": 0,
+        "timeout": 0,
+        "invalid": 0
+      },
+      "successRate": 0.08333333333333333,
+      "successCI95": [
+        0.03288322434995555,
+        0.19553565161066291
+      ],
+      "interceptRate": 0.9166666666666666,
+      "interceptCI95": [
+        0.8044643483893369,
+        0.9671167756500444
+      ],
+      "crashRate": 0,
+      "crashCI95": [
+        0,
+        0.0741026511527422
+      ],
+      "collisionRate": 0.9166666666666666,
+      "pathEfficiency": 0.7530991681963146,
+      "invalidActions": 0,
+      "scenariosSolved": 1,
+      "perScenario": {
+        "H1": 0,
+        "H2": 0,
+        "H3": 1,
+        "H4": 0,
+        "H5": 2,
+        "H6": 0,
+        "H7": 0,
+        "H8": 0,
+        "H9": 0,
+        "H10": 0,
+        "H11": 1,
+        "H12": 0
+      },
+      "routesChosen": {
+        "H1": "R1",
+        "H2": "R1",
+        "H3": "R1",
+        "H4": "R1",
+        "H5": "R1",
+        "H6": "R1",
+        "H7": "R1",
+        "H8": "R1",
+        "H9": "R1",
+        "H10": "R1",
+        "H11": "R1",
+        "H12": "R1"
+      }
+    },
+    "shortest_ctrl": {
+      "label": "Shortest route + controller ON (4.2/0.6/6m/0.6/replan)",
+      "scenarios": 12,
+      "trials": 48,
+      "counts": {
+        "reached": 23,
+        "intercepted": 17,
+        "crashed": 8,
+        "timeout": 0,
+        "invalid": 0
+      },
+      "successRate": 0.4791666666666667,
+      "successCI95": [
+        0.34471090015787464,
+        0.6167100436401562
+      ],
+      "interceptRate": 0.3541666666666667,
+      "interceptCI95": [
+        0.23433457112685735,
+        0.4956120354593591
+      ],
+      "crashRate": 0.16666666666666666,
+      "crashCI95": [
+        0.08695410039453222,
+        0.29578100037396254
+      ],
+      "collisionRate": 0.5208333333333334,
+      "pathEfficiency": 0.9015259809008986,
+      "invalidActions": 0,
+      "scenariosSolved": 6,
+      "perScenario": {
+        "H1": 0,
+        "H2": 3,
+        "H3": 0,
+        "H4": 0,
+        "H5": 2,
+        "H6": 4,
+        "H7": 0,
+        "H8": 4,
+        "H9": 4,
+        "H10": 4,
+        "H11": 1,
+        "H12": 1
+      },
+      "routesChosen": {
+        "H1": "R1",
+        "H2": "R1",
+        "H3": "R1",
+        "H4": "R1",
+        "H5": "R1",
+        "H6": "R1",
+        "H7": "R1",
+        "H8": "R1",
+        "H9": "R1",
+        "H10": "R1",
+        "H11": "R1",
+        "H12": "R1"
+      }
+    },
+    "heuristic": {
+      "label": "Bird-aware heuristic (max-clearance route + controller ON)",
+      "scenarios": 12,
+      "trials": 48,
+      "counts": {
+        "reached": 38,
+        "intercepted": 9,
+        "crashed": 1,
+        "timeout": 0,
+        "invalid": 0
+      },
+      "successRate": 0.7916666666666666,
+      "successCI95": [
+        0.6574082647864651,
+        0.8826985220411018
+      ],
+      "interceptRate": 0.1875,
+      "interceptCI95": [
+        0.10191276348200173,
+        0.31940139348846214
+      ],
+      "crashRate": 0.020833333333333332,
+      "crashCI95": [
+        0.003687015979399688,
+        0.10899469137531158
+      ],
+      "collisionRate": 0.20833333333333334,
+      "pathEfficiency": 1.162773739568135,
+      "invalidActions": 0,
+      "scenariosSolved": 10,
+      "perScenario": {
+        "H1": 4,
+        "H2": 4,
+        "H3": 0,
+        "H4": 4,
+        "H5": 2,
+        "H6": 4,
+        "H7": 4,
+        "H8": 4,
+        "H9": 4,
+        "H10": 4,
+        "H11": 1,
+        "H12": 3
+      },
+      "routesChosen": {
+        "H1": "R6",
+        "H2": "R6",
+        "H3": "R6",
+        "H4": "R3",
+        "H5": "R4",
+        "H6": "R1",
+        "H7": "R8",
+        "H8": "R1",
+        "H9": "R4",
+        "H10": "R8",
+        "H11": "R1",
+        "H12": "R3"
+      }
+    },
+    "tuned": {
+      "label": "Tuned on training: clearance + {\"cruise_speed\":4.2,\"corner_slowdown\":0.6,\"avoidance_distance\":4,\"evade_strength\":0.4,\"replan_when_bird_nearby\":true}",
+      "scenarios": 12,
+      "trials": 48,
+      "counts": {
+        "reached": 40,
+        "intercepted": 8,
+        "crashed": 0,
+        "timeout": 0,
+        "invalid": 0
+      },
+      "successRate": 0.8333333333333334,
+      "successCI95": [
+        0.7042189996260375,
+        0.9130458996054678
+      ],
+      "interceptRate": 0.16666666666666666,
+      "interceptCI95": [
+        0.08695410039453222,
+        0.29578100037396254
+      ],
+      "crashRate": 0,
+      "crashCI95": [
+        0,
+        0.0741026511527422
+      ],
+      "collisionRate": 0.16666666666666666,
+      "pathEfficiency": 1.1338560795219768,
+      "invalidActions": 0,
+      "scenariosSolved": 11,
+      "perScenario": {
+        "H1": 4,
+        "H2": 4,
+        "H3": 0,
+        "H4": 4,
+        "H5": 2,
+        "H6": 4,
+        "H7": 4,
+        "H8": 3,
+        "H9": 4,
+        "H10": 4,
+        "H11": 3,
+        "H12": 4
+      },
+      "routesChosen": {
+        "H1": "R6",
+        "H2": "R6",
+        "H3": "R6",
+        "H4": "R3",
+        "H5": "R4",
+        "H6": "R1",
+        "H7": "R8",
+        "H8": "R1",
+        "H9": "R4",
+        "H10": "R8",
+        "H11": "R1",
+        "H12": "R3"
+      }
+    },
+    "oracle_fixed": {
+      "label": "Oracle fixed (picked ON held-out, upper bound): clearance + {\"cruise_speed\":4.8,\"corner_slowdown\":0.9,\"avoidance_distance\":4,\"evade_strength\":0.7,\"replan_when_bird_nearby\":true}",
+      "scenarios": 12,
+      "trials": 48,
+      "counts": {
+        "reached": 48,
+        "intercepted": 0,
+        "crashed": 0,
+        "timeout": 0,
+        "invalid": 0
+      },
+      "successRate": 1,
+      "successCI95": [
+        0.9258973488472576,
+        0.9999999999999999
+      ],
+      "interceptRate": 0,
+      "interceptCI95": [
+        0,
+        0.0741026511527422
+      ],
+      "crashRate": 0,
+      "crashCI95": [
+        0,
+        0.0741026511527422
+      ],
+      "collisionRate": 0,
+      "pathEfficiency": 1.1387881032263028,
+      "invalidActions": 0,
+      "scenariosSolved": 12,
+      "perScenario": {
+        "H1": 4,
+        "H2": 4,
+        "H3": 4,
+        "H4": 4,
+        "H5": 4,
+        "H6": 4,
+        "H7": 4,
+        "H8": 4,
+        "H9": 4,
+        "H10": 4,
+        "H11": 4,
+        "H12": 4
+      },
+      "routesChosen": {
+        "H1": "R6",
+        "H2": "R6",
+        "H3": "R6",
+        "H4": "R3",
+        "H5": "R4",
+        "H6": "R1",
+        "H7": "R8",
+        "H8": "R1",
+        "H9": "R4",
+        "H10": "R8",
+        "H11": "R1",
+        "H12": "R3"
+      }
+    }
+  },
+  "ripple": {
+    "recording": {
+      "file": "sim/recordings/ripple-training.json",
+      "usingModel": true,
+      "strategySource": "ripple",
+      "scenarioMismatch": 0,
+      "conditions": {
+        "original": {
+          "label": "Ripple, original instructions",
+          "scenarios": 12,
+          "trials": 48,
+          "counts": {
+            "reached": 33,
+            "intercepted": 11,
+            "crashed": 4,
+            "timeout": 0,
+            "invalid": 0
+          },
+          "successRate": 0.6875,
+          "successCI95": [
+            0.5466666274950367,
+            0.800544878322685
+          ],
+          "interceptRate": 0.22916666666666666,
+          "interceptCI95": [
+            0.13307691028989044,
+            0.36539535908451154
+          ],
+          "crashRate": 0.08333333333333333,
+          "crashCI95": [
+            0.03288322434995555,
+            0.19553565161066291
+          ],
+          "collisionRate": 0.3125,
+          "pathEfficiency": 0.9983584919350411,
+          "invalidActions": 0,
+          "scenariosSolved": 9,
+          "perScenario": {
+            "H1": 4,
+            "H2": 3,
+            "H3": 0,
+            "H4": 3,
+            "H5": 2,
+            "H6": 4,
+            "H7": 1,
+            "H8": 4,
+            "H9": 4,
+            "H10": 4,
+            "H11": 1,
+            "H12": 3
+          },
+          "recordedSuccessRate": 0.6875,
+          "replayed": 12,
+          "replayMismatch": 0
+        },
+        "strategy": {
+          "label": "Ripple + frozen strategy",
+          "scenarios": 12,
+          "trials": 48,
+          "counts": {
+            "reached": 32,
+            "intercepted": 4,
+            "crashed": 12,
+            "timeout": 0,
+            "invalid": 0
+          },
+          "successRate": 0.6666666666666666,
+          "successCI95": [
+            0.5253984633247204,
+            0.783233986291032
+          ],
+          "interceptRate": 0.08333333333333333,
+          "interceptCI95": [
+            0.03288322434995555,
+            0.19553565161066291
+          ],
+          "crashRate": 0.25,
+          "crashCI95": [
+            0.1492048880971003,
+            0.3878464374792707
+          ],
+          "collisionRate": 0.3333333333333333,
+          "pathEfficiency": 1.0431187542449283,
+          "invalidActions": 0,
+          "scenariosSolved": 9,
+          "perScenario": {
+            "H1": 4,
+            "H2": 4,
+            "H3": 3,
+            "H4": 4,
+            "H5": 2,
+            "H6": 3,
+            "H7": 1,
+            "H8": 3,
+            "H9": 3,
+            "H10": 1,
+            "H11": 3,
+            "H12": 1
+          },
+          "recordedSuccessRate": 0.6666666666666666,
+          "replayed": 12,
+          "replayMismatch": 0
+        }
+      }
+    },
+    "current930b632": {
+      "file": "runs/experiments/current-930b632-20261113/session.json",
+      "usingModel": true,
+      "strategySource": "ripple",
+      "scenarioMismatch": 0,
+      "conditions": {
+        "original": {
+          "label": "Ripple, original instructions",
+          "scenarios": 12,
+          "trials": 48,
+          "counts": {
+            "reached": 34,
+            "intercepted": 13,
+            "crashed": 1,
+            "timeout": 0,
+            "invalid": 0
+          },
+          "successRate": 0.7083333333333334,
+          "successCI95": [
+            0.5682047226383246,
+            0.8175858393813663
+          ],
+          "interceptRate": 0.2708333333333333,
+          "interceptCI95": [
+            0.16565803561632889,
+            0.40997234616201117
+          ],
+          "crashRate": 0.020833333333333332,
+          "crashCI95": [
+            0.003687015979399688,
+            0.10899469137531158
+          ],
+          "collisionRate": 0.2916666666666667,
+          "pathEfficiency": 0.8929889541004072,
+          "invalidActions": 0,
+          "scenariosSolved": 9,
+          "perScenario": {
+            "H1": 4,
+            "H2": 4,
+            "H3": 1,
+            "H4": 4,
+            "H5": 2,
+            "H6": 4,
+            "H7": 0,
+            "H8": 4,
+            "H9": 3,
+            "H10": 4,
+            "H11": 4,
+            "H12": 0
+          },
+          "recordedSuccessRate": 0.7083333333333334,
+          "replayed": 12,
+          "replayMismatch": 0
+        },
+        "strategy": {
+          "label": "Ripple + frozen strategy",
+          "scenarios": 12,
+          "trials": 48,
+          "counts": {
+            "reached": 37,
+            "intercepted": 3,
+            "crashed": 8,
+            "timeout": 0,
+            "invalid": 0
+          },
+          "successRate": 0.7708333333333334,
+          "successCI95": [
+            0.6346046409154885,
+            0.8669230897101096
+          ],
+          "interceptRate": 0.0625,
+          "interceptCI95": [
+            0.021482843131227225,
+            0.1683569766274222
+          ],
+          "crashRate": 0.16666666666666666,
+          "crashCI95": [
+            0.08695410039453222,
+            0.29578100037396254
+          ],
+          "collisionRate": 0.22916666666666666,
+          "pathEfficiency": 1.0082595197677398,
+          "invalidActions": 0,
+          "scenariosSolved": 10,
+          "perScenario": {
+            "H1": 4,
+            "H2": 4,
+            "H3": 4,
+            "H4": 4,
+            "H5": 2,
+            "H6": 4,
+            "H7": 2,
+            "H8": 4,
+            "H9": 3,
+            "H10": 4,
+            "H11": 1,
+            "H12": 1
+          },
+          "recordedSuccessRate": 0.7708333333333334,
+          "replayed": 12,
+          "replayMismatch": 0
+        }
+      }
+    }
+  },
+  "strongestFairBaseline": "tuned",
+  "comparisons": {
+    "ripple_rec_original": {
+      "shortest": {
+        "successDiffPP": 60.4,
+        "wins": 9,
+        "ties": 2,
+        "losses": 1,
+        "signTestP": 0.021484375
+      },
+      "shortest_ctrl": {
+        "successDiffPP": 20.8,
+        "wins": 4,
+        "ties": 8,
+        "losses": 0,
+        "signTestP": 0.125
+      },
+      "heuristic": {
+        "successDiffPP": -10.4,
+        "wins": 0,
+        "ties": 9,
+        "losses": 3,
+        "signTestP": 0.25
+      },
+      "tuned": {
+        "successDiffPP": -14.6,
+        "wins": 1,
+        "ties": 6,
+        "losses": 5,
+        "signTestP": 0.21875
+      },
+      "oracle_fixed": {
+        "successDiffPP": -31.2,
+        "wins": 0,
+        "ties": 5,
+        "losses": 7,
+        "signTestP": 0.015625
+      }
+    },
+    "ripple_rec_strategy": {
+      "shortest": {
+        "successDiffPP": 58.3,
+        "wins": 11,
+        "ties": 1,
+        "losses": 0,
+        "signTestP": 0.0009765625
+      },
+      "shortest_ctrl": {
+        "successDiffPP": 18.7,
+        "wins": 6,
+        "ties": 2,
+        "losses": 4,
+        "signTestP": 0.75390625
+      },
+      "heuristic": {
+        "successDiffPP": -12.5,
+        "wins": 2,
+        "ties": 4,
+        "losses": 6,
+        "signTestP": 0.2890625
+      },
+      "tuned": {
+        "successDiffPP": -16.7,
+        "wins": 1,
+        "ties": 6,
+        "losses": 5,
+        "signTestP": 0.21875
+      },
+      "oracle_fixed": {
+        "successDiffPP": -33.3,
+        "wins": 0,
+        "ties": 3,
+        "losses": 9,
+        "signTestP": 0.00390625
+      }
+    },
+    "ripple_930_original": {
+      "shortest": {
+        "successDiffPP": 62.5,
+        "wins": 8,
+        "ties": 4,
+        "losses": 0,
+        "signTestP": 0.0078125
+      },
+      "shortest_ctrl": {
+        "successDiffPP": 22.9,
+        "wins": 5,
+        "ties": 5,
+        "losses": 2,
+        "signTestP": 0.453125
+      },
+      "heuristic": {
+        "successDiffPP": -8.3,
+        "wins": 2,
+        "ties": 7,
+        "losses": 3,
+        "signTestP": 1
+      },
+      "tuned": {
+        "successDiffPP": -12.5,
+        "wins": 3,
+        "ties": 6,
+        "losses": 3,
+        "signTestP": 1
+      },
+      "oracle_fixed": {
+        "successDiffPP": -29.2,
+        "wins": 0,
+        "ties": 7,
+        "losses": 5,
+        "signTestP": 0.0625
+      }
+    },
+    "ripple_930_strategy": {
+      "shortest": {
+        "successDiffPP": 68.8,
+        "wins": 10,
+        "ties": 2,
+        "losses": 0,
+        "signTestP": 0.001953125
+      },
+      "shortest_ctrl": {
+        "successDiffPP": 29.2,
+        "wins": 5,
+        "ties": 6,
+        "losses": 1,
+        "signTestP": 0.21875
+      },
+      "heuristic": {
+        "successDiffPP": -2.1,
+        "wins": 1,
+        "ties": 8,
+        "losses": 3,
+        "signTestP": 0.625
+      },
+      "tuned": {
+        "successDiffPP": -6.2,
+        "wins": 2,
+        "ties": 6,
+        "losses": 4,
+        "signTestP": 0.6875
+      },
+      "oracle_fixed": {
+        "successDiffPP": -22.9,
+        "wins": 0,
+        "ties": 7,
+        "losses": 5,
+        "signTestP": 0.0625
+      }
+    }
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "id": "canyon",
+  "registry": {
+    "id": "canyon",
+    "title": "Zohar canyon search",
+    "purpose": "Reach a marked rescue rendezvous through the narrow rocky canyon.",
+    "status": "task-specific Ripple search program recorded; both fresh demonstration seeds found the hidden hiker proxy; exact replays",
+    "source": {
+      "hash": "7aa4d3d4",
+      "originalTitle": "Zohar Riverbad, Dead sea, Israel",
+      "sceneUrl": "https://superspl.at/scene/7aa4d3d4",
+      "viewerUrl": "https://superspl.at/s?id=7aa4d3d4",
+      "creator": "barak9177",
+      "creatorUrl": "https://superspl.at/user/barak9177",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"Zohar Riverbad, Dead sea, Israel\" by barak9177 (https://superspl.at/scene/7aa4d3d4), licensed under CC BY 4.0.",
+      "modifications": "Rescue checkpoint annotations and drone visualization; crop/scale changes must be recorded when made."
+    },
+    "assets": {
+      "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/7aa4d3d4/v1/lod-meta.json",
+      "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/7aa4d3d4/v1/scene.voxel.json",
+      "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/7aa4d3d4/v1/scene.voxel.bin",
+      "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/7aa4d3d4/v1/xl.webp",
+      "format": "ssog",
+      "publishedSizeBytes": 98123857,
+      "cacheDirectory": "cache/splat-scenes/canyon",
+      "collisionFormat": "supersplat-voxel-1.1",
+      "collisionResolution": 0.05,
+      "collisionGridBounds": {
+        "min": [
+          -8.2,
+          -7.199999999999999,
+          -11.200000000000001
+        ],
+        "max": [
+          16.400000000000002,
+          7.400000000000002,
+          5.200000000000001
+        ]
+      }
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          180
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "official-viewer-coordinate-convention; physical scale provisional",
+      "units": "source scene units; not independently calibrated metres",
+      "note": "Current official SOG viewer rotates the gsplat entity 180 degrees around Z. Published v1.1 collision is already in engine coordinates. Camera settings below are used directly in that engine world."
+    },
+    "camera": {
+      "position": [
+        5.571248531341553,
+        0.7567952275276184,
+        -1.9957404136657715
+      ],
+      "target": [
+        2.55139601642516,
+        0.16042246905404645,
+        -0.4067693204666032
+      ],
+      "fov": 96,
+      "sourceFrame": "public SuperSplat viewer engine world",
+      "status": "author-published initial camera"
+    },
+    "flightBounds": {
+      "min": [
+        -7,
+        -3,
+        -10
+      ],
+      "max": [
+        15,
+        6,
+        4
+      ],
+      "status": "provisional local crop for route scouting; not a measured free volume"
+    },
+    "routes": [
+      {
+        "id": "canyon-scout-1",
+        "start": [
+          5.5,
+          1,
+          -2
+        ],
+        "goal": [
+          -3.5,
+          -1,
+          -5.5
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+        "diagnosticPath": [
+          [
+            5.5,
+            1,
+            -2
+          ],
+          [
+            4,
+            2.5,
+            -2
+          ],
+          [
+            0,
+            3.5,
+            -2
+          ],
+          [
+            -4,
+            3.5,
+            -2
+          ],
+          [
+            -5,
+            2,
+            -3
+          ],
+          [
+            -3.5,
+            -1,
+            -5.5
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 16.489278914656513,
+          "straightDistance": 9.861541461658009,
+          "detourFactor": 1.6720792564496496,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "clearanceRadius": 0.35,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.35,
+            "samples": 666,
+            "clear": true
+          }
+        }
+      },
+      {
+        "id": "canyon-scout-2",
+        "start": [
+          5.5,
+          1,
+          -2
+        ],
+        "goal": [
+          -3.5,
+          1,
+          -5.5
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+        "diagnosticPath": [
+          [
+            5.5,
+            1,
+            -2
+          ],
+          [
+            4,
+            2.5,
+            -2
+          ],
+          [
+            0,
+            3.5,
+            -2
+          ],
+          [
+            -4,
+            3.5,
+            -2
+          ],
+          [
+            -5,
+            2,
+            -3
+          ],
+          [
+            -3.5,
+            1,
+            -5.5
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 15.388185783470622,
+          "straightDistance": 9.656603957913983,
+          "detourFactor": 1.5935401151933306,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "clearanceRadius": 0.35,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.35,
+            "samples": 622,
+            "clear": true
+          }
+        }
+      },
+      {
+        "id": "canyon-scout-3",
+        "start": [
+          5.5,
+          1,
+          -2
+        ],
+        "goal": [
+          -4,
+          -0.5,
+          -3.5
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+        "diagnosticPath": [
+          [
+            5.5,
+            1,
+            -2
+          ],
+          [
+            4,
+            2.5,
+            -2
+          ],
+          [
+            0,
+            3.5,
+            -2
+          ],
+          [
+            -4,
+            3.5,
+            -2
+          ],
+          [
+            -5,
+            2,
+            -3
+          ],
+          [
+            -4,
+            -0.5,
+            -3.5
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 15.044591569511965,
+          "straightDistance": 9.733961166965893,
+          "detourFactor": 1.5455775209550597,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "clearanceRadius": 0.35,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.35,
+            "samples": 608,
+            "clear": true
+          }
+        }
+      }
+    ],
+    "routeScout": {
+      "tool": "sim/tools/maps/scout_splat_routes.mjs",
+      "reportPath": "cache/splat-scenes/canyon/route-scout-clearance.json",
+      "cell": 0.5,
+      "freeSupportedCells": 3646,
+      "reachableSupportedCells": 2801,
+      "cameraAnchorSnapDistance": 0.2534621444070295,
+      "physicalScaleCalibrated": false,
+      "note": "Points and diagnostics are in engine world. Paths only establish sampled geometric connectivity; they are not model commands or replay recordings.",
+      "clearanceRadius": 0.35
+    },
+    "reviewActive": true,
+    "reviewDecision": "approved",
+    "reviewNote": "Canyon preview approved on 2026-11-15.",
+    "mission": {
+      "kind": "find-beacon",
+      "definitionPath": "sim/scenes/canyon-hiker-mission.json",
+      "summary": "Locate a lost hiker represented by a hidden beacon in the canyon."
+    }
+  },
+  "calibration": null,
+  "admission": {
+    "stage": 0,
+    "checkedAt": "2026-11-20",
+    "commit": null,
+    "gates": {
+      "licence": {
+        "status": "pass",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-15 from https://superspl.at/scene/7aa4d3d4."
+      },
+      "attribution": {
+        "status": "pass",
+        "detail": "\"Zohar Riverbad, Dead sea, Israel\" by barak9177 (https://superspl.at/scene/7aa4d3d4), licensed under CC BY 4.0."
+      },
+      "review": {
+        "status": "pass",
+        "detail": "Review decision “approved”: Canyon preview approved on 2026-11-15."
+      }
+    },
+    "signoffs": {}
+  },
+  "registryOrder": 2
+}

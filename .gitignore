@@ -1,0 +1,51 @@
+# Local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.ripple-env-*
+
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Model weights and generated artifacts
+models/
+checkpoints/
+cache/
+.cache/
+runs/
+stats/
+captures/
+*.safetensors
+*.gguf
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+
+# Browser tooling
+node_modules/
+.next/
+coverage/
+
+# Machine files
+.DS_Store
+*.log
+
+# Offline stand-in sessions (not Ripple); keep real recordings
+sim/recordings/offline-*.json
+
+# Local Vercel project link
+.vercel/
+
+# Raw scan maps from sim/tools/env/add_scene.mjs (before the flight volume); rebuild with build_splat_map.mjs --scene <id>-raw
+sim/maps/*-raw.json

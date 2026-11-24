@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "id": "forest-lake",
+  "kind": "scan",
+  "scene": "forest-lake",
+  "mapBuild": "forest-lake",
+  "videoOnly": false,
+  "harness": {
+    "map": "sim/maps/forest-lake.json",
+    "scenarioFile": "sim/scenarios/reach-forest-lake.json",
+    "reach": {
+      "seed": 20642150,
+      "idPrefix": "forest-lake-",
+      "windOffset": 9075000
+    },
+    "scene": "The area is a 3D scan of a real small lake in a forest: water, a shoreline track, banks and surrounding trees, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.",
+    "routeText": "Routes are 15-35 m long",
+    "units": "scene units (roughly metres, not calibrated)",
+    "version": "arena"
+  },
+  "admission": {
+    "stage": null,
+    "checkedAt": "2026-11-20",
+    "commit": "95840e3",
+    "gates": {
+      "licence": {
+        "stage": 0,
+        "status": "pass",
+        "value": "CC BY 4.0",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-20 from https://superspl.at/scene/d5e57a5b."
+      },
+      "attribution": {
+        "stage": 0,
+        "status": "pass",
+        "detail": "\"Taşçılar Göleti\" by eakturk (https://superspl.at/scene/d5e57a5b), licensed under CC BY 4.0."
+      },
+      "review": {
+        "stage": 0,
+        "status": "fail",
+        "detail": "Review decision “pending”: Picked from the PlayCanvas explore API as a candidate outdoor scene (mountains, forests, natural landscapes, small villages); look not yet approved."
+      },
+      "scale": {
+        "stage": 1,
+        "status": "info",
+        "detail": "Not measured. Recorded so far: Scene units treated as metres at scale 1, without independent calibration. (Shown for information; not enforced.)"
+      },
+      "passage": {
+        "stage": 1,
+        "status": "pass",
+        "value": 0.9,
+        "detail": "Narrowest gap on the flight graph: 0.90 m (the drone is 0.50 m wide) at [3.7, -1.7, 5.1]."
+      },
+      "alignment": {
+        "stage": 1,
+        "status": "pass",
+        "value": 0.943,
+        "detail": "94.3% of 707 sampled surface cells of the scan's own collider (the altitude fence and sealed hollows excluded) have scan points within 0.50 m (needs 90%)."
+      },
+      "coverage": {
+        "stage": 1,
+        "status": "pass",
+        "value": 0.909,
+        "detail": "90.9% of 219 waypoints have captured scan ground below them (needs 90%). Captured means at least 5 scan points within 2 m (5% of this scan's median, 57). 20 waypoints sit over ground with no scan surface within 2.5 m (ground we sealed)."
+      },
+      "scene-text": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "The area is a 3D scan of a real small lake in a forest: water, a shoreline track, banks and surrounding trees, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles."
+      },
+      "routes": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "0 routes (0 train, 0 dev, 0 heldout, 0 test) match sim/scenarios/reach-forest-lake.json."
+      },
+      "planner": {
+        "stage": 2,
+        "status": "fail",
+        "value": 0,
+        "detail": "0% of 0 development routes (needs 90%)."
+      },
+      "straight": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0,
+        "detail": "0% reached flying straight (at most 50%)."
+      },
+      "between": {
+        "stage": 2,
+        "status": "fail",
+        "value": 0,
+        "detail": "Reactive avoider 0%, between straight 0% and planner 0%."
+      },
+      "replay": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "0 of 0 flights replay exactly."
+      }
+    },
+    "signoffs": {},
+    "readyIfApproved": 1
+  },
+  "registryOrder": 23
+}

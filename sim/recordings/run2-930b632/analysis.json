@@ -1,0 +1,196 @@
+{
+  "source": "runs/experiments/current-930b632-20261113/session.json",
+  "training_episodes": 8,
+  "strategy": "In the first seconds, classify the bird: if it tracks your current position, it is pursuing; if it aims ahead of you, it is intercepting; if it holds a fixed point and waits, it is ambushing; if it oscillates between two points, it is patrolling. For pursuing or intercepting birds, fly a direct route away from its line of attack, using the outside window entry when possible. For ambush or patrol birds, approach from the opposite side of its waiting point, keep at least 8 m clearance, and avoid lingering near its trigger radius. Use speed 4.8-5 m/s, corner_slowdown 0.6-0.7, avoidance 8 m, evade 0.7-0.8, and replan continuously. If the bird is stationary, do not fly past its waiting point; go around it. If it is moving, keep distance and never fly directly at it. Always prefer the shortest safe route that maximizes separation from the bird's current and predicted position.",
+  "strategy_source": "ripple",
+  "training_attacker_sources": {
+    "ripple": 8
+  },
+  "training_defender_sources": {
+    "ripple": 8
+  },
+  "metrics": {
+    "shortest": {
+      "trials": 48,
+      "outcomes": {
+        "intercepted": 44,
+        "reached": 4
+      },
+      "success_rate": 0.08333333333333333,
+      "invalid_decisions": 0,
+      "solved_scenarios": 1,
+      "sources": {
+        "comparator": 12
+      }
+    },
+    "original": {
+      "trials": 48,
+      "outcomes": {
+        "reached": 34,
+        "intercepted": 13,
+        "crashed": 1
+      },
+      "success_rate": 0.7083333333333334,
+      "invalid_decisions": 0,
+      "solved_scenarios": 9,
+      "sources": {
+        "ripple": 12
+      }
+    },
+    "strategy": {
+      "trials": 48,
+      "outcomes": {
+        "reached": 37,
+        "intercepted": 3,
+        "crashed": 8
+      },
+      "success_rate": 0.7708333333333334,
+      "invalid_decisions": 0,
+      "solved_scenarios": 10,
+      "sources": {
+        "ripple": 12
+      }
+    }
+  },
+  "paired_scenarios": [
+    {
+      "scenario": "H1",
+      "shortest": 0,
+      "original": 4,
+      "strategy": 4,
+      "delta": 0
+    },
+    {
+      "scenario": "H2",
+      "shortest": 0,
+      "original": 4,
+      "strategy": 4,
+      "delta": 0
+    },
+    {
+      "scenario": "H3",
+      "shortest": 1,
+      "original": 1,
+      "strategy": 4,
+      "delta": 3
+    },
+    {
+      "scenario": "H4",
+      "shortest": 0,
+      "original": 4,
+      "strategy": 4,
+      "delta": 0
+    },
+    {
+      "scenario": "H5",
+      "shortest": 2,
+      "original": 2,
+      "strategy": 2,
+      "delta": 0
+    },
+    {
+      "scenario": "H6",
+      "shortest": 0,
+      "original": 4,
+      "strategy": 4,
+      "delta": 0
+    },
+    {
+      "scenario": "H7",
+      "shortest": 0,
+      "original": 0,
+      "strategy": 2,
+      "delta": 2
+    },
+    {
+      "scenario": "H8",
+      "shortest": 0,
+      "original": 4,
+      "strategy": 4,
+      "delta": 0
+    },
+    {
+      "scenario": "H9",
+      "shortest": 0,
+      "original": 3,
+      "strategy": 3,
+      "delta": 0
+    },
+    {
+      "scenario": "H10",
+      "shortest": 0,
+      "original": 4,
+      "strategy": 4,
+      "delta": 0
+    },
+    {
+      "scenario": "H11",
+      "shortest": 1,
+      "original": 4,
+      "strategy": 1,
+      "delta": -3
+    },
+    {
+      "scenario": "H12",
+      "shortest": 0,
+      "original": 0,
+      "strategy": 1,
+      "delta": 1
+    }
+  ],
+  "adapted_minus_original_percentage_points": 6.25,
+  "scenario_wins_ties_losses": {
+    "wins": 3,
+    "ties": 8,
+    "losses": 1
+  },
+  "paired_scenario_sign_flip_pvalue_two_sided": 0.75,
+  "quiz": {
+    "original": {
+      "correct": 6,
+      "total": 12,
+      "accuracy": 0.5,
+      "error": null,
+      "meanTimeError": 1.12
+    },
+    "strategy": {
+      "correct": 6,
+      "total": 12,
+      "accuracy": 0.5,
+      "error": null,
+      "meanTimeError": 1.2
+    }
+  },
+  "ledger": {
+    "calls": 45,
+    "failures": 1,
+    "promptTokens": 120677,
+    "completionTokens": 7885,
+    "ms": 198597
+  },
+  "qualification": "One frozen strategy and one model decision per scenario per condition; seeds share that decision. Same building and 12 fixed held-out scenarios, so the 48 trials are clustered, not 48 independent policy samples.",
+  "rematch": {
+    "training_episode": 3,
+    "before_reached": 0,
+    "after_reached": 0
+  },
+  "belief_metrics": {
+    "original": {
+      "correct_behavior": 2,
+      "correct_family": 3,
+      "total": 12,
+      "mean_danger_error_metres": 11.5
+    },
+    "strategy": {
+      "correct_behavior": 2,
+      "correct_family": 8,
+      "total": 12,
+      "mean_danger_error_metres": 12.1
+    }
+  },
+  "training_invalid_decisions": 1,
+  "replay_verification": {
+    "checked": 45,
+    "mismatched": 0
+  }
+}

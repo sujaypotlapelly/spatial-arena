@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Harness I/O · Spatial Arena</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      html, body { height: auto; min-height: 100%; }
+      body { overflow-y: auto; }
+      .page { max-width: 1400px; margin: 0 auto; padding: 22px 24px 48px; }
+      .top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; }
+      .top h1 { font-size: 24px; }
+      .top p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+
+      .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 16px; }
+      .pills { display: flex; flex-wrap: wrap; gap: 4px; }
+      .pill { background: #0f172a; border: 1px solid var(--line); color: var(--muted); border-radius: 6px; padding: 6px 10px; font-size: 13px; cursor: pointer; }
+      .pill b { color: var(--text); margin-right: 4px; font-family: ui-monospace, monospace; }
+      .pill:hover { border-color: #334155; color: var(--text); }
+      .pill[aria-pressed="true"] { border-color: var(--accent); color: var(--text); background: #0c2233; }
+      select { background: #0f172a; color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; font-size: 13px; }
+
+      .tokens { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; }
+      .tok { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+      .tok .n { font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.1; }
+      .tok .l { font-size: 13px; color: var(--muted); margin-top: 2px; }
+      .tok.think .n { color: var(--warn); }
+
+      .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 14px; align-items: start; }
+      .col { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; min-width: 0; }
+      .col h2 { margin: 0 0 2px; font-size: 13px; }
+      .col .sub { margin: 0 0 10px; font-size: 13px; }
+      .col h3 { font-size: 12px; color: var(--muted); font-weight: 600; margin: 14px 0 6px; }
+      pre { margin: 0; background: #0a0f1d; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre-wrap; word-break: break-word; overflow: auto; max-height: 460px; }
+      .ln { display: block; }
+      .ln.fly { color: var(--accent); }
+      .ln.score { color: #64748b; }
+      .ln.step { color: #c4b5fd; }
+      .ln.why { color: var(--muted); }
+      .key { color: var(--muted); }
+      .legend-row { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--muted); margin-top: 8px; }
+      .legend-row i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+      details { margin-top: 10px; font-size: 13px; }
+      details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+      details pre { margin-top: 6px; max-height: 360px; font-size: 12px; background: #0a0f1d; padding: 10px 12px; border-radius: 8px; }
+      #extras details { margin: 0 0 10px; }
+      .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+      .tag { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid #334155; color: var(--text); white-space: nowrap; }
+      .tag.on { border-color: var(--warn); color: var(--warn); }
+      .tool { font: 12px/1.5 ui-monospace, monospace; padding: 4px 0; border-bottom: 1px dashed var(--line); color: var(--muted); }
+      .tool b { color: var(--text); }
+      .seeds { display: grid; grid-template-columns: auto 1fr auto; gap: 4px 12px; font-size: 13px; align-items: center; }
+      .badge { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 4px; justify-self: start; }
+      .badge.reached { background: #064e3b; color: var(--good); }
+      .badge.intercepted { background: #4c0519; color: var(--bad); }
+      .badge.crashed { background: #451a03; color: var(--warn); }
+      .badge.timeout, .badge.invalid { background: #1e293b; color: var(--muted); }
+      .note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.45; }
+      .err { color: var(--bad); }
+
+      @media (max-width: 1100px) {
+        .cols { grid-template-columns: 1fr; }
+        .tokens { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 520px) {
+        .page { padding: 16px 16px 40px; }
+        .tok .n { font-size: 24px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="top">
+        <div>
+          <h1>Harness I/O</h1>
+          <p>One recorded Ripple decision: what it reads, what it sends back, and what the simulator flies.</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="pills" id="pills" role="group" aria-label="Harness"></div>
+        <label class="muted" for="scenario">Scenario</label>
+        <select id="scenario"></select>
+      </div>
+
+      <div class="tokens">
+        <div class="tok"><div class="n" id="tIn">–</div><div class="l">tokens in (the prompt)</div></div>
+        <div class="tok think"><div class="n" id="tThink">–</div><div class="l" id="tThinkL">tokens spent thinking</div></div>
+        <div class="tok"><div class="n" id="tOut">–</div><div class="l">tokens in the answer (JSON)</div></div>
+        <div class="tok"><div class="n" id="tTime">–</div><div class="l">seconds for the decision</div></div>
+      </div>
+
+      <div class="cols">
+        <section class="col">
+          <h2>① Input</h2>
+          <p class="sub muted">What Ripple reads: the state, as JSON, inside a text prompt.</p>
+          <div id="extras"></div>
+          <pre id="input"></pre>
+          <details><summary>Full prompt text</summary><pre id="prompt"></pre></details>
+        </section>
+
+        <section class="col">
+          <h2>② Output</h2>
+          <p class="sub muted">What Ripple sends back. Nothing else reaches the simulator.</p>
+          <div id="tools"></div>
+          <pre id="output"></pre>
+          <div class="legend-row">
+            <span><i style="background:var(--accent)"></i>sets the drone autopilot</span>
+            <span><i style="background:#64748b"></i>belief: scored afterwards, not flown</span>
+            <span id="stepLegend" hidden><i style="background:#c4b5fd"></i>structured steps: work shown first</span>
+          </div>
+          <details id="thinkBox" hidden><summary>Thinking text</summary><pre id="thinking"></pre></details>
+        </section>
+
+        <section class="col">
+          <h2>③ Simulator</h2>
+          <p class="sub muted">What actually flies, 60 steps a second. Ripple is not called again.</p>
+          <h3>Drone autopilot settings (from Ripple)</h3>
+          <pre id="drone"></pre>
+          <h3>Bird controller settings (scripted test scenario, not Ripple)</h3>
+          <pre id="bird"></pre>
+          <h3>Result on 4 wind seeds</h3>
+          <div class="seeds" id="seeds"></div>
+          <p class="note" id="belief"></p>
+        </section>
+      </div>
+      <p class="note" id="source"></p>
+    </div>
+    <script type="module" src="src/harness.js"></script>
+  </body>
+</html>

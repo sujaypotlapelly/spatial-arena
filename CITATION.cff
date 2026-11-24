@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use Spatial Arena, please cite it as below."
+title: "Spatial Arena: can a language model fly a drone?"
+type: software
+authors:
+  - family-names: Potlapelly
+    given-names: Sujay
+  - family-names: Khanna
+    given-names: Aadi
+  - family-names: Wilton
+    given-names: Simon
+date-released: 2026-11-18
+url: "https://spatialarena.dev/"
+license: MIT
+abstract: "A drone simulator with a text-only interface. A language model reads numbers each second and replies with a command, or writes and revises its own flight program."

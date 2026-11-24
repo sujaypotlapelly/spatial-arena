@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "id": "canyon5",
+  "kind": "scan",
+  "scene": "canyon",
+  "mapBuild": "canyon-v5",
+  "videoOnly": false,
+  "harness": {
+    "map": "sim/maps/canyon-v5.json",
+    "scenarioFile": "sim/scenarios/reach-canyon5.json",
+    "reach": {
+      "seed": 20261202,
+      "idPrefix": "canyon5-",
+      "windOffset": 700000
+    },
+    "scene": "The terrain is a 3D scan of a real desert canyon (a dry riverbed): rock walls, boulders and uneven ground, open to the sky. A flight ceiling (an altitude geofence) acts like a roof, so the drone cannot climb over the canyon walls.",
+    "routeText": "Routes are 15-35 m long",
+    "units": "scene units x2 (scale not calibrated)",
+    "version": "v5",
+    "missions": {
+      "search": {
+        "kind": "find-beacon",
+        "timeLimitSeconds": 90,
+        "train": 12,
+        "dev": 24,
+        "test": 48,
+        "detectionRange": 5,
+        "minDist": 15,
+        "maxDist": 35,
+        "seed": 20261203,
+        "windBase": 1250000,
+        "surface": "sky"
+      }
+    }
+  },
+  "admission": {
+    "stage": 0,
+    "checkedAt": "2026-11-20",
+    "commit": "95840e3",
+    "gates": {
+      "licence": {
+        "stage": 0,
+        "status": "pass",
+        "value": "CC BY 4.0",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-15 from https://superspl.at/scene/7aa4d3d4."
+      },
+      "attribution": {
+        "stage": 0,
+        "status": "pass",
+        "detail": "\"Zohar Riverbad, Dead sea, Israel\" by barak9177 (https://superspl.at/scene/7aa4d3d4), licensed under CC BY 4.0."
+      },
+      "review": {
+        "stage": 0,
+        "status": "pass",
+        "detail": "Review decision “approved”: Canyon preview approved on 2026-11-15."
+      },
+      "scale": {
+        "stage": 1,
+        "status": "info",
+        "detail": "Not measured. Recorded so far: Scene units x8, treated as metres: chosen by eye with a correctly scaled drone in a lower channel; there the narrowest pinch is about 6 m. The collider's native 0.05-unit voxels become 0.4 m, so the grid cell is 0.4. The crop top (y = 20, the earlier 2.5-unit ceiling x8) is the altitude limit that seals the plateaus. Not independently calibrated. (Shown for information; not enforced.)"
+      },
+      "passage": {
+        "stage": 1,
+        "status": "pass",
+        "value": 0.91,
+        "detail": "Narrowest gap on the flight graph: 0.91 m (the drone is 0.50 m wide) at [20.4, 8.1, -45.3]."
+      },
+      "alignment": {
+        "stage": 1,
+        "status": "fail",
+        "value": 0.623,
+        "detail": "62.3% of 4440 sampled surface cells of the scan's own collider (the altitude fence and sealed hollows excluded) have scan points within 0.80 m (needs 90%)."
+      },
+      "coverage": {
+        "stage": 1,
+        "status": "fail",
+        "value": 0.478,
+        "detail": "47.8% of 205 waypoints have captured scan ground below them (needs 90%). Captured means at least 5 scan points within 2 m (5% of this scan's median, 28). 71 waypoints sit over ground with no scan surface within 2.5 m (ground we sealed)."
+      },
+      "scene-text": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "The terrain is a 3D scan of a real desert canyon (a dry riverbed): rock walls, boulders and uneven ground, open to the sky. A flight ceiling (an altitude geofence) acts like a roof, so the drone cannot climb over the canyon walls."
+      },
+      "routes": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "108 routes (12 train, 24 dev, 24 heldout, 48 test) match sim/scenarios/reach-canyon5.json."
+      },
+      "planner": {
+        "stage": 2,
+        "status": "pass",
+        "value": 1,
+        "detail": "100% of 24 dev routes (needs 90%)."
+      },
+      "straight": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.2916666666666667,
+        "detail": "29.2% reached flying straight (at most 50%)."
+      },
+      "between": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.4583333333333333,
+        "detail": "Reactive avoider 45.8%, between straight 29.2% and planner 100%."
+      },
+      "replay": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "72 of 72 flights replay exactly."
+      },
+      "missions-search": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "Sets match sim/scenarios/mission-canyon5-search.json. Each target used once. Oracle completed 4 of 4 development missions."
+      },
+      "targets-captured": {
+        "stage": 2,
+        "status": "fail",
+        "value": 28,
+        "detail": "56 of 84 targets have at least 5 scan points within 2 m (5% of this scan's median, 28). Uncaptured: canyon5-search-T11, canyon5-search-D1, canyon5-search-D3, canyon5-search-D5, canyon5-search-D6, canyon5-search-D8 and 22 more."
+      },
+      "targets-sky": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0,
+        "detail": "84 of 84 targets are in their column's topmost free space."
+      }
+    },
+    "signoffs": {},
+    "readyIfApproved": 0
+  },
+  "registryOrder": 5
+}

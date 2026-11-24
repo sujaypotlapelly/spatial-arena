@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "verzasca-valley",
+  "registry": {
+    "id": "verzasca-valley",
+    "title": "Verzasca River - Ponte dei Salti, Switzerland",
+    "purpose": "Arena environment candidate: alpine river valley: a stone footbridge over a rocky river, stone paths, trees and steep banks",
+    "status": "approved; see admission",
+    "source": {
+      "hash": "fb6b9fae",
+      "originalTitle": "Verzasca River - Ponte dei Salti, Switzerland",
+      "sceneUrl": "https://superspl.at/scene/fb6b9fae",
+      "viewerUrl": "https://superspl.at/s?id=fb6b9fae",
+      "creator": "tosolini",
+      "creatorUrl": "https://superspl.at/user/tosolini",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"Verzasca River - Ponte dei Salti, Switzerland\" by tosolini (https://superspl.at/scene/fb6b9fae), licensed under CC BY 4.0.",
+      "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+    },
+    "assets": {
+      "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/fb6b9fae/v1/lod-meta.json",
+      "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/fb6b9fae/v1/scene.voxel.json",
+      "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/fb6b9fae/v1/scene.voxel.bin",
+      "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/fb6b9fae/v1/xl.webp",
+      "format": "ssog",
+      "publishedSizeBytes": 281221876,
+      "cacheDirectory": "cache/splat-scenes/verzasca-valley",
+      "collisionFormat": "supersplat-voxel-1.1",
+      "collisionResolution": null,
+      "collisionGridBounds": {
+        "min": [
+          -82.00000000000001,
+          -13.600000000000001,
+          -55.60000000000001
+        ],
+        "max": [
+          11.599999999999994,
+          33.6,
+          50
+        ]
+      }
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          180
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "official-viewer-coordinate-convention; physical scale provisional",
+      "units": "source scene units; not independently calibrated metres",
+      "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+    },
+    "camera": {
+      "position": [
+        -35.20000000000001,
+        33.6,
+        -55.60000000000001
+      ],
+      "target": [
+        -35.20000000000001,
+        10,
+        -2.8000000000000043
+      ],
+      "fov": 70,
+      "sourceFrame": "engine world",
+      "status": "default overview from the collider bounds"
+    },
+    "flightBounds": null,
+    "routes": [],
+    "reviewActive": true,
+    "reviewDecision": "approved",
+    "reviewNote": "Scene approved on 2026-11-20."
+  },
+  "calibration": null,
+  "admission": {
+    "stage": 0,
+    "checkedAt": "2026-11-20",
+    "commit": null,
+    "gates": {
+      "licence": {
+        "status": "pass",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-20 from https://superspl.at/scene/fb6b9fae."
+      },
+      "attribution": {
+        "status": "pass",
+        "detail": "\"Verzasca River - Ponte dei Salti, Switzerland\" by tosolini (https://superspl.at/scene/fb6b9fae), licensed under CC BY 4.0."
+      },
+      "review": {
+        "status": "pass",
+        "detail": "Review decision “approved”: Scene approved on 2026-11-20."
+      }
+    },
+    "signoffs": {}
+  },
+  "registryOrder": 16
+}

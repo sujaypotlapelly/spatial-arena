@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; worker-src 'self'; connect-src 'self'; style-src 'self'; img-src 'self' data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Spatial Arena: try it yourself</title>
+<link rel="stylesheet" href="arena.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<header class="top">
+  <h1>Try it yourself: fly a drone through the factory scan</h1>
+  <p class="lede">Each second a flight program receives the drone's instrument readings as text and sends back one command. Below, Ripple's flight program flies one route; drag the timeline to read what it received and sent at any second. Flights run on this device with the benchmark's simulator. No model runs on this page and nothing is sent anywhere.</p>
+  <p id="check-banner" class="check-line warn" hidden>This browser does not reproduce the benchmark's flights exactly, so scores here can differ from the published ones. <a href="#check">Details below the flight</a>.</p>
+</header>
+
+<main>
+  <section class="stage" aria-labelledby="stage-h">
+    <h2 id="stage-h" class="sr-only">The flight</h2>
+    <div class="dock">
+      <div class="viewwrap">
+        <canvas id="view" aria-label="Top-down map of the factory collision grid with the flight path"></canvas>
+      </div>
+      <div class="scrub">
+        <input type="range" id="t" min="0" max="90" step="0.1" value="0" aria-label="Flight time">
+        <div class="scrub-buttons">
+          <button type="button" id="play" aria-label="Play">Play</button>
+          <button type="button" id="prev" aria-label="Previous second">&lt; 1 s</button>
+          <button type="button" id="next" aria-label="Next second">1 s &gt;</button>
+          <output id="tlabel" for="t">0.0 s</output>
+          <label class="speed"><span class="speed-word">Speed </span><select id="speed"><option value="1">1x</option><option value="2" selected>2x</option><option value="5">5x</option></select></label>
+        </div>
+        <p id="dock-cmd" class="dock-cmd" aria-hidden="true"></p>
+      </div>
+    </div>
+
+    <aside class="panel" aria-labelledby="panel-h">
+      <h2 id="panel-h">Second <span id="sec">0</span>: <span id="who"></span></h2>
+      <h3>Instrument readings it received, as text</h3>
+      <pre id="obs" class="code" tabindex="0"></pre>
+      <h3>What it sent back</h3>
+      <pre id="reply" class="code" tabindex="0"></pre>
+      <h3>What the simulator applied</h3>
+      <pre id="applied" class="code" tabindex="0"></pre>
+      <p id="note" class="note"></p>
+      <p class="hint" id="obs-hint"></p>
+    </aside>
+
+    <div class="outcome">
+      <p id="demo-note" class="demo-note"></p>
+      <div id="result" class="result" aria-live="polite"></div>
+      <p id="check" class="check-line" role="status"></p>
+      <p class="jump"><a href="#setup">Change the route or flight program</a></p>
+    </div>
+
+    <div class="mapnotes">
+      <div class="legend" aria-hidden="true">
+        <span><i class="sw path"></i>This flight</span>
+        <span><i class="sw ghost"></i>Ghost</span>
+        <span><i class="sw goal"></i>Goal (1 m)</span>
+        <span><i class="sw contact"></i>Wall contact</span>
+        <span><i class="sw slice"></i>Solid at the drone's height</span>
+      </div>
+      <p class="hint">Top-down, north up. Grey shows the scan's collision grid over the drone's flying heights; the darker a spot, the more of that column is solid.</p>
+      <label class="check"><input type="checkbox" id="slice" checked> Show what is solid at the drone's height</label>
+      <label class="check"><input type="checkbox" id="animate"> Play new flights as they happen (starts off if your system asks for reduced motion)</label>
+    </div>
+  </section>
+
+  <section class="setup" id="setup" aria-labelledby="setup-h">
+    <h2 id="setup-h">Fly it yourself</h2>
+    <p class="hint">Pick a route, a wind and a flight program, then press Fly. Each flight is saved on this device so you can replay and compare it.</p>
+    <div class="row">
+      <label>Route
+        <select id="route"></select>
+      </label>
+      <label>Wind
+        <select id="wind"><option value="0">Wind 1</option><option value="1">Wind 2</option></select>
+      </label>
+      <p id="route-info" class="hint"></p>
+    </div>
+    <fieldset class="programs">
+      <legend>Flight program</legend>
+      <div id="programs" class="program-list"></div>
+    </fieldset>
+    <div id="editor" class="editor" hidden>
+      <label for="code">Your <code>policy(obs, memory)</code></label>
+      <textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off" rows="16"></textarea>
+      <div class="row">
+        <label>Name on the leaderboard <input id="custom-name" maxlength="40" value="My flight program"></label>
+        <button type="button" id="reset-code" class="quiet">Restore the example</button>
+      </div>
+    </div>
+    <div class="row">
+      <button type="button" id="fly" class="primary">Fly</button>
+      <span id="status" role="status" class="hint"></span>
+    </div>
+  </section>
+
+  <section class="compare" aria-labelledby="cmp-h">
+    <h2 id="cmp-h">Compare with a ghost</h2>
+    <p class="hint">Any saved flight on the same route and wind can fly alongside this one as a dashed ghost.</p>
+    <label>Ghost <select id="ghost"><option value="">None</option></select></label>
+    <div id="cmp-table"></div>
+  </section>
+
+  <section class="board" aria-labelledby="board-h">
+    <h2 id="board-h">Leaderboard on this device</h2>
+    <p class="hint">Ranked by reaching the goal, then time, then wall contacts. Every saved flight is stored as its commands and re-flown before it is scored, including imported ones, so a file cannot carry a made-up score. Stored in this browser only.</p>
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" id="tab-route" aria-selected="true">This route and wind</button>
+      <button type="button" role="tab" id="tab-all" aria-selected="false">Overall</button>
+    </div>
+    <div id="board" role="tabpanel"></div>
+    <div class="row">
+      <button type="button" id="export">Export all flights (JSON)</button>
+      <label class="file">Import flights <input type="file" id="import" accept="application/json,.json"></label>
+      <button type="button" id="selfcheck" class="quiet">Run the browser check again</button>
+      <button type="button" id="clear" class="quiet danger">Delete all saved flights</button>
+    </div>
+    <p id="board-status" class="hint" role="status"></p>
+  </section>
+</main>
+
+<footer>
+  <p>Simulator: <code>sim/src/gym/reach.js</code> at control level C3 (a velocity each second; the straight-line program uses C2, a target point), imported unchanged. Map: <code>sim/maps/factory-full.json</code>. Routes: <code>sim/scenarios/reach-factory.json</code>. Ripple's flight program: <code>arena/programs/ripple-cap2-run3-v7.js</code>, provenance in <code>arena/programs/manifest.json</code>. Every flight is simulated.</p>
+</footer>
+</body>
+</html>

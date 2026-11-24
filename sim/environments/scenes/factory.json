@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "id": "factory",
+  "registry": {
+    "id": "factory",
+    "title": "Factory earthquake drill",
+    "purpose": "Reach a known rescue checkpoint in the existing factory simulation. The scan is not a record of an earthquake.",
+    "status": "six authentic recordings independently replayed; marked checkpoint uses existing factory geometry",
+    "source": {
+      "creator": "Christoph Schindelar",
+      "sceneUrl": "https://playcanvas.com/project/1480299",
+      "license": null,
+      "licenseNote": "The source credits the scan and collider creators. No redistribution license for the derived factory maps has been identified.",
+      "attribution": "Factory Gaussian-splat scan by Christoph Schindelar. Collision mesh from Iakov Sumygin’s PlayCanvas project."
+    },
+    "assets": {
+      "splatUrl": "https://code.playcanvas.com/temp/factory/lod-meta.json",
+      "collisionUrl": "https://playcanv.as/apps/b466da14/files/assets/284536691/1/Factory_collider.glb",
+      "mapPath": "sim/maps/factory-full.json"
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          -90,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          -4.695,
+          0.438,
+          11.397
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "existing-replay-alignment",
+      "units": "existing simulator metres",
+      "note": "Factory-specific GLB offset and splat rotation; do not apply to other scenes. Map coordinates already include the GLB offset."
+    },
+    "camera": {
+      "position": [
+        -20,
+        18,
+        10
+      ],
+      "target": [
+        -15,
+        0,
+        -10
+      ],
+      "fov": 65,
+      "sourceFrame": "existing simulator world",
+      "status": "provisional rescue overview"
+    },
+    "flightBounds": {
+      "min": [
+        -36.5,
+        -2.25,
+        -28.75
+      ],
+      "max": [
+        24.75,
+        4.5,
+        14.75
+      ],
+      "status": "existing simulation bounds"
+    },
+    "routes": [],
+    "reviewActive": true,
+    "reviewDecision": "existing-approved",
+    "reviewNote": "Existing factory stays active as the earthquake-response drill.",
+    "mission": {
+      "kind": "known-checkpoint",
+      "definitionPath": "sim/scenes/factory-room-mission.json",
+      "summary": "Earthquake-response drill: reach the marked room checkpoint."
+    }
+  },
+  "calibration": null,
+  "admission": {
+    "stage": 0,
+    "checkedAt": "2026-11-20",
+    "commit": null,
+    "gates": {
+      "licence": {
+        "status": "info",
+        "detail": "The source credits the scan and collider creators. No redistribution license for the derived factory maps has been identified. (Shown for information; not enforced.)"
+      },
+      "attribution": {
+        "status": "pass",
+        "detail": "Factory Gaussian-splat scan by Christoph Schindelar. Collision mesh from Iakov Sumygin’s PlayCanvas project."
+      },
+      "review": {
+        "status": "pass",
+        "detail": "Review decision “existing-approved”: Existing factory stays active as the earthquake-response drill."
+      }
+    },
+    "signoffs": {}
+  },
+  "registryOrder": 0
+}

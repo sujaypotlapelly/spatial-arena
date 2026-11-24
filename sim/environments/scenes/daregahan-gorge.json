@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "daregahan-gorge",
+  "registry": {
+    "id": "daregahan-gorge",
+    "title": "Iran's Beauty - Yazd - Daregahan",
+    "purpose": "Arena environment candidate: mountain gorge: rock walls, a stream bed, boulders and plants",
+    "status": "added by sim/tools/env/add_scene.mjs; awaiting review",
+    "source": {
+      "hash": "8652a3e8",
+      "originalTitle": "Iran's Beauty - Yazd - Daregahan",
+      "sceneUrl": "https://superspl.at/scene/8652a3e8",
+      "viewerUrl": "https://superspl.at/s?id=8652a3e8",
+      "creator": "parsamahdavi48",
+      "creatorUrl": "https://superspl.at/user/parsamahdavi48",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"Iran's Beauty - Yazd - Daregahan\" by parsamahdavi48 (https://superspl.at/scene/8652a3e8), licensed under CC BY 4.0.",
+      "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+    },
+    "assets": {
+      "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/8652a3e8/v1/lod-meta.json",
+      "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/8652a3e8/v1/scene.voxel.json",
+      "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/8652a3e8/v1/scene.voxel.bin",
+      "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/8652a3e8/v1/xl.webp",
+      "format": "ssog",
+      "publishedSizeBytes": 57015975,
+      "cacheDirectory": "cache/splat-scenes/daregahan-gorge",
+      "collisionFormat": "supersplat-voxel-1.1",
+      "collisionResolution": null,
+      "collisionGridBounds": {
+        "min": [
+          -16.200000000000003,
+          -9,
+          -55.6
+        ],
+        "max": [
+          46.8,
+          52.6,
+          40.20000000000001
+        ]
+      }
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          180
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "official-viewer-coordinate-convention; physical scale provisional",
+      "units": "source scene units; not independently calibrated metres",
+      "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+    },
+    "camera": {
+      "position": [
+        15.299999999999997,
+        52.6,
+        -55.6
+      ],
+      "target": [
+        15.299999999999997,
+        21.8,
+        -7.699999999999996
+      ],
+      "fov": 70,
+      "sourceFrame": "engine world",
+      "status": "default overview from the collider bounds"
+    },
+    "flightBounds": null,
+    "routes": [],
+    "reviewActive": true,
+    "reviewDecision": "pending",
+    "reviewNote": "Picked from the PlayCanvas explore API as a candidate outdoor scene (mountains, forests, natural landscapes, small villages); look not yet approved."
+  },
+  "calibration": null,
+  "admission": {
+    "stage": null,
+    "checkedAt": "2026-11-20",
+    "commit": null,
+    "gates": {
+      "licence": {
+        "status": "pass",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-20 from https://superspl.at/scene/8652a3e8."
+      },
+      "attribution": {
+        "status": "pass",
+        "detail": "\"Iran's Beauty - Yazd - Daregahan\" by parsamahdavi48 (https://superspl.at/scene/8652a3e8), licensed under CC BY 4.0."
+      },
+      "review": {
+        "status": "fail",
+        "detail": "Review decision “pending”: Picked from the PlayCanvas explore API as a candidate outdoor scene (mountains, forests, natural landscapes, small villages); look not yet approved."
+      }
+    },
+    "signoffs": {}
+  },
+  "registryOrder": 8
+}

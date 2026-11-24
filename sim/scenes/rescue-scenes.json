@@ -1,0 +1,2718 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-15",
+  "coordinateSystem": "PlayCanvas right-handed Y-up; each asset has an explicit transform into scene world",
+  "transformEvidence": {
+    "viewerUrl": "https://superspl.at/assets/main-DyIwYmby.js",
+    "finding": "The official cZ asset loader creates a gsplat entity and applies setLocalEulerAngles(0,0,180) for SOG/PLY, except LCC2 uses270X and SPZ is unrotated. Camera initial position/target pass directly to camera setup. The current selected assets are SOG; these rules are not universal across file formats.",
+    "caution": "Renderer coordinate alignment is distinct from physical scale calibration. New scenes currently retain source scale1."
+  },
+  "scenes": [
+    {
+      "id": "factory",
+      "title": "Factory earthquake drill",
+      "purpose": "Reach a known rescue checkpoint in the existing factory simulation. The scan is not a record of an earthquake.",
+      "status": "six authentic recordings independently replayed; marked checkpoint uses existing factory geometry",
+      "source": {
+        "creator": "Christoph Schindelar",
+        "sceneUrl": "https://playcanvas.com/project/1480299",
+        "license": null,
+        "licenseNote": "The source credits the scan and collider creators. No redistribution license for the derived factory maps has been identified.",
+        "attribution": "Factory Gaussian-splat scan by Christoph Schindelar. Collision mesh from Iakov Sumygin’s PlayCanvas project."
+      },
+      "assets": {
+        "splatUrl": "https://code.playcanvas.com/temp/factory/lod-meta.json",
+        "collisionUrl": "https://playcanv.as/apps/b466da14/files/assets/284536691/1/Factory_collider.glb",
+        "mapPath": "sim/maps/factory-full.json"
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            -90,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            -4.695,
+            0.438,
+            11.397
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "existing-replay-alignment",
+        "units": "existing simulator metres",
+        "note": "Factory-specific GLB offset and splat rotation; do not apply to other scenes. Map coordinates already include the GLB offset."
+      },
+      "camera": {
+        "position": [
+          -20,
+          18,
+          10
+        ],
+        "target": [
+          -15,
+          0,
+          -10
+        ],
+        "fov": 65,
+        "sourceFrame": "existing simulator world",
+        "status": "provisional rescue overview"
+      },
+      "flightBounds": {
+        "min": [
+          -36.5,
+          -2.25,
+          -28.75
+        ],
+        "max": [
+          24.75,
+          4.5,
+          14.75
+        ],
+        "status": "existing simulation bounds"
+      },
+      "routes": [],
+      "reviewActive": true,
+      "reviewDecision": "existing-approved",
+      "reviewNote": "Existing factory stays active as the earthquake-response drill.",
+      "mission": {
+        "kind": "known-checkpoint",
+        "definitionPath": "sim/scenes/factory-room-mission.json",
+        "summary": "Earthquake-response drill: reach the marked room checkpoint."
+      }
+    },
+    {
+      "id": "church",
+      "title": "Ruins rescue drill",
+      "purpose": "Reach a marked checkpoint through the roofless church ruins. Do not imply the scan depicts an actual earthquake.",
+      "status": "geometric-route-candidates; awaiting visual alignment and model flight",
+      "source": {
+        "hash": "310abb3c",
+        "originalTitle": "church ruins",
+        "sceneUrl": "https://superspl.at/scene/310abb3c",
+        "viewerUrl": "https://superspl.at/s?id=310abb3c",
+        "creator": "priceburnett",
+        "creatorUrl": "https://superspl.at/user/priceburnett",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"church ruins\" by priceburnett (https://superspl.at/scene/310abb3c), licensed under CC BY 4.0.",
+        "modifications": "Rescue checkpoint annotations and drone visualization; crop/scale changes must be recorded when made."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/310abb3c/v1/lod-meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/310abb3c/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/310abb3c/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/310abb3c/v1/xl.webp",
+        "format": "ssog",
+        "publishedSizeBytes": 103631954,
+        "cacheDirectory": "cache/splat-scenes/church",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": 0.05,
+        "collisionGridBounds": {
+          "min": [
+            -54.4,
+            -1.5999999999999996,
+            -41.2
+          ],
+          "max": [
+            50.20000000000001,
+            27.4,
+            42.2
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "Current official SOG viewer rotates the gsplat entity 180 degrees around Z. Published v1.1 collision is already in engine coordinates. Camera settings below are used directly in that engine world."
+      },
+      "camera": {
+        "position": [
+          25.699451446533203,
+          10.14479923248291,
+          3.0113890171051025
+        ],
+        "target": [
+          22.544123678911262,
+          8.90201389931087,
+          2.3047162790393134
+        ],
+        "fov": 75,
+        "sourceFrame": "public SuperSplat viewer engine world",
+        "status": "author-published initial camera"
+      },
+      "flightBounds": {
+        "min": [
+          12,
+          5,
+          -10
+        ],
+        "max": [
+          34,
+          15,
+          14
+        ],
+        "status": "provisional local crop for route scouting; not a measured free volume"
+      },
+      "routes": [
+        {
+          "id": "church-scout-1",
+          "start": [
+            25.799999999999997,
+            10.399999999999999,
+            3.1999999999999993
+          ],
+          "goal": [
+            27,
+            8.6,
+            -0.40000000000000036
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+          "diagnosticPath": [
+            [
+              25.799999999999997,
+              10.399999999999999,
+              3.1999999999999993
+            ],
+            [
+              24.6,
+              8,
+              3.1999999999999993
+            ],
+            [
+              24.6,
+              7.4,
+              0.7999999999999989
+            ],
+            [
+              27,
+              8.6,
+              -0.40000000000000036
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 8.096532639710153,
+            "straightDistance": 4.2,
+            "detourFactor": 1.9277458665976555,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.3,
+              "samples": 328,
+              "clear": true
+            }
+          }
+        },
+        {
+          "id": "church-scout-2",
+          "start": [
+            25.799999999999997,
+            10.399999999999999,
+            3.1999999999999993
+          ],
+          "goal": [
+            24.6,
+            7.4,
+            0.7999999999999989
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+          "diagnosticPath": [
+            [
+              25.799999999999997,
+              10.399999999999999,
+              3.1999999999999993
+            ],
+            [
+              24.6,
+              8,
+              3.1999999999999993
+            ],
+            [
+              24.6,
+              7.4,
+              0.7999999999999989
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 5.157144948370341,
+            "straightDistance": 4.0249223594996195,
+            "detourFactor": 1.2813029638195257,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.3,
+              "samples": 209,
+              "clear": true
+            }
+          }
+        },
+        {
+          "id": "church-scout-3",
+          "start": [
+            25.799999999999997,
+            10.399999999999999,
+            3.1999999999999993
+          ],
+          "goal": [
+            25.2,
+            7.4,
+            9.2
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+          "diagnosticPath": [
+            [
+              25.799999999999997,
+              10.399999999999999,
+              3.1999999999999993
+            ],
+            [
+              25.2,
+              8.6,
+              9.2
+            ],
+            [
+              25.2,
+              7.4,
+              9.2
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 7.492853089020908,
+            "straightDistance": 6.734983296193093,
+            "detourFactor": 1.1125273455772633,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.3,
+              "samples": 302,
+              "clear": true
+            }
+          }
+        }
+      ],
+      "routeScout": {
+        "tool": "sim/tools/maps/scout_splat_routes.mjs",
+        "reportPath": "cache/splat-scenes/church/route-scout.json",
+        "cell": 0.6,
+        "freeSupportedCells": 2530,
+        "reachableSupportedCells": 1635,
+        "cameraAnchorSnapDistance": 0.3328836827093734,
+        "physicalScaleCalibrated": false,
+        "note": "Points and diagnostics are in engine world. Paths only establish sampled geometric connectivity; they are not model commands or replay recordings."
+      },
+      "reviewActive": false,
+      "reviewDecision": "rejected",
+      "reviewNote": "Archived after scene review."
+    },
+    {
+      "id": "canyon",
+      "title": "Zohar canyon search",
+      "purpose": "Reach a marked rescue rendezvous through the narrow rocky canyon.",
+      "status": "task-specific Ripple search program recorded; both fresh demonstration seeds found the hidden hiker proxy; exact replays",
+      "source": {
+        "hash": "7aa4d3d4",
+        "originalTitle": "Zohar Riverbad, Dead sea, Israel",
+        "sceneUrl": "https://superspl.at/scene/7aa4d3d4",
+        "viewerUrl": "https://superspl.at/s?id=7aa4d3d4",
+        "creator": "barak9177",
+        "creatorUrl": "https://superspl.at/user/barak9177",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Zohar Riverbad, Dead sea, Israel\" by barak9177 (https://superspl.at/scene/7aa4d3d4), licensed under CC BY 4.0.",
+        "modifications": "Rescue checkpoint annotations and drone visualization; crop/scale changes must be recorded when made."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/7aa4d3d4/v1/lod-meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/7aa4d3d4/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/7aa4d3d4/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/7aa4d3d4/v1/xl.webp",
+        "format": "ssog",
+        "publishedSizeBytes": 98123857,
+        "cacheDirectory": "cache/splat-scenes/canyon",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": 0.05,
+        "collisionGridBounds": {
+          "min": [
+            -8.2,
+            -7.199999999999999,
+            -11.200000000000001
+          ],
+          "max": [
+            16.400000000000002,
+            7.400000000000002,
+            5.200000000000001
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "Current official SOG viewer rotates the gsplat entity 180 degrees around Z. Published v1.1 collision is already in engine coordinates. Camera settings below are used directly in that engine world."
+      },
+      "camera": {
+        "position": [
+          5.571248531341553,
+          0.7567952275276184,
+          -1.9957404136657715
+        ],
+        "target": [
+          2.55139601642516,
+          0.16042246905404645,
+          -0.4067693204666032
+        ],
+        "fov": 96,
+        "sourceFrame": "public SuperSplat viewer engine world",
+        "status": "author-published initial camera"
+      },
+      "flightBounds": {
+        "min": [
+          -7,
+          -3,
+          -10
+        ],
+        "max": [
+          15,
+          6,
+          4
+        ],
+        "status": "provisional local crop for route scouting; not a measured free volume"
+      },
+      "routes": [
+        {
+          "id": "canyon-scout-1",
+          "start": [
+            5.5,
+            1,
+            -2
+          ],
+          "goal": [
+            -3.5,
+            -1,
+            -5.5
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+          "diagnosticPath": [
+            [
+              5.5,
+              1,
+              -2
+            ],
+            [
+              4,
+              2.5,
+              -2
+            ],
+            [
+              0,
+              3.5,
+              -2
+            ],
+            [
+              -4,
+              3.5,
+              -2
+            ],
+            [
+              -5,
+              2,
+              -3
+            ],
+            [
+              -3.5,
+              -1,
+              -5.5
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 16.489278914656513,
+            "straightDistance": 9.861541461658009,
+            "detourFactor": 1.6720792564496496,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "clearanceRadius": 0.35,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.35,
+              "samples": 666,
+              "clear": true
+            }
+          }
+        },
+        {
+          "id": "canyon-scout-2",
+          "start": [
+            5.5,
+            1,
+            -2
+          ],
+          "goal": [
+            -3.5,
+            1,
+            -5.5
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+          "diagnosticPath": [
+            [
+              5.5,
+              1,
+              -2
+            ],
+            [
+              4,
+              2.5,
+              -2
+            ],
+            [
+              0,
+              3.5,
+              -2
+            ],
+            [
+              -4,
+              3.5,
+              -2
+            ],
+            [
+              -5,
+              2,
+              -3
+            ],
+            [
+              -3.5,
+              1,
+              -5.5
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 15.388185783470622,
+            "straightDistance": 9.656603957913983,
+            "detourFactor": 1.5935401151933306,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "clearanceRadius": 0.35,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.35,
+              "samples": 622,
+              "clear": true
+            }
+          }
+        },
+        {
+          "id": "canyon-scout-3",
+          "start": [
+            5.5,
+            1,
+            -2
+          ],
+          "goal": [
+            -4,
+            -0.5,
+            -3.5
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+          "diagnosticPath": [
+            [
+              5.5,
+              1,
+              -2
+            ],
+            [
+              4,
+              2.5,
+              -2
+            ],
+            [
+              0,
+              3.5,
+              -2
+            ],
+            [
+              -4,
+              3.5,
+              -2
+            ],
+            [
+              -5,
+              2,
+              -3
+            ],
+            [
+              -4,
+              -0.5,
+              -3.5
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 15.044591569511965,
+            "straightDistance": 9.733961166965893,
+            "detourFactor": 1.5455775209550597,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "clearanceRadius": 0.35,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.35,
+              "samples": 608,
+              "clear": true
+            }
+          }
+        }
+      ],
+      "routeScout": {
+        "tool": "sim/tools/maps/scout_splat_routes.mjs",
+        "reportPath": "cache/splat-scenes/canyon/route-scout-clearance.json",
+        "cell": 0.5,
+        "freeSupportedCells": 3646,
+        "reachableSupportedCells": 2801,
+        "cameraAnchorSnapDistance": 0.2534621444070295,
+        "physicalScaleCalibrated": false,
+        "note": "Points and diagnostics are in engine world. Paths only establish sampled geometric connectivity; they are not model commands or replay recordings.",
+        "clearanceRadius": 0.35
+      },
+      "reviewActive": true,
+      "reviewDecision": "approved",
+      "reviewNote": "Canyon preview approved on 2026-11-15.",
+      "mission": {
+        "kind": "find-beacon",
+        "definitionPath": "sim/scenes/canyon-hiker-mission.json",
+        "summary": "Locate a lost hiker represented by a hidden beacon in the canyon."
+      }
+    },
+    {
+      "id": "calico",
+      "title": "Calico Basin rescue reserve",
+      "purpose": "Backup desert terrain for a marked rescue checkpoint; scout before using in the review.",
+      "status": "backup",
+      "source": {
+        "hash": "5d517144",
+        "originalTitle": "Calico Basin at sunrise, Red Rock Canyon, Las Vegas NV",
+        "sceneUrl": "https://superspl.at/scene/5d517144",
+        "viewerUrl": "https://superspl.at/s?id=5d517144",
+        "creator": "tosolini",
+        "creatorUrl": "https://superspl.at/user/tosolini",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Calico Basin at sunrise, Red Rock Canyon, Las Vegas NV\" by tosolini (https://superspl.at/scene/5d517144), licensed under CC BY 4.0.",
+        "modifications": "Rescue checkpoint annotations and drone visualization; crop/scale changes must be recorded when made."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/5d517144/v1/lod-meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/5d517144/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/5d517144/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/5d517144/v1/xl.webp",
+        "format": "ssog",
+        "publishedSizeBytes": 156623847,
+        "cacheDirectory": "cache/splat-scenes/calico",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": 0.05,
+        "collisionGridBounds": {
+          "min": [
+            -75.8,
+            -9.8,
+            -62.400000000000006
+          ],
+          "max": [
+            56.2,
+            25.000000000000004,
+            35.400000000000006
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "Current official SOG viewer rotates the gsplat entity 180 degrees around Z. Published v1.1 collision is already in engine coordinates. Camera settings below are used directly in that engine world."
+      },
+      "camera": {
+        "position": [
+          1.1138761043548584,
+          2.3263051509857178,
+          -7.154256820678711
+        ],
+        "target": [
+          -0.37785394631845315,
+          1.9782026554382262,
+          -5.868346206167808
+        ],
+        "fov": 75,
+        "sourceFrame": "public SuperSplat viewer engine world",
+        "status": "author-published initial camera"
+      },
+      "flightBounds": {
+        "min": [
+          -20,
+          -4,
+          -22
+        ],
+        "max": [
+          15,
+          8,
+          10
+        ],
+        "status": "provisional local crop for route scouting; not a measured free volume"
+      },
+      "routes": [],
+      "reviewActive": false,
+      "reviewDecision": "rejected",
+      "reviewNote": "Archived because the canyon already covers this terrain."
+    },
+    {
+      "id": "ship-aft",
+      "title": "Shipboard rescue drill",
+      "purpose": "Reach a marked checkpoint through the SS United States AFT Lines Room. The scan depicts a real ship interior, not active sinking or flooding.",
+      "status": "geometric-route-candidates; awaiting visual alignment and model flight",
+      "reviewActive": false,
+      "reviewDecision": "cancelled",
+      "reviewNote": "Archived on 2026-11-15. Recordings from this scene are excluded from the results.",
+      "source": {
+        "hash": "eb9df574",
+        "originalTitle": "SS United States Cruise Ship - AFT Lines Room",
+        "sceneUrl": "https://superspl.at/scene/eb9df574",
+        "viewerUrl": "https://superspl.at/s?id=eb9df574",
+        "creator": "seventysevenguy",
+        "creatorUrl": "https://superspl.at/user/seventysevenguy",
+        "captureCredit": "Anatum Geomobile",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"SS United States Cruise Ship - AFT Lines Room\" by seventysevenguy; scan created by Anatum Geomobile using XGRIDS PortalCAM. Source: https://superspl.at/scene/eb9df574 . Licensed under CC BY 4.0.",
+        "modifications": "Rescue checkpoint annotations and drone visualization; source scale retained pending independent calibration."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/eb9df574/v1/lod-meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/eb9df574/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/eb9df574/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/eb9df574/v1/xl.webp",
+        "format": "ssog",
+        "publishedSizeBytes": 205112192,
+        "cacheDirectory": "cache/splat-scenes/ship-aft",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": 0.05,
+        "collisionGridBounds": {
+          "min": [
+            1.8000000000000003,
+            -54.800000000000004,
+            -164.8
+          ],
+          "max": [
+            28.8,
+            -49.400000000000006,
+            -109
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "Published SOG loader rotates splats180degrees aroundZ. Published v1.1 collision and initial camera are already in engine world. Negative Y/Z coordinates are retained without recentering."
+      },
+      "camera": {
+        "position": [
+          18.740947723388672,
+          -51.23908996582031,
+          -153.62318420410156
+        ],
+        "target": [
+          18.14287454312788,
+          -51.82375874364301,
+          -156.9848066478489
+        ],
+        "fov": 101,
+        "sourceFrame": "public SuperSplat viewer engine world",
+        "status": "author-published initial camera"
+      },
+      "flightBounds": {
+        "min": [
+          8,
+          -54,
+          -163
+        ],
+        "max": [
+          27,
+          -49.8,
+          -143
+        ],
+        "status": "provisional crop around author camera; awaiting collider scout and visual route inspection"
+      },
+      "routes": [
+        {
+          "id": "ship-aft-scout-1",
+          "start": [
+            18.8,
+            -51.2,
+            -153.8
+          ],
+          "goal": [
+            12,
+            -51.6,
+            -159.4
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+          "diagnosticPath": [
+            [
+              18.8,
+              -51.2,
+              -153.8
+            ],
+            [
+              12,
+              -51.6,
+              -155
+            ],
+            [
+              12,
+              -51.6,
+              -159.4
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 11.316646586316239,
+            "straightDistance": 8.818163074019438,
+            "detourFactor": 1.2833337840686994,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "clearanceRadius": 0.35,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.35,
+              "samples": 456,
+              "clear": true
+            }
+          }
+        },
+        {
+          "id": "ship-aft-scout-2",
+          "start": [
+            18.8,
+            -51.2,
+            -153.8
+          ],
+          "goal": [
+            23.200000000000003,
+            -52,
+            -159.4
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+          "diagnosticPath": [
+            [
+              18.8,
+              -51.2,
+              -153.8
+            ],
+            [
+              22.8,
+              -51.2,
+              -155.4
+            ],
+            [
+              22.8,
+              -51.2,
+              -157.8
+            ],
+            [
+              22.8,
+              -51.6,
+              -159.4
+            ],
+            [
+              23.200000000000003,
+              -52,
+              -159.4
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 8.923059520903903,
+            "straightDistance": 7.1665891468675635,
+            "detourFactor": 1.2450915404860448,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "clearanceRadius": 0.35,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.35,
+              "samples": 363,
+              "clear": true
+            }
+          }
+        },
+        {
+          "id": "ship-aft-scout-3",
+          "start": [
+            18.8,
+            -51.2,
+            -153.8
+          ],
+          "goal": [
+            24,
+            -50.4,
+            -156.6
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+          "diagnosticPath": [
+            [
+              18.8,
+              -51.2,
+              -153.8
+            ],
+            [
+              22.8,
+              -50.8,
+              -155.4
+            ],
+            [
+              24.400000000000002,
+              -50.8,
+              -155.8
+            ],
+            [
+              24.400000000000002,
+              -50.8,
+              -156.6
+            ],
+            [
+              24,
+              -50.4,
+              -156.6
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 7.341589205753074,
+            "straightDistance": 5.959865770300527,
+            "detourFactor": 1.2318380125837756,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "clearanceRadius": 0.35,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.35,
+              "samples": 299,
+              "clear": true
+            }
+          }
+        }
+      ],
+      "routeScout": {
+        "tool": "sim/tools/maps/scout_splat_routes.mjs",
+        "reportPath": "cache/splat-scenes/ship-aft/route-scout-clearance.json",
+        "cell": 0.4,
+        "freeSupportedCells": 4336,
+        "reachableSupportedCells": 4336,
+        "cameraAnchorSnapDistance": 0.19047052916400425,
+        "physicalScaleCalibrated": false,
+        "clearanceRadius": 0.35,
+        "note": "Three unobstructed diagnostic paths around obstacles; direct segments are blocked. Paths are geometric connectivity checks only, not model commands or flight recordings."
+      }
+    },
+    {
+      "id": "fire-inn",
+      "title": "Burnt inn rescue drill",
+      "purpose": "Reach a marked inspection checkpoint at the burnt remains of the World’s End Inn. The captured damage is real; any rescue mission, smoke, or active fire added to this scene is simulated.",
+      "status": "geometric-route-candidates; awaiting visual alignment and model flight",
+      "reviewActive": false,
+      "reviewDecision": "approved-reserve",
+      "reviewNote": "Reserve scene for the rescue demonstration.",
+      "source": {
+        "hash": "8ee91366",
+        "originalTitle": "World's End Inn",
+        "sceneUrl": "https://superspl.at/scene/8ee91366",
+        "viewerUrl": "https://superspl.at/s?id=8ee91366",
+        "creator": "artfletch",
+        "creatorUrl": "https://superspl.at/user/artfletch",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"World’s End Inn\" by artfletch (https://superspl.at/scene/8ee91366), licensed under CC BY 4.0.",
+        "captureDescription": "The burnt remains of the World's End Pub by the river and fort at Tilbury, Essex.\n\nThe pub was destroyed by fire on 23rd September 2026.\n\nhttps://historicengland.org.uk/listing/the-list/list-entry/1111632\n\nDate: late 17th Century.\n\nPhotos taken in September 2026 and processed in Reality Capture and Lichtfeld Studio.",
+        "modifications": "Rescue checkpoint annotations and drone visualization; source scale retained pending independent calibration."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/8ee91366/v1/lod-meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/8ee91366/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/8ee91366/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/8ee91366/v1/xl.webp",
+        "format": "ssog",
+        "publishedSizeBytes": 175696955,
+        "cacheDirectory": "cache/splat-scenes/fire-inn",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": 0.05,
+        "collisionGridBounds": {
+          "min": [
+            -75.2,
+            -3.8000000000000043,
+            -72.00000000000001
+          ],
+          "max": [
+            75.00000000000001,
+            22.999999999999996,
+            73.8
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "Current official SOG viewer rotates splats180degrees aroundZ. Published v1.1 collision and initial camera are already in engine world; source scale and coordinates retained."
+      },
+      "camera": {
+        "position": [
+          21.842103958129883,
+          12.755606651306152,
+          0.1757597029209137
+        ],
+        "target": [
+          -3.6468656086732647,
+          -0.03443865352157616,
+          -3.588123934705296
+        ],
+        "fov": 110,
+        "sourceFrame": "public SuperSplat viewer engine world",
+        "status": "author-published overview camera"
+      },
+      "flightBounds": {
+        "min": [
+          -16,
+          -1,
+          -18
+        ],
+        "max": [
+          17,
+          8,
+          12
+        ],
+        "status": "provisional local building crop; awaiting collider scout and visual route inspection"
+      },
+      "routes": [
+        {
+          "id": "fire-inn-scout-1",
+          "start": [
+            12,
+            3,
+            0
+          ],
+          "goal": [
+            -0.5,
+            3.5,
+            -11.5
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+          "diagnosticPath": [
+            [
+              12,
+              3,
+              0
+            ],
+            [
+              11.5,
+              5,
+              0
+            ],
+            [
+              9,
+              5.5,
+              1.5
+            ],
+            [
+              -0.5,
+              5.5,
+              1
+            ],
+            [
+              -0.5,
+              5,
+              -5
+            ],
+            [
+              -0.5,
+              3.5,
+              -11.5
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 27.224370821038175,
+            "straightDistance": 16.99264546796643,
+            "detourFactor": 1.6021266890055472,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "clearanceRadius": 0.35,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.35,
+              "samples": 1096,
+              "clear": true
+            }
+          }
+        },
+        {
+          "id": "fire-inn-scout-2",
+          "start": [
+            12,
+            3,
+            0
+          ],
+          "goal": [
+            -5,
+            4,
+            -12
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+          "diagnosticPath": [
+            [
+              12,
+              3,
+              0
+            ],
+            [
+              11.5,
+              5,
+              0
+            ],
+            [
+              9,
+              5.5,
+              1.5
+            ],
+            [
+              -5,
+              5,
+              1
+            ],
+            [
+              -5,
+              4,
+              -12
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 32.075843283640125,
+            "straightDistance": 20.83266665599966,
+            "detourFactor": 1.5396897484750236,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "clearanceRadius": 0.35,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.35,
+              "samples": 1289,
+              "clear": true
+            }
+          }
+        },
+        {
+          "id": "fire-inn-scout-3",
+          "start": [
+            12,
+            3,
+            0
+          ],
+          "goal": [
+            -6.5,
+            3.5,
+            -10.5
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+          "diagnosticPath": [
+            [
+              12,
+              3,
+              0
+            ],
+            [
+              11.5,
+              5,
+              0
+            ],
+            [
+              9,
+              5.5,
+              1.5
+            ],
+            [
+              -5,
+              5,
+              1
+            ],
+            [
+              -5,
+              5,
+              -0.5
+            ],
+            [
+              -5,
+              4,
+              -0.5
+            ],
+            [
+              -6.5,
+              4,
+              -2
+            ],
+            [
+              -6.5,
+              4,
+              -10.5
+            ],
+            [
+              -6.5,
+              3.5,
+              -10.5
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 32.65875881679447,
+            "straightDistance": 21.277922830953212,
+            "detourFactor": 1.5348659301125689,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "clearanceRadius": 0.35,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.35,
+              "samples": 1316,
+              "clear": true
+            }
+          }
+        }
+      ],
+      "routeScout": {
+        "tool": "sim/tools/maps/scout_splat_routes.mjs",
+        "reportPath": "cache/splat-scenes/fire-inn/route-scout-clearance.json",
+        "cell": 0.5,
+        "scoutAnchor": [
+          10,
+          2,
+          0
+        ],
+        "freeSupportedCells": 17343,
+        "reachableSupportedCells": 17309,
+        "cameraAnchorSnapDistance": 2.23606797749979,
+        "physicalScaleCalibrated": false,
+        "clearanceRadius": 0.35,
+        "note": "The author camera is a high overview; routes were scouted from an explicit local ground-level anchor[10, 2, 0], then snapped to[12, 3, 0]. Diagnostic paths are sampled connectivity checks, not model commands or recordings."
+      }
+    },
+    {
+      "id": "residential",
+      "title": "Residential delivery",
+      "purpose": "Fly through the garden and deliver a package beside the smaller cottage at the back.",
+      "status": "rear-cottage pad visually confirmed and geometry checked; two actual Ripple-written parcel deliveries replay exactly",
+      "reviewActive": true,
+      "reviewDecision": "selected-for-residential-delivery",
+      "reviewNote": "Selected on 2026-11-15 for the garden delivery task.",
+      "source": {
+        "hash": "5f41cc74",
+        "version": 3,
+        "originalTitle": "Utlida 1:80",
+        "sceneUrl": "https://superspl.at/scene/5f41cc74",
+        "viewerUrl": "https://superspl.at/s?id=5f41cc74",
+        "creator": "overblickstudio",
+        "creatorUrl": "https://superspl.at/user/overblickstudio",
+        "captureCredit": "Jakob Safwan / Overblick Studio",
+        "captureCreditUrl": "https://www.overblickstudio.se",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Utlida 1:80\" — 3D capture and Gaussian Splat by Jakob Safwan / Overblick Studio, https://www.overblickstudio.se . Source: https://superspl.at/scene/5f41cc74 . Licensed under CC BY 4.0.",
+        "captureDescription": "Test 2 — Utlida\n\nCaptured area: ~2,350 m²\nStructures: 2 cottages + 1 garage\nWeather: Cloudy\nCurrent coverage: ~65%\n\nCapture\n\nImages: 1,038\n\nAerial: DJI Mini 5 Pro\nGround: Panasonic Lumix S1R\n\nGaussian Splat\n\nTraining: 100,000 iterations\n\nThis is the second capture test of Utlida 1:80, combining aerial and ground-based photography to create a large-scale Gaussian Splat of the property and its surroundings.\n\nNext step\n\nThe next iteration will aim for 100% capture coverage, together with GIS and measurement control to achieve the most accurate real-world scale and spatial alignment possible.\n\nAttribution is required\n\n3D capture and Gaussian Splat by Jakob Safwan / Overblick Studio\noverblickstudio.se\n\nIf this model is used in a public project, demo, application, video, publication, website or other published work, please clearly credit the original 3D capture to Jakob Safwan / www.overblickstudio.se",
+        "coverage": "Creator reports approximately 65% coverage; 2 cottages and 1 garage over approximately 2350 square metres.",
+        "modifications": "Delivery checkpoint annotations and drone visualization. Source scale retained pending independent physical calibration."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/5f41cc74/v3/lod-meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/5f41cc74/v3/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/5f41cc74/v3/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/5f41cc74/v3/xl.webp",
+        "format": "ssog",
+        "publishedSizeBytes": 149331720,
+        "cacheDirectory": "cache/splat-scenes/residential",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": 0.05,
+        "collisionGridBounds": {
+          "min": [
+            -38.6,
+            -3,
+            -54.4
+          ],
+          "max": [
+            47.6,
+            29.800000000000004,
+            45.20000000000001
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates. Do not rotate collider a second time."
+      },
+      "camera": {
+        "position": [
+          -0.2913541793823242,
+          10.1322021484375,
+          -16.714109420776367
+        ],
+        "target": [
+          -4.862727569175797,
+          5.457662769259163,
+          -1.9890328761940257
+        ],
+        "fov": 90,
+        "sourceFrame": "public SuperSplat viewer engine world",
+        "status": "whole-property overview for the longer rear-cottage delivery"
+      },
+      "flightBounds": {
+        "min": [
+          -18,
+          -1,
+          -29
+        ],
+        "max": [
+          20,
+          11,
+          28
+        ],
+        "status": "local flight crop enlarged behind the main cottage for the second-cottage delivery mission"
+      },
+      "routes": [
+        {
+          "id": "residential-scout-1",
+          "start": [
+            0,
+            3.8,
+            -17
+          ],
+          "goal": [
+            -10.8,
+            4.3999999999999995,
+            -12.8
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; delivery mission and actual door alignment pending; no flight recorded",
+          "diagnosticPath": [
+            [
+              0,
+              3.8,
+              -17
+            ],
+            [
+              -13.2,
+              5.6,
+              -15.8
+            ],
+            [
+              -13.2,
+              6.199999999999999,
+              -13.4
+            ],
+            [
+              -12,
+              5.6,
+              -12.2
+            ],
+            [
+              -11.4,
+              5.6,
+              -12.2
+            ],
+            [
+              -10.8,
+              4.3999999999999995,
+              -12.8
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 19.71965530680528,
+            "straightDistance": 11.60344776348823,
+            "detourFactor": 1.6994651683489936,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "clearanceRadius": 0.35,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.35,
+              "samples": 795,
+              "clear": true
+            }
+          }
+        },
+        {
+          "id": "residential-scout-2",
+          "start": [
+            0,
+            3.8,
+            -17
+          ],
+          "goal": [
+            -11.4,
+            4.3999999999999995,
+            -10.400000000000002
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; delivery mission and actual door alignment pending; no flight recorded",
+          "diagnosticPath": [
+            [
+              0,
+              3.8,
+              -17
+            ],
+            [
+              -13.2,
+              5.6,
+              -15.8
+            ],
+            [
+              -13.2,
+              6.199999999999999,
+              -13.4
+            ],
+            [
+              -12,
+              6.199999999999999,
+              -11.600000000000001
+            ],
+            [
+              -12,
+              5.6,
+              -10.400000000000002
+            ],
+            [
+              -11.4,
+              4.3999999999999995,
+              -10.400000000000002
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 20.69657379941351,
+            "straightDistance": 13.186356585501548,
+            "detourFactor": 1.5695445262089665,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "clearanceRadius": 0.35,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.35,
+              "samples": 835,
+              "clear": true
+            }
+          }
+        },
+        {
+          "id": "residential-scout-3",
+          "start": [
+            0,
+            3.8,
+            -17
+          ],
+          "goal": [
+            -16.2,
+            6.199999999999999,
+            -3.8000000000000007
+          ],
+          "droneRadius": 0.25,
+          "goalRadius": 0.6,
+          "timeLimitSeconds": 90,
+          "status": "geometric-connectivity-only; delivery mission and actual door alignment pending; no flight recorded",
+          "diagnosticPath": [
+            [
+              0,
+              3.8,
+              -17
+            ],
+            [
+              -16.8,
+              5.6,
+              -15.8
+            ],
+            [
+              -16.8,
+              6.199999999999999,
+              -3.8000000000000007
+            ],
+            [
+              -16.2,
+              6.199999999999999,
+              -3.8000000000000007
+            ]
+          ],
+          "checks": {
+            "startClear": true,
+            "goalClear": true,
+            "directPathClear": false,
+            "pathClear": true,
+            "pathLength": 29.553703692892196,
+            "straightDistance": 21.034257771549722,
+            "detourFactor": 1.405027171097314,
+            "sampleStep": 0.1,
+            "supportWithin": 3,
+            "clearanceRadius": 0.35,
+            "independentSweep": {
+              "step": 0.025,
+              "clearanceRadius": 0.35,
+              "samples": 1187,
+              "clear": true
+            }
+          }
+        }
+      ],
+      "routeScout": {
+        "tool": "sim/tools/maps/scout_splat_routes.mjs",
+        "reportPath": "cache/splat-scenes/residential/route-scout.json",
+        "cell": 0.6,
+        "freeSupportedCells": 15622,
+        "reachableSupportedCells": 14953,
+        "anchor": [
+          -0.3,
+          2,
+          -16.7
+        ],
+        "cameraAnchorSnapDistance": 1.849324200890693,
+        "clearanceRadius": 0.35,
+        "physicalScaleCalibrated": false,
+        "note": "Paths establish sampled geometric connectivity only; no route hints are available to a controller. Goals are unconfirmed checkpoint candidates, not labelled doors.",
+        "command": "node sim/tools/maps/scout_splat_routes.mjs --scene residential --anchor \"[-0.3,2,-16.7]\" --cell .6 --radius .35 --out cache/splat-scenes/residential/route-scout.json"
+      },
+      "mission": {
+        "kind": "package-delivery",
+        "definitionPath": "sim/scenes/residential-delivery-mission.json",
+        "summary": "Fly through the garden and deliver a package beside the smaller cottage at the back.",
+        "previewPad": {
+          "position": [
+            -2.55,
+            5.7,
+            22.2
+          ],
+          "radius": 0.3
+        }
+      },
+      "authorCamera": {
+        "position": [
+          -0.2913541793823242,
+          10.1322021484375,
+          -16.714109420776367
+        ],
+        "target": [
+          -4.862727569175797,
+          5.457662769259163,
+          -1.9890328761940257
+        ],
+        "fov": 90,
+        "sourceFrame": "public SuperSplat viewer engine world",
+        "status": "author-published overview camera; delivery close view pending"
+      },
+      "reviewCameras": {
+        "back": {
+          "position": [
+            -1,
+            8,
+            12
+          ],
+          "target": [
+            -2.55,
+            6.2,
+            22.2
+          ],
+          "fov": 65
+        },
+        "front": {
+          "position": [
+            -2.5,
+            8,
+            -10
+          ],
+          "target": [
+            -7.7,
+            5.8,
+            -4.1
+          ],
+          "fov": 70,
+          "status": "porch delivery review camera"
+        }
+      }
+    },
+    {
+      "id": "hill-lodge",
+      "title": "Lodge on a hill",
+      "purpose": "Arena environment candidate: hillside property: a thatched lodge, terraced gardens, shrubs and trees on a slope",
+      "status": "approved; see admission",
+      "source": {
+        "hash": "c393e279",
+        "originalTitle": "Lodge on a hill",
+        "sceneUrl": "https://superspl.at/scene/c393e279",
+        "viewerUrl": "https://superspl.at/s?id=c393e279",
+        "creator": "zartan_3dfpv",
+        "creatorUrl": "https://superspl.at/user/zartan_3dfpv",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Lodge on a hill\" by zartan_3dfpv (https://superspl.at/scene/c393e279), licensed under CC BY 4.0.",
+        "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/c393e279/v1/meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/c393e279/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/c393e279/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/c393e279/v1/xl.webp",
+        "format": "sog",
+        "publishedSizeBytes": 45149557,
+        "cacheDirectory": "cache/splat-scenes/hill-lodge",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": null,
+        "collisionGridBounds": {
+          "min": [
+            -52.2,
+            -8.200000000000001,
+            -25.400000000000002
+          ],
+          "max": [
+            33,
+            7,
+            57.2
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+      },
+      "camera": {
+        "position": [
+          -9.600000000000001,
+          7,
+          -25.400000000000002
+        ],
+        "target": [
+          -9.600000000000001,
+          -0.6000000000000005,
+          15.9
+        ],
+        "fov": 70,
+        "sourceFrame": "engine world",
+        "status": "default overview from the collider bounds"
+      },
+      "flightBounds": null,
+      "routes": [],
+      "reviewActive": true,
+      "reviewDecision": "approved",
+      "reviewNote": "Scene approved on 2026-11-20."
+    },
+    {
+      "id": "daregahan-gorge",
+      "title": "Iran's Beauty - Yazd - Daregahan",
+      "purpose": "Arena environment candidate: mountain gorge: rock walls, a stream bed, boulders and plants",
+      "status": "added by sim/tools/env/add_scene.mjs; awaiting review",
+      "source": {
+        "hash": "8652a3e8",
+        "originalTitle": "Iran's Beauty - Yazd - Daregahan",
+        "sceneUrl": "https://superspl.at/scene/8652a3e8",
+        "viewerUrl": "https://superspl.at/s?id=8652a3e8",
+        "creator": "parsamahdavi48",
+        "creatorUrl": "https://superspl.at/user/parsamahdavi48",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Iran's Beauty - Yazd - Daregahan\" by parsamahdavi48 (https://superspl.at/scene/8652a3e8), licensed under CC BY 4.0.",
+        "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/8652a3e8/v1/lod-meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/8652a3e8/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/8652a3e8/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/8652a3e8/v1/xl.webp",
+        "format": "ssog",
+        "publishedSizeBytes": 57015975,
+        "cacheDirectory": "cache/splat-scenes/daregahan-gorge",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": null,
+        "collisionGridBounds": {
+          "min": [
+            -16.200000000000003,
+            -9,
+            -55.6
+          ],
+          "max": [
+            46.8,
+            52.6,
+            40.20000000000001
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+      },
+      "camera": {
+        "position": [
+          15.299999999999997,
+          52.6,
+          -55.6
+        ],
+        "target": [
+          15.299999999999997,
+          21.8,
+          -7.699999999999996
+        ],
+        "fov": 70,
+        "sourceFrame": "engine world",
+        "status": "default overview from the collider bounds"
+      },
+      "flightBounds": null,
+      "routes": [],
+      "reviewActive": true,
+      "reviewDecision": "pending",
+      "reviewNote": "Picked from the PlayCanvas explore API as a candidate outdoor scene (mountains, forests, natural landscapes, small villages); look not yet approved."
+    },
+    {
+      "id": "forest-trail",
+      "title": "Forest Scan",
+      "purpose": "Arena environment candidate: forest trail: dense trees, undergrowth and a narrow path",
+      "status": "approved; see admission",
+      "source": {
+        "hash": "259c0051",
+        "originalTitle": "Forest Scan",
+        "sceneUrl": "https://superspl.at/scene/259c0051",
+        "viewerUrl": "https://superspl.at/s?id=259c0051",
+        "creator": "draftmode",
+        "creatorUrl": "https://superspl.at/user/draftmode",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Forest Scan\" by draftmode (https://superspl.at/scene/259c0051), licensed under CC BY 4.0.",
+        "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/259c0051/v1/meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/259c0051/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/259c0051/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/259c0051/v1/xl.webp",
+        "format": "sog",
+        "publishedSizeBytes": 31462402,
+        "cacheDirectory": "cache/splat-scenes/forest-trail",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": null,
+        "collisionGridBounds": {
+          "min": [
+            -21.4,
+            -4.200000000000001,
+            -25.000000000000004
+          ],
+          "max": [
+            24.800000000000004,
+            27,
+            21.999999999999996
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+      },
+      "camera": {
+        "position": [
+          1.7000000000000028,
+          27,
+          -25.000000000000004
+        ],
+        "target": [
+          1.7000000000000028,
+          11.399999999999999,
+          -1.5000000000000036
+        ],
+        "fov": 70,
+        "sourceFrame": "engine world",
+        "status": "default overview from the collider bounds"
+      },
+      "flightBounds": null,
+      "routes": [],
+      "reviewActive": true,
+      "reviewDecision": "approved",
+      "reviewNote": "Scene approved on 2026-11-20."
+    },
+    {
+      "id": "huashan-path",
+      "title": "The Precipitous Huashan, Virtual Hiking",
+      "purpose": "Arena environment candidate: mountain path on a cliff: a steep rock face, a narrow paved path with snow and a railing",
+      "status": "added by sim/tools/env/add_scene.mjs; awaiting review",
+      "source": {
+        "hash": "aa909429",
+        "originalTitle": "The Precipitous Huashan, Virtual Hiking",
+        "sceneUrl": "https://superspl.at/scene/aa909429",
+        "viewerUrl": "https://superspl.at/s?id=aa909429",
+        "creator": "wu3d",
+        "creatorUrl": "https://superspl.at/user/wu3d",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"The Precipitous Huashan, Virtual Hiking\" by wu3d (https://superspl.at/scene/aa909429), licensed under CC BY 4.0.",
+        "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/aa909429/v1/meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/aa909429/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/aa909429/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/aa909429/v1/xl.webp",
+        "format": "sog",
+        "publishedSizeBytes": 43956771,
+        "cacheDirectory": "cache/splat-scenes/huashan-path",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": null,
+        "collisionGridBounds": {
+          "min": [
+            -35.00000000000001,
+            -2.6000000000000005,
+            -7.800000000000001
+          ],
+          "max": [
+            45.6,
+            30.6,
+            16.2
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+      },
+      "camera": {
+        "position": [
+          5.299999999999997,
+          30.6,
+          -7.800000000000001
+        ],
+        "target": [
+          5.299999999999997,
+          14,
+          4.199999999999999
+        ],
+        "fov": 70,
+        "sourceFrame": "engine world",
+        "status": "default overview from the collider bounds"
+      },
+      "flightBounds": null,
+      "routes": [],
+      "reviewActive": true,
+      "reviewDecision": "pending",
+      "reviewNote": "Picked from the PlayCanvas explore API as a candidate outdoor scene (mountains, forests, natural landscapes, small villages); look not yet approved."
+    },
+    {
+      "id": "sunny-meadow",
+      "title": "Sunny Meadow",
+      "purpose": "Arena environment candidate: meadow: open grass, a row of trees and the edge of a field",
+      "status": "approved; see admission",
+      "source": {
+        "hash": "3aacb9d5",
+        "originalTitle": "Sunny Meadow",
+        "sceneUrl": "https://superspl.at/scene/3aacb9d5",
+        "viewerUrl": "https://superspl.at/s?id=3aacb9d5",
+        "creator": "alienhd",
+        "creatorUrl": "https://superspl.at/user/alienhd",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Sunny Meadow\" by alienhd (https://superspl.at/scene/3aacb9d5), licensed under CC BY 4.0.",
+        "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/3aacb9d5/v1/meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/3aacb9d5/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/3aacb9d5/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/3aacb9d5/v1/xl.webp",
+        "format": "sog",
+        "publishedSizeBytes": 59239960,
+        "cacheDirectory": "cache/splat-scenes/sunny-meadow",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": null,
+        "collisionGridBounds": {
+          "min": [
+            -30.800000000000004,
+            -0.20000000000000284,
+            -29.799999999999997
+          ],
+          "max": [
+            29.799999999999997,
+            21.2,
+            35.2
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+      },
+      "camera": {
+        "position": [
+          -0.5000000000000036,
+          21.2,
+          -29.799999999999997
+        ],
+        "target": [
+          -0.5000000000000036,
+          10.499999999999998,
+          2.700000000000003
+        ],
+        "fov": 70,
+        "sourceFrame": "engine world",
+        "status": "default overview from the collider bounds"
+      },
+      "flightBounds": null,
+      "routes": [],
+      "reviewActive": true,
+      "reviewDecision": "approved",
+      "reviewNote": "Scene approved on 2026-11-20."
+    },
+    {
+      "id": "interlaken-square",
+      "title": "Dorfplatz Interlaken Switzerland",
+      "purpose": "Arena environment candidate: village square: a church, houses, trees and a paved square",
+      "status": "added by sim/tools/env/add_scene.mjs; awaiting review",
+      "source": {
+        "hash": "16a90551",
+        "originalTitle": "Dorfplatz Interlaken Switzerland",
+        "sceneUrl": "https://superspl.at/scene/16a90551",
+        "viewerUrl": "https://superspl.at/s?id=16a90551",
+        "creator": "dewaisol",
+        "creatorUrl": "https://superspl.at/user/dewaisol",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Dorfplatz Interlaken Switzerland\" by dewaisol (https://superspl.at/scene/16a90551), licensed under CC BY 4.0.",
+        "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/16a90551/v1/meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/16a90551/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/16a90551/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/16a90551/v1/xl.webp",
+        "format": "sog",
+        "publishedSizeBytes": 56040335,
+        "cacheDirectory": "cache/splat-scenes/interlaken-square",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": null,
+        "collisionGridBounds": {
+          "min": [
+            -55.00000000000001,
+            -4.6000000000000005,
+            -39.6
+          ],
+          "max": [
+            30.6,
+            20.2,
+            53.6
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+      },
+      "camera": {
+        "position": [
+          -12.200000000000003,
+          20.2,
+          -39.6
+        ],
+        "target": [
+          -12.200000000000003,
+          7.799999999999999,
+          7
+        ],
+        "fov": 70,
+        "sourceFrame": "engine world",
+        "status": "default overview from the collider bounds"
+      },
+      "flightBounds": null,
+      "routes": [],
+      "reviewActive": true,
+      "reviewDecision": "pending",
+      "reviewNote": "Picked from the PlayCanvas explore API as a candidate outdoor scene (mountains, forests, natural landscapes, small villages); look not yet approved."
+    },
+    {
+      "id": "double-arch",
+      "title": "Arches National Park - Double Arch",
+      "purpose": "Arena environment candidate: desert rock landscape: two natural sandstone arches, boulders and a sandy trail",
+      "status": "added by sim/tools/env/add_scene.mjs; awaiting review",
+      "source": {
+        "hash": "91fafbc3",
+        "originalTitle": "Arches National Park - Double Arch",
+        "sceneUrl": "https://superspl.at/scene/91fafbc3",
+        "viewerUrl": "https://superspl.at/s?id=91fafbc3",
+        "creator": "virtualworldtours",
+        "creatorUrl": "https://superspl.at/user/virtualworldtours",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Arches National Park - Double Arch\" by virtualworldtours (https://superspl.at/scene/91fafbc3), licensed under CC BY 4.0.",
+        "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/91fafbc3/v1/lod-meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/91fafbc3/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/91fafbc3/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/91fafbc3/v1/xl.webp",
+        "format": "ssog",
+        "publishedSizeBytes": 90654583,
+        "cacheDirectory": "cache/splat-scenes/double-arch",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": null,
+        "collisionGridBounds": {
+          "min": [
+            -46.2,
+            -6.000000000000001,
+            -71.60000000000001
+          ],
+          "max": [
+            35.2,
+            54.2,
+            31.39999999999999
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+      },
+      "camera": {
+        "position": [
+          -5.5,
+          54.2,
+          -71.60000000000001
+        ],
+        "target": [
+          -5.5,
+          24.1,
+          -20.10000000000001
+        ],
+        "fov": 70,
+        "sourceFrame": "engine world",
+        "status": "default overview from the collider bounds"
+      },
+      "flightBounds": null,
+      "routes": [],
+      "reviewActive": true,
+      "reviewDecision": "pending",
+      "reviewNote": "Picked from the PlayCanvas explore API as a candidate outdoor scene (mountains, forests, natural landscapes, small villages); look not yet approved."
+    },
+    {
+      "id": "forest-lake",
+      "title": "Taşçılar Göleti",
+      "purpose": "Arena environment candidate: small lake in a forest: water, a shoreline track, banks and surrounding trees",
+      "status": "added by sim/tools/env/add_scene.mjs; awaiting review",
+      "source": {
+        "hash": "d5e57a5b",
+        "originalTitle": "Taşçılar Göleti",
+        "sceneUrl": "https://superspl.at/scene/d5e57a5b",
+        "viewerUrl": "https://superspl.at/s?id=d5e57a5b",
+        "creator": "eakturk",
+        "creatorUrl": "https://superspl.at/user/eakturk",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Taşçılar Göleti\" by eakturk (https://superspl.at/scene/d5e57a5b), licensed under CC BY 4.0.",
+        "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/d5e57a5b/v1/lod-meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/d5e57a5b/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/d5e57a5b/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/d5e57a5b/v1/xl.webp",
+        "format": "ssog",
+        "publishedSizeBytes": 101510181,
+        "cacheDirectory": "cache/splat-scenes/forest-lake",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": null,
+        "collisionGridBounds": {
+          "min": [
+            -8.600000000000001,
+            -11.4,
+            -8.8
+          ],
+          "max": [
+            10.8,
+            1,
+            8.600000000000001
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+      },
+      "camera": {
+        "position": [
+          1.0999999999999996,
+          1,
+          -8.8
+        ],
+        "target": [
+          1.0999999999999996,
+          -5.2,
+          -0.09999999999999964
+        ],
+        "fov": 70,
+        "sourceFrame": "engine world",
+        "status": "default overview from the collider bounds"
+      },
+      "flightBounds": null,
+      "routes": [],
+      "reviewActive": true,
+      "reviewDecision": "pending",
+      "reviewNote": "Picked from the PlayCanvas explore API as a candidate outdoor scene (mountains, forests, natural landscapes, small villages); look not yet approved."
+    },
+    {
+      "id": "autumn-woods",
+      "title": "Autumn in the woods (Windberg, Freital/Germany)",
+      "purpose": "Arena environment candidate: beech forest in autumn: tree trunks, fallen leaves and a forest path",
+      "status": "added by sim/tools/env/add_scene.mjs; awaiting review",
+      "source": {
+        "hash": "8615117a",
+        "originalTitle": "Autumn in the woods (Windberg, Freital/Germany)",
+        "sceneUrl": "https://superspl.at/scene/8615117a",
+        "viewerUrl": "https://superspl.at/s?id=8615117a",
+        "creator": "hollmar",
+        "creatorUrl": "https://superspl.at/user/hollmar",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Autumn in the woods (Windberg, Freital/Germany)\" by hollmar (https://superspl.at/scene/8615117a), licensed under CC BY 4.0.",
+        "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/8615117a/v1/lod-meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/8615117a/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/8615117a/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/8615117a/v1/xl.webp",
+        "format": "ssog",
+        "publishedSizeBytes": 177417877,
+        "cacheDirectory": "cache/splat-scenes/autumn-woods",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": null,
+        "collisionGridBounds": {
+          "min": [
+            -26.2,
+            -12.2,
+            -41.2
+          ],
+          "max": [
+            23.400000000000002,
+            35.2,
+            40.8
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+      },
+      "camera": {
+        "position": [
+          -1.3999999999999986,
+          35.2,
+          -41.2
+        ],
+        "target": [
+          -1.3999999999999986,
+          11.500000000000002,
+          -0.20000000000000284
+        ],
+        "fov": 70,
+        "sourceFrame": "engine world",
+        "status": "default overview from the collider bounds"
+      },
+      "flightBounds": null,
+      "routes": [],
+      "reviewActive": true,
+      "reviewDecision": "pending",
+      "reviewNote": "Picked from the PlayCanvas explore API as a candidate outdoor scene (mountains, forests, natural landscapes, small villages); look not yet approved."
+    },
+    {
+      "id": "verzasca-valley",
+      "title": "Verzasca River - Ponte dei Salti, Switzerland",
+      "purpose": "Arena environment candidate: alpine river valley: a stone footbridge over a rocky river, stone paths, trees and steep banks",
+      "status": "approved; see admission",
+      "source": {
+        "hash": "fb6b9fae",
+        "originalTitle": "Verzasca River - Ponte dei Salti, Switzerland",
+        "sceneUrl": "https://superspl.at/scene/fb6b9fae",
+        "viewerUrl": "https://superspl.at/s?id=fb6b9fae",
+        "creator": "tosolini",
+        "creatorUrl": "https://superspl.at/user/tosolini",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Verzasca River - Ponte dei Salti, Switzerland\" by tosolini (https://superspl.at/scene/fb6b9fae), licensed under CC BY 4.0.",
+        "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+      },
+      "assets": {
+        "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/fb6b9fae/v1/lod-meta.json",
+        "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/fb6b9fae/v1/scene.voxel.json",
+        "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/fb6b9fae/v1/scene.voxel.bin",
+        "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/fb6b9fae/v1/xl.webp",
+        "format": "ssog",
+        "publishedSizeBytes": 281221876,
+        "cacheDirectory": "cache/splat-scenes/verzasca-valley",
+        "collisionFormat": "supersplat-voxel-1.1",
+        "collisionResolution": null,
+        "collisionGridBounds": {
+          "min": [
+            -82.00000000000001,
+            -13.600000000000001,
+            -55.60000000000001
+          ],
+          "max": [
+            11.599999999999994,
+            33.6,
+            50
+          ]
+        }
+      },
+      "transform": {
+        "splat": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "scale": 1
+        },
+        "collision": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1
+        },
+        "status": "official-viewer-coordinate-convention; physical scale provisional",
+        "units": "source scene units; not independently calibrated metres",
+        "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+      },
+      "camera": {
+        "position": [
+          -35.20000000000001,
+          33.6,
+          -55.60000000000001
+        ],
+        "target": [
+          -35.20000000000001,
+          10,
+          -2.8000000000000043
+        ],
+        "fov": 70,
+        "sourceFrame": "engine world",
+        "status": "default overview from the collider bounds"
+      },
+      "flightBounds": null,
+      "routes": [],
+      "reviewActive": true,
+      "reviewDecision": "approved",
+      "reviewNote": "Scene approved on 2026-11-20."
+    }
+  ]
+}

@@ -1,0 +1,736 @@
+{
+  "generatedAt": "2026-11-14T02:30:13.353Z",
+  "groupBy": "key",
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 20261113,
+    "unit": "episode (paired: scenario)"
+  },
+  "files": [
+    {
+      "path": "sim/recordings/batch/h36-fast.json",
+      "offline": false,
+      "exportedAt": "2026-11-14T02:29:43.471Z",
+      "evaluatedAt": "2026-11-14T02:29:43.469Z",
+      "trainingEpisodes": 8
+    },
+    {
+      "path": "sim/recordings/batch/h36-think.json",
+      "offline": false,
+      "exportedAt": "2026-11-14T02:28:42.673Z",
+      "evaluatedAt": "2026-11-14T02:28:42.671Z",
+      "trainingEpisodes": 0
+    }
+  ],
+  "excluded": [],
+  "totals": {
+    "files": 2,
+    "scenarios": 36,
+    "decisions": 360,
+    "trials": 1440
+  },
+  "scenarioConflicts": [],
+  "baseline": "raw",
+  "conditions": {
+    "shortest": {
+      "label": "Shortest-path comparator",
+      "model": false,
+      "nFiles": 2,
+      "nScenarios": 36,
+      "nDecisions": 72,
+      "nTrials": 288,
+      "success": {
+        "value": 0.04861111111111111,
+        "ci": [
+          0.020833333333333332,
+          0.0798611111111111
+        ],
+        "n": 72
+      },
+      "solved": 0.05555555555555555,
+      "family": null,
+      "behavior": null,
+      "danger": null,
+      "prediction": null,
+      "invalid": 0,
+      "medianLatencyS": null,
+      "toolCallsPerDecision": null,
+      "hosts": [],
+      "perFile": [
+        {
+          "file": "sim/recordings/batch/h36-fast.json",
+          "decisions": 36,
+          "success": 0.04861111111111111
+        },
+        {
+          "file": "sim/recordings/batch/h36-think.json",
+          "decisions": 36,
+          "success": 0.04861111111111111
+        }
+      ]
+    },
+    "raw": {
+      "label": "A · Raw coordinates",
+      "model": true,
+      "nFiles": 1,
+      "nScenarios": 36,
+      "nDecisions": 36,
+      "nTrials": 144,
+      "success": {
+        "value": 0.5625,
+        "ci": [
+          0.4305555555555556,
+          0.6875
+        ],
+        "n": 36
+      },
+      "solved": 0.6666666666666666,
+      "family": {
+        "value": 0.5277777777777778,
+        "ci": [
+          0.3611111111111111,
+          0.6944444444444444
+        ],
+        "n": 36
+      },
+      "behavior": {
+        "value": 0.4166666666666667,
+        "ci": [
+          0.25,
+          0.5562499999999962
+        ],
+        "n": 36
+      },
+      "danger": {
+        "value": 9.020689655172413,
+        "ci": [
+          7.33103448275862,
+          10.775948275862067
+        ],
+        "n": 29
+      },
+      "prediction": {
+        "value": 7.569444444444445,
+        "ci": [
+          6.310486111111113,
+          8.91423611111111
+        ],
+        "n": 36
+      },
+      "invalid": 0,
+      "medianLatencyS": 3.009,
+      "toolCallsPerDecision": 0,
+      "hosts": [
+        "GMICloud",
+        "PrimeIntellect"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/batch/h36-fast.json",
+          "decisions": 36,
+          "success": 0.5625
+        }
+      ]
+    },
+    "tools": {
+      "label": "C · Geometry tools",
+      "model": true,
+      "nFiles": 1,
+      "nScenarios": 36,
+      "nDecisions": 36,
+      "nTrials": 144,
+      "success": {
+        "value": 0.5625,
+        "ci": [
+          0.4305555555555556,
+          0.6875
+        ],
+        "n": 36
+      },
+      "solved": 0.5833333333333334,
+      "family": {
+        "value": 0.6111111111111112,
+        "ci": [
+          0.4715277777777778,
+          0.7777777777777778
+        ],
+        "n": 36
+      },
+      "behavior": {
+        "value": 0.4166666666666667,
+        "ci": [
+          0.25,
+          0.5833333333333334
+        ],
+        "n": 36
+      },
+      "danger": {
+        "value": 8.505555555555553,
+        "ci": [
+          7.338819444444446,
+          9.749999999999998
+        ],
+        "n": 36
+      },
+      "prediction": {
+        "value": 5.41111111111111,
+        "ci": [
+          4.502638888888888,
+          6.430694444444445
+        ],
+        "n": 36
+      },
+      "invalid": 0,
+      "medianLatencyS": 4.4785,
+      "toolCallsPerDecision": 1.3888888888888888,
+      "hosts": [
+        "PrimeIntellect"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/batch/h36-fast.json",
+          "decisions": 36,
+          "success": 0.5625
+        }
+      ]
+    },
+    "structured": {
+      "label": "D · Structured steps",
+      "model": true,
+      "nFiles": 1,
+      "nScenarios": 36,
+      "nDecisions": 36,
+      "nTrials": 144,
+      "success": {
+        "value": 0.5902777777777778,
+        "ci": [
+          0.4583333333333333,
+          0.7152777777777778
+        ],
+        "n": 36
+      },
+      "solved": 0.6388888888888888,
+      "family": {
+        "value": 0.4444444444444444,
+        "ci": [
+          0.2777777777777778,
+          0.6111111111111112
+        ],
+        "n": 36
+      },
+      "behavior": {
+        "value": 0.3888888888888889,
+        "ci": [
+          0.2222222222222222,
+          0.5555555555555556
+        ],
+        "n": 36
+      },
+      "danger": {
+        "value": 9.478787878787877,
+        "ci": [
+          7.572727272727271,
+          11.45462121212121
+        ],
+        "n": 33
+      },
+      "prediction": {
+        "value": 5.866666666666666,
+        "ci": [
+          4.930486111111112,
+          6.8308333333333335
+        ],
+        "n": 36
+      },
+      "invalid": 0,
+      "medianLatencyS": 3.4175,
+      "toolCallsPerDecision": 0,
+      "hosts": [
+        "GMICloud",
+        "PrimeIntellect"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/batch/h36-fast.json",
+          "decisions": 36,
+          "success": 0.5902777777777778
+        }
+      ]
+    },
+    "feedback": {
+      "label": "E · Raw + learned strategy",
+      "model": true,
+      "nFiles": 1,
+      "nScenarios": 36,
+      "nDecisions": 36,
+      "nTrials": 144,
+      "success": {
+        "value": 0.6111111111111112,
+        "ci": [
+          0.4930555555555556,
+          0.7222222222222222
+        ],
+        "n": 36
+      },
+      "solved": 0.7777777777777778,
+      "family": {
+        "value": 0.4444444444444444,
+        "ci": [
+          0.3048611111111112,
+          0.6111111111111112
+        ],
+        "n": 36
+      },
+      "behavior": {
+        "value": 0.2777777777777778,
+        "ci": [
+          0.1388888888888889,
+          0.4166666666666667
+        ],
+        "n": 36
+      },
+      "danger": {
+        "value": 8.74,
+        "ci": [
+          7.111214285714286,
+          10.508785714285713
+        ],
+        "n": 35
+      },
+      "prediction": {
+        "value": 6.722222222222222,
+        "ci": [
+          5.688819444444443,
+          7.836458333333331
+        ],
+        "n": 36
+      },
+      "invalid": 0,
+      "medianLatencyS": 2.813,
+      "toolCallsPerDecision": 0,
+      "hosts": [
+        "PrimeIntellect",
+        "GMICloud"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/batch/h36-fast.json",
+          "decisions": 36,
+          "success": 0.6111111111111112
+        }
+      ]
+    },
+    "tools_structured": {
+      "label": "F · Tools + structured",
+      "model": true,
+      "nFiles": 1,
+      "nScenarios": 36,
+      "nDecisions": 36,
+      "nTrials": 144,
+      "success": {
+        "value": 0.5833333333333334,
+        "ci": [
+          0.4513888888888889,
+          0.7222222222222222
+        ],
+        "n": 36
+      },
+      "solved": 0.6666666666666666,
+      "family": {
+        "value": 0.3333333333333333,
+        "ci": [
+          0.19444444444444445,
+          0.5
+        ],
+        "n": 36
+      },
+      "behavior": {
+        "value": 0.3333333333333333,
+        "ci": [
+          0.19444444444444445,
+          0.5
+        ],
+        "n": 36
+      },
+      "danger": {
+        "value": 8.24,
+        "ci": [
+          7.05714285714286,
+          9.500214285714286
+        ],
+        "n": 35
+      },
+      "prediction": {
+        "value": 5.541666666666668,
+        "ci": [
+          4.396944444444445,
+          6.680694444444446
+        ],
+        "n": 36
+      },
+      "invalid": 0,
+      "medianLatencyS": 4.528,
+      "toolCallsPerDecision": 1.3055555555555556,
+      "hosts": [
+        "PrimeIntellect"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/batch/h36-fast.json",
+          "decisions": 36,
+          "success": 0.5833333333333334
+        }
+      ]
+    },
+    "tools_feedback": {
+      "label": "G · Tools + learned strategy",
+      "model": true,
+      "nFiles": 1,
+      "nScenarios": 36,
+      "nDecisions": 36,
+      "nTrials": 144,
+      "success": {
+        "value": 0.5555555555555556,
+        "ci": [
+          0.4234375,
+          0.6876736111111101
+        ],
+        "n": 36
+      },
+      "solved": 0.6666666666666666,
+      "family": {
+        "value": 0.4722222222222222,
+        "ci": [
+          0.3333333333333333,
+          0.6388888888888888
+        ],
+        "n": 36
+      },
+      "behavior": {
+        "value": 0.3888888888888889,
+        "ci": [
+          0.25,
+          0.5555555555555556
+        ],
+        "n": 36
+      },
+      "danger": {
+        "value": 9.591176470588234,
+        "ci": [
+          8.000000000000002,
+          11.241249999999999
+        ],
+        "n": 34
+      },
+      "prediction": {
+        "value": 4.9147058823529415,
+        "ci": [
+          3.9263970588235293,
+          6.008897058823529
+        ],
+        "n": 34
+      },
+      "invalid": 2,
+      "medianLatencyS": 4.101,
+      "toolCallsPerDecision": 1.6111111111111112,
+      "hosts": [
+        "PrimeIntellect"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/batch/h36-fast.json",
+          "decisions": 36,
+          "success": 0.5555555555555556
+        }
+      ]
+    },
+    "structured_feedback": {
+      "label": "H · Structured + learned strategy",
+      "model": true,
+      "nFiles": 1,
+      "nScenarios": 36,
+      "nDecisions": 36,
+      "nTrials": 144,
+      "success": {
+        "value": 0.6875,
+        "ci": [
+          0.5625,
+          0.7986111111111112
+        ],
+        "n": 36
+      },
+      "solved": 0.8055555555555556,
+      "family": {
+        "value": 0.3333333333333333,
+        "ci": [
+          0.16666666666666666,
+          0.5
+        ],
+        "n": 36
+      },
+      "behavior": {
+        "value": 0.25,
+        "ci": [
+          0.1111111111111111,
+          0.3888888888888889
+        ],
+        "n": 36
+      },
+      "danger": {
+        "value": 9.538709677419353,
+        "ci": [
+          7.987096774193548,
+          11.177500000000002
+        ],
+        "n": 31
+      },
+      "prediction": {
+        "value": 6.308333333333334,
+        "ci": [
+          5.2970138888888885,
+          7.222291666666664
+        ],
+        "n": 36
+      },
+      "invalid": 0,
+      "medianLatencyS": 3.321,
+      "toolCallsPerDecision": 0,
+      "hosts": [
+        "GMICloud",
+        "PrimeIntellect"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/batch/h36-fast.json",
+          "decisions": 36,
+          "success": 0.6875
+        }
+      ]
+    },
+    "think": {
+      "label": "B · Raw + thinking",
+      "model": true,
+      "nFiles": 1,
+      "nScenarios": 36,
+      "nDecisions": 36,
+      "nTrials": 144,
+      "success": {
+        "value": 0.6527777777777778,
+        "ci": [
+          0.5208333333333334,
+          0.7777777777777778
+        ],
+        "n": 36
+      },
+      "solved": 0.6944444444444444,
+      "family": {
+        "value": 0.3055555555555556,
+        "ci": [
+          0.16666666666666666,
+          0.4722222222222222
+        ],
+        "n": 36
+      },
+      "behavior": {
+        "value": 0.25,
+        "ci": [
+          0.1111111111111111,
+          0.3888888888888889
+        ],
+        "n": 36
+      },
+      "danger": {
+        "value": 8.809090909090907,
+        "ci": [
+          5.000000000000001,
+          12.837727272727264
+        ],
+        "n": 11
+      },
+      "prediction": {
+        "value": 5.312121212121213,
+        "ci": [
+          4.248484848484849,
+          6.403030303030302
+        ],
+        "n": 33
+      },
+      "invalid": 3,
+      "medianLatencyS": 146.712,
+      "toolCallsPerDecision": 0,
+      "hosts": [
+        "Together",
+        "PrimeIntellect"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/batch/h36-think.json",
+          "decisions": 36,
+          "success": 0.6527777777777778
+        }
+      ]
+    }
+  },
+  "comparisons": {
+    "shortest": {
+      "nScenarios": 36,
+      "success": {
+        "value": -0.5138888888888888,
+        "ci": [
+          -0.6597222222222222,
+          -0.3680555555555556
+        ],
+        "n": 36,
+        "distinguishable": true
+      },
+      "family": null
+    },
+    "tools": {
+      "nScenarios": 36,
+      "success": {
+        "value": 0,
+        "ci": [
+          -0.13194444444444445,
+          0.125
+        ],
+        "n": 36,
+        "distinguishable": false
+      },
+      "family": {
+        "value": 0.08333333333333333,
+        "ci": [
+          -0.1395833333333333,
+          0.3333333333333333
+        ],
+        "n": 36,
+        "distinguishable": false
+      }
+    },
+    "structured": {
+      "nScenarios": 36,
+      "success": {
+        "value": 0.027777777777777776,
+        "ci": [
+          -0.08333333333333333,
+          0.1388888888888889
+        ],
+        "n": 36,
+        "distinguishable": false
+      },
+      "family": {
+        "value": -0.08333333333333333,
+        "ci": [
+          -0.3055555555555556,
+          0.1388888888888889
+        ],
+        "n": 36,
+        "distinguishable": false
+      }
+    },
+    "feedback": {
+      "nScenarios": 36,
+      "success": {
+        "value": 0.04861111111111111,
+        "ci": [
+          -0.06944444444444445,
+          0.1736111111111111
+        ],
+        "n": 36,
+        "distinguishable": false
+      },
+      "family": {
+        "value": -0.08333333333333333,
+        "ci": [
+          -0.2777777777777778,
+          0.1388888888888889
+        ],
+        "n": 36,
+        "distinguishable": false
+      }
+    },
+    "tools_structured": {
+      "nScenarios": 36,
+      "success": {
+        "value": 0.020833333333333332,
+        "ci": [
+          -0.1111111111111111,
+          0.1597222222222222
+        ],
+        "n": 36,
+        "distinguishable": false
+      },
+      "family": {
+        "value": -0.19444444444444445,
+        "ci": [
+          -0.4166666666666667,
+          0.02847222222221843
+        ],
+        "n": 36,
+        "distinguishable": false
+      }
+    },
+    "tools_feedback": {
+      "nScenarios": 36,
+      "success": {
+        "value": -0.006944444444444444,
+        "ci": [
+          -0.1597222222222222,
+          0.1388888888888889
+        ],
+        "n": 36,
+        "distinguishable": false
+      },
+      "family": {
+        "value": -0.05555555555555555,
+        "ci": [
+          -0.25,
+          0.1388888888888889
+        ],
+        "n": 36,
+        "distinguishable": false
+      }
+    },
+    "structured_feedback": {
+      "nScenarios": 36,
+      "success": {
+        "value": 0.125,
+        "ci": [
+          0.013888888888888888,
+          0.24305555555555555
+        ],
+        "n": 36,
+        "distinguishable": true
+      },
+      "family": {
+        "value": -0.19444444444444445,
+        "ci": [
+          -0.3888888888888889,
+          0
+        ],
+        "n": 36,
+        "distinguishable": false
+      }
+    },
+    "think": {
+      "nScenarios": 36,
+      "success": {
+        "value": 0.09027777777777778,
+        "ci": [
+          -0.0763888888888889,
+          0.2638888888888889
+        ],
+        "n": 36,
+        "distinguishable": false
+      },
+      "family": {
+        "value": -0.2222222222222222,
+        "ci": [
+          -0.4444444444444444,
+          0
+        ],
+        "n": 36,
+        "distinguishable": false
+      }
+    }
+  }
+}

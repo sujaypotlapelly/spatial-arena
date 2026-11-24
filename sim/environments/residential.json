@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "residential",
+  "kind": "scan",
+  "scene": "residential",
+  "mapBuild": "residential",
+  "videoOnly": false,
+  "harness": {
+    "map": "sim/maps/residential.json",
+    "scenarioFile": "sim/scenarios/reach-residential.json",
+    "reach": {
+      "seed": 20261117,
+      "idPrefix": "residential-",
+      "windOffset": 200000
+    },
+    "scene": "The area is a 3D scan of a real rural property: two timber cottages, a garage, trees, fences and a garden, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over the houses or trees.",
+    "routeText": "Routes are 15-35 m long",
+    "units": "scene units (roughly metres, not calibrated)",
+    "missions": {
+      "search": {
+        "kind": "find-beacon",
+        "timeLimitSeconds": 90,
+        "train": 12,
+        "dev": 24,
+        "test": 48,
+        "detectionRange": 5,
+        "minDist": 15,
+        "maxDist": 35,
+        "seed": 20261124,
+        "windBase": 1050000
+      },
+      "delivery": {
+        "kind": "package-delivery",
+        "timeLimitSeconds": 90,
+        "padRadius": 0.3,
+        "releaseHeight": 1,
+        "parcelRadius": 0.1,
+        "maxHoldSpeed": 0.35,
+        "requiredHoldSeconds": 2,
+        "requireNoContactDuringHold": true,
+        "gravity": 9.81,
+        "landingHeightTolerance": 0.2,
+        "train": 12,
+        "dev": 24,
+        "test": 48,
+        "minDist": 15,
+        "maxDist": 35,
+        "seed": 20261125,
+        "windBase": 1060000
+      }
+    }
+  },
+  "admission": {
+    "stage": 1,
+    "checkedAt": "2026-11-20",
+    "commit": "95840e3",
+    "gates": {
+      "licence": {
+        "stage": 0,
+        "status": "pass",
+        "value": "CC BY 4.0",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-16 from https://superspl.at/scene/5f41cc74."
+      },
+      "attribution": {
+        "stage": 0,
+        "status": "pass",
+        "detail": "\"Utlida 1:80\" — 3D capture and Gaussian Splat by Jakob Safwan / Overblick Studio, https://www.overblickstudio.se . Source: https://superspl.at/scene/5f41cc74 . Licensed under CC BY 4.0."
+      },
+      "review": {
+        "stage": 0,
+        "status": "pass",
+        "detail": "Review decision “selected-for-residential-delivery”: Selected on 2026-11-15 for the garden delivery task."
+      },
+      "scale": {
+        "stage": 1,
+        "status": "info",
+        "detail": "Not measured. Recorded so far: Scene units; roughly metres (the rear porch roof sits about 2.5 units above its floor) but not independently calibrated. (Shown for information; not enforced.)"
+      },
+      "passage": {
+        "stage": 1,
+        "status": "pass",
+        "value": 0.9,
+        "detail": "Narrowest gap on the flight graph: 0.90 m (the drone is 0.50 m wide) at [-12.6, 6.4, -12.7]."
+      },
+      "alignment": {
+        "stage": 1,
+        "status": "pass",
+        "value": 0.994,
+        "detail": "99.4% of 6557 sampled surface cells of the scan's own collider (the altitude fence and sealed hollows excluded) have scan points within 0.50 m (needs 90%)."
+      },
+      "coverage": {
+        "stage": 1,
+        "status": "pass",
+        "value": 1,
+        "detail": "100% of 74 waypoints have captured scan ground below them (needs 90%). Captured means at least 123 scan points within 2 m (5% of this scan's median, 2458). 0 waypoints sit over ground with no scan surface within 2.5 m (ground we sealed)."
+      },
+      "scene-text": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "The area is a 3D scan of a real rural property: two timber cottages, a garage, trees, fences and a garden, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over the houses or trees."
+      },
+      "routes": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "108 routes (12 train, 24 dev, 24 heldout, 48 test) match sim/scenarios/reach-residential.json."
+      },
+      "planner": {
+        "stage": 2,
+        "status": "pass",
+        "value": 1,
+        "detail": "100% of 24 dev routes (needs 90%)."
+      },
+      "straight": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.25,
+        "detail": "25% reached flying straight (at most 50%)."
+      },
+      "between": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.6666666666666666,
+        "detail": "Reactive avoider 66.7%, between straight 25% and planner 100%."
+      },
+      "replay": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "72 of 72 flights replay exactly."
+      },
+      "missions-search": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "Sets match sim/scenarios/mission-residential-search.json. Each target used once. Oracle completed 4 of 4 development missions."
+      },
+      "missions-delivery": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "Sets match sim/scenarios/mission-residential-delivery.json. Each target used once. Oracle completed 4 of 4 development missions."
+      },
+      "targets-captured": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0,
+        "detail": "168 of 168 targets have at least 123 scan points within 2 m (5% of this scan's median, 2458)."
+      },
+      "targets-sky": {
+        "stage": 2,
+        "status": "fail",
+        "value": 2,
+        "detail": "166 of 168 targets are in their column's topmost free space. Under a roof, canopy or the ground: residential-search-X32, residential-delivery-D19."
+      }
+    },
+    "signoffs": {},
+    "readyIfApproved": 1
+  },
+  "registryOrder": 3
+}

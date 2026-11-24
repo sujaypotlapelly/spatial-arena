@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "building",
+  "kind": "boxes",
+  "scene": null,
+  "mapBuild": null,
+  "videoOnly": false,
+  "harness": {
+    "map": "sim/maps/building.json",
+    "scenarioFile": "sim/scenarios/reach-building.json",
+    "reach": {
+      "train": 0,
+      "dev": 0,
+      "heldout": 0,
+      "test": 40
+    },
+    "scene": "The building is a two-floor greybox building.",
+    "routeText": "Routes are 15-35 m long",
+    "units": "metres"
+  },
+  "admission": {
+    "stage": 2,
+    "checkedAt": "2026-11-20",
+    "commit": "95840e3",
+    "gates": {
+      "licence": {
+        "stage": 0,
+        "status": "pass",
+        "detail": "Built in this repo from a box description; covered by the repo's own licence."
+      },
+      "scale": {
+        "stage": 1,
+        "status": "pass",
+        "detail": "Box places are written in metres."
+      },
+      "passage": {
+        "stage": 1,
+        "status": "pass",
+        "value": 1.44,
+        "detail": "Narrowest gap on the flight graph: 1.44 m (the drone is 0.50 m wide) at [12.8, 1.8, 6.7]."
+      },
+      "alignment": {
+        "stage": 1,
+        "status": "pass",
+        "detail": "No scan: the box description is the geometry."
+      },
+      "coverage": {
+        "stage": 1,
+        "status": "pass",
+        "detail": "No scan: every space is defined."
+      },
+      "scene-text": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "The building is a two-floor greybox building."
+      },
+      "routes": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "40 routes (0 train, 0 dev, 0 heldout, 40 test) match sim/scenarios/reach-building.json."
+      },
+      "planner": {
+        "stage": 2,
+        "status": "pass",
+        "value": 1,
+        "detail": "100% of 24 test routes (needs 90%)."
+      },
+      "straight": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.2916666666666667,
+        "detail": "29.2% reached flying straight (at most 50%)."
+      },
+      "between": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.4166666666666667,
+        "detail": "Reactive avoider 41.7%, between straight 29.2% and planner 100%."
+      },
+      "replay": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "72 of 72 flights replay exactly."
+      }
+    },
+    "signoffs": {},
+    "readyIfApproved": 2
+  },
+  "registryOrder": 1
+}

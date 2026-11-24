@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "residential",
+  "status": "visually confirmed second-cottage porch pad; two task-specific parcel delivery demos recorded and replay-verified",
+  "interpretation": "Navigate the longer garden approach to a supported delivery pad at the second cottage, hold a stable hover, and release a parcel under simplified gravity. Success requires the parcel to land inside the pad. The pad marker still needs close-view confirmation.",
+  "controllerInputs": "position, velocity, local clearances, time, contact count, known delivery pad and hover target, delivery rules; no diagnostic route or collision map",
+  "mission": {
+    "id": "residential-back-cottage-delivery-1",
+    "kind": "package-delivery",
+    "start": [
+      0,
+      3.8,
+      -17
+    ],
+    "targetPosition": [
+      -2.55,
+      5.7,
+      22.2
+    ],
+    "padRadius": 0.3,
+    "releaseHeight": 1,
+    "parcelRadius": 0.1,
+    "maxHoldSpeed": 0.35,
+    "requiredHoldSeconds": 2,
+    "requireNoContactDuringHold": true,
+    "gravity": 9.81,
+    "landingHeightTolerance": 0.2,
+    "timeLimitSeconds": 90
+  },
+  "units": "source scene units; physical scale is uncalibrated; the numeric gravity is a simplified simulation parameter",
+  "visualValidation": {
+    "status": "Root confirmed the pad disk lies on the actual wooden porch of the smaller back cottage, beside the bench/door and bags; approach from open stairs with fence on the right.",
+    "overviewViewport": [
+      1753,
+      986
+    ],
+    "porchRayHit": [
+      -1.4053,
+      5.8154,
+      21.1544
+    ],
+    "doorCentreRayHit": [
+      -1.5408,
+      7.0251,
+      22.2021
+    ],
+    "candidateHorizontalDistanceFromDoorRay": 1.009202184896565,
+    "closeCamera": {
+      "position": [
+        -1,
+        8,
+        12
+      ],
+      "target": [
+        -2.55,
+        6.2,
+        22.2
+      ],
+      "fov": 65,
+      "view": "back"
+    }
+  },
+  "geometryValidation": {
+    "source": "actual SuperSplat voxel 1.1 collider for Utlida 1:80 v3",
+    "reportPath": "cache/splat-scenes/residential/back-cottage-pad-proposal.json",
+    "surfaceCandidatesPath": "cache/splat-scenes/residential/back-cottage-pad-surface-candidates.json",
+    "supportedFlatRadius": 0.4,
+    "supportSampleSpacing": 0.05,
+    "supportSamples": 197,
+    "maxSurfaceHeightVariation": 0,
+    "solidSupportDepth": 0.08,
+    "padRadiusReason": "A 0.3-radius target leaves the parcel's 0.1-radius footprint inside the verified 0.4-radius support patch.",
+    "hoverPosition": [
+      -2.55,
+      6.7,
+      22.2
+    ],
+    "hoverClearanceRadius": 0.3,
+    "parcelReleaseCentre": [
+      -2.55,
+      6.330000000000001,
+      22.2
+    ],
+    "parcelDropClearUntilCentreHeight": 5.81,
+    "parcelSupportCollisionBelowCentreHeight": 5.79,
+    "parcelDropSweepStep": 0.01,
+    "directPathClear": false,
+    "diagnosticPathLength": 39.625223184317164,
+    "straightDistance": 39.389751205104105,
+    "independentRouteSweep": {
+      "step": 0.025,
+      "clearanceRadius": 0.3,
+      "samples": 1589,
+      "clear": true
+    }
+  },
+  "provenance": "Pad surface and route connectivity were checked against the downloaded Utlida collider. The privileged path remains in the ignored geometry report and is not supplied to controllers. These checks do not constitute a model-controlled delivery run. Existing Reach recordings are not evidence of parcel delivery.",
+  "setupHistory": {
+    "previousMissionId": "residential-porch-delivery-1",
+    "reason": "The delivery target moved to the second cottage for a longer flight through the garden.",
+    "previousDefinitionPath": "cache/splat-scenes/residential/setup-history/front-porch-mission-definition.json",
+    "previousFirstPass": "runs/rescue/residential-delivery-first-pass",
+    "modelCallsBeforeChange": 0
+  },
+  "recordingEvidence": {
+    "development": "runs/rescue/residential-delivery-development",
+    "demo": "runs/rescue/residential-delivery-demo",
+    "model": "ricursiveai/ripple-65b-preview",
+    "provider": "PrimeIntellect",
+    "selectedVersion": 4,
+    "policySha256": "25c6759371c6e23359d3e179fa0ebb0200d0d74c13e6eeb34414bdfe9a743675",
+    "practiceDeliveries": 1,
+    "practiceFlights": 2,
+    "demoDeliveries": 2,
+    "demoFlights": 2,
+    "note": "Illustrative same-mission wind seeds, not a general success-rate estimate. Frozen factory failure and all development failures remain separately preserved."
+  }
+}

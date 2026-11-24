@@ -1,0 +1,37 @@
+{
+  "source_commit": "930b632",
+  "provider": "PrimeIntellect",
+  "provider_fallbacks": false,
+  "max_tokens": 8192,
+  "evaluation_concurrency": 2,
+  "training_episodes": 8,
+  "evaluation_scenarios": 12,
+  "seeds_per_scenario": 4,
+  "conditions": [
+    "shortest",
+    "original",
+    "strategy"
+  ],
+  "successful_provider_responses": 44,
+  "provider_error_records": 16,
+  "cost_usd": 0.011823199999999999,
+  "source_sha256": {
+    "snapshot/sim/server.py": "80f9977f639cfef977ff3c8c8037c37e716c38e0437e2b252d9d5d0abb812993",
+    "snapshot/sim/maps/building.json": "a1ff490fa95d5019d242b51fdb1edaf62d9b9e535692c9884630b482c95196f0",
+    "snapshot/sim/tools/checkpoint_campaign.mjs": "91a3b35081ff422f006c53eb0047c0709a9f3e79c23030b33f7767799a9b524b",
+    "snapshot/sim/tools/legacy/add_rematch.mjs": "bc7b86eb339301f56910167546a0616cc8efd8fbe1e793446d4e0f2f418e7a31",
+    "snapshot/sim/tools/legacy/headless_demo.mjs": "af66609266a28a57ddf8928142251673e8939729f7ad9ce3c0a32bc5a42b3d99",
+    "snapshot/sim/tools/legacy/make_heldout.mjs": "ed9fd94f2ed18ff667140628750603108f80c2f2ef8745f773235c4ad35c4e7c",
+    "snapshot/sim/test/model-client.test.mjs": "30df7053a2dfe5c476b0cf58cef6c4b52f338d520f2b8ed7b1803f7ebf2adea5",
+    "snapshot/sim/test/sim.test.mjs": "148128f598783841239c93bfb58e23fe174b1db872c08eaa4ce6fcf3fcea2fa2",
+    "snapshot/sim/scenarios/heldout.json": "981513379b74b90f1f5e96eabc9bf76e91559698566d6d69b0cbe2290a269af2",
+    "snapshot/sim/src/agents.js": "2e47c5a5fe7a0c156222803da9a2f613846f918110cee236482dbb544ed72284",
+    "snapshot/sim/src/policy.js": "837a5ee68de659570a4a0e8c53b5eb9510a08ac2f18d93c1780b3a25bb7a1f57",
+    "snapshot/sim/src/world.js": "a343cb83a2130dfc1d87e4d3510c71132bc5e36f3b08402fa4427bd36e88e315",
+    "snapshot/sim/src/scenarios.js": "be1d70675701415dcf75e17c1b3f443363366ba2afd9353340db38794fbafcdd",
+    "snapshot/sim/src/render.js": "a067b976f7cd4201fbb86a2e4a08cced285e3bbaa001e111ecea7e4ea29e466a",
+    "snapshot/sim/src/arena.js": "33fb3ef12adef3381c6e8cefc6bff56a5820bd2ebe0a52f179535b61feb503eb",
+    "snapshot/sim/src/engine.js": "047145b96038009522afde0a4607b574899fd6d928169d9de73c3b8a121a4ced",
+    "snapshot/sim/src/app.js": "76713e1b359e4b9720b8ea3c453418c1cdc7b00bbab6828557693c780f2a4395"
+  }
+}

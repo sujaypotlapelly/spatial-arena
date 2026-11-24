@@ -1,0 +1,924 @@
+{
+  "schemaVersion": 1,
+  "note": "Parameters for sim/tools/maps/build_splat_map.mjs. Each benchmark map is rebuilt from the cached SuperSplat collider with exactly these values.",
+  "maps": {
+    "canyon": {
+      "name": "Zohar canyon (barak9177, CC BY 4.0), SuperSplat collider, rescaled x8",
+      "out": "sim/maps/canyon.json",
+      "cell": 0.4,
+      "crop": {
+        "min": [
+          -60,
+          -52,
+          -84
+        ],
+        "max": [
+          124,
+          20,
+          36
+        ]
+      },
+      "launch": [
+        44,
+        8,
+        -16
+      ],
+      "terrainRadius": 4,
+      "agl": null,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "unitsNote": "Scene units x8, treated as metres: chosen by eye with a correctly scaled drone in a lower channel; there the narrowest pinch is about 6 m. The collider's native 0.05-unit voxels become 0.4 m, so the grid cell is 0.4. The crop top (y = 20, the earlier 2.5-unit ceiling x8) is the altitude limit that seals the plateaus. Not independently calibrated.",
+      "scale": 8,
+      "scaleNote": "Amendment 2: x4 -> x8 at Sujay's visual choice; whole canyon, same ceiling rule scaled.",
+      "maxCells": 26000000
+    },
+    "residential": {
+      "name": "Utlida cottages (Jakob Safwan / Overblick Studio, CC BY 4.0), SuperSplat collider",
+      "out": "sim/maps/residential.json",
+      "cell": 0.25,
+      "crop": {
+        "min": [
+          -18,
+          -1,
+          -29
+        ],
+        "max": [
+          20,
+          13,
+          28
+        ]
+      },
+      "launch": [
+        0,
+        3.8,
+        -17
+      ],
+      "terrainRadius": 6,
+      "agl": 4.5,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 90,
+      "maxEdge": 10,
+      "edgeRadius": 0.45,
+      "unitsNote": "Scene units; roughly metres (the rear porch roof sits about 2.5 units above its floor) but not independently calibrated."
+    },
+    "canyon-v5": {
+      "name": "Zohar canyon (barak9177, CC BY 4.0), SuperSplat collider, rescaled x8, scan hollows sealed",
+      "out": "sim/maps/canyon-v5.json",
+      "cell": 0.4,
+      "crop": {
+        "min": [
+          -60,
+          -52,
+          -84
+        ],
+        "max": [
+          124,
+          20,
+          36
+        ]
+      },
+      "launch": [
+        44,
+        8,
+        -16
+      ],
+      "terrainRadius": 4,
+      "agl": null,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "unitsNote": "Scene units x8, treated as metres: chosen by eye with a correctly scaled drone in a lower channel; there the narrowest pinch is about 6 m. The collider's native 0.05-unit voxels become 0.4 m, so the grid cell is 0.4. The crop top (y = 20, the earlier 2.5-unit ceiling x8) is the altitude limit that seals the plateaus. Not independently calibrated.",
+      "scale": 8,
+      "scaleNote": "Amendment 2: x4 -> x8 at Sujay's visual choice; whole canyon, same ceiling rule scaled.",
+      "maxCells": 26000000,
+      "scene": "canyon",
+      "sealBelowGroundBy": 3,
+      "hollowNote": "v5: free cells more than 3 m below the floor of their column's topmost free interval are sealed. These are closed pockets under the real canyon floor (missed surfaces in the scan); v4 placed 28 of 48 canyon test hikers in them.",
+      "floor": -12,
+      "floorNote": "v5: the splat has essentially no points below y = -1.5 scan units (-12 m at x8) anywhere in the canyon (0.0% of opaque points vs 2.5% at -1.5 and 33.6% at -1.0), so the collider's open space below -12 m is uncaptured void and is sealed."
+    },
+    "residential-video": {
+      "name": "Utlida cottages, scan collider without the altitude geofence (video path checks only; not a benchmark map)",
+      "out": "sim/maps/residential-video.json",
+      "cell": 0.25,
+      "crop": {
+        "min": [
+          -18,
+          -1,
+          -29
+        ],
+        "max": [
+          20,
+          13,
+          28
+        ]
+      },
+      "launch": [
+        0,
+        3.8,
+        -17
+      ],
+      "terrainRadius": 6,
+      "agl": null,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 90,
+      "maxEdge": 10,
+      "edgeRadius": 0.45,
+      "unitsNote": "Scene units; roughly metres (the rear porch roof sits about 2.5 units above its floor) but not independently calibrated.",
+      "scene": "residential"
+    },
+    "canyon-v5b": {
+      "name": "Zohar canyon (barak9177, CC BY 4.0), SuperSplat collider, rescaled x8, scan hollows sealed, flight volume over captured ground",
+      "out": "sim/maps/canyon-v5b.json",
+      "cell": 0.4,
+      "crop": {
+        "min": [
+          -60,
+          -52,
+          -84
+        ],
+        "max": [
+          124,
+          20,
+          36
+        ]
+      },
+      "launch": [
+        44,
+        8,
+        -16
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "unitsNote": "Scene units x8, treated as metres: chosen by eye with a correctly scaled drone in a lower channel; there the narrowest pinch is about 6 m. The collider's native 0.05-unit voxels become 0.4 m, so the grid cell is 0.4. The crop top (y = 20, the earlier 2.5-unit ceiling x8) is the altitude limit that seals the plateaus. Not independently calibrated.",
+      "scale": 8,
+      "scaleNote": "Amendment 2: x4 -> x8 at Sujay's visual choice; whole canyon, same ceiling rule scaled.",
+      "maxCells": 26000000,
+      "scene": "canyon",
+      "sealBelowGroundBy": 3,
+      "hollowNote": "v5: free cells more than 3 m below the floor of their column's topmost free interval are sealed. These are closed pockets under the real canyon floor (missed surfaces in the scan); v4 placed 28 of 48 canyon test hikers in them.",
+      "floor": -12,
+      "floorNote": "v5: the splat has essentially no points below y = -1.5 scan units (-12 m at x8) anywhere in the canyon (0.0% of opaque points vs 2.5% at -1.5 and 33.6% at -1.0), so the collider's open space below -12 m is uncaptured void and is sealed.",
+      "aglNote": "v5b: the drone may fly at most 8 m above the terrain (lowest ground within terrainRadius). The canyon scan is rich near the floor and thin near the rim, so flights stay where it is rich.",
+      "volume": "sim/maps/volumes/canyon-v5b.json",
+      "volumeNote": "v5b (2026-11-19): only columns over ground the scan captured, proposed by sim/tools/env/suggest_volume.mjs canyon5 --agl 8 --close 2 --margin 0.8 (6,056 of 8,812 m2 of open-sky ground). Preview: sim/environments/reports/volume-canyon-v5b.html. Volume approved on 2026-11-19."
+    },
+    "hill-lodge-raw": {
+      "name": "hill-lodge (raw, before the flight volume)",
+      "out": "sim/maps/hill-lodge-raw.json",
+      "cell": 0.25,
+      "crop": {
+        "min": [
+          -53,
+          -11,
+          -26
+        ],
+        "max": [
+          33,
+          7,
+          58
+        ]
+      },
+      "launch": [
+        -4.7,
+        -2,
+        16.1
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "hill-lodge",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20."
+    },
+    "hill-lodge": {
+      "name": "hill-lodge: flight volume over captured ground",
+      "out": "sim/maps/hill-lodge.json",
+      "cell": 0.25,
+      "crop": {
+        "min": [
+          -53,
+          -11,
+          -26
+        ],
+        "max": [
+          33,
+          7,
+          58
+        ]
+      },
+      "launch": [
+        -4.7,
+        -2,
+        16.1
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "hill-lodge",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20.",
+      "volume": "sim/maps/volumes/hill-lodge.json",
+      "volumeNote": "Flight volume proposed by suggest_volume.mjs; awaiting review."
+    },
+    "daregahan-gorge-raw": {
+      "name": "daregahan-gorge (raw, before the flight volume)",
+      "out": "sim/maps/daregahan-gorge-raw.json",
+      "cell": 0.35,
+      "crop": {
+        "min": [
+          -17,
+          -4,
+          -56
+        ],
+        "max": [
+          47,
+          53,
+          41
+        ]
+      },
+      "launch": [
+        11.3,
+        11.9,
+        -15.1
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "daregahan-gorge",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20."
+    },
+    "daregahan-gorge": {
+      "name": "daregahan-gorge: flight volume over captured ground",
+      "out": "sim/maps/daregahan-gorge.json",
+      "cell": 0.35,
+      "crop": {
+        "min": [
+          -17,
+          -4,
+          -56
+        ],
+        "max": [
+          47,
+          53,
+          41
+        ]
+      },
+      "launch": [
+        11.3,
+        11.9,
+        -15.1
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "daregahan-gorge",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20.",
+      "volume": "sim/maps/volumes/daregahan-gorge.json",
+      "volumeNote": "Flight volume proposed by suggest_volume.mjs; awaiting review."
+    },
+    "forest-trail-raw": {
+      "name": "forest-trail (raw, before the flight volume)",
+      "out": "sim/maps/forest-trail-raw.json",
+      "cell": 0.25,
+      "crop": {
+        "min": [
+          -22,
+          -7,
+          -26
+        ],
+        "max": [
+          25,
+          27,
+          22
+        ]
+      },
+      "launch": [
+        -0.9,
+        5.3,
+        -0.5
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "forest-trail",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20."
+    },
+    "huashan-path-raw": {
+      "name": "huashan-path (raw, before the flight volume)",
+      "out": "sim/maps/huashan-path-raw.json",
+      "cell": 0.25,
+      "crop": {
+        "min": [
+          -36,
+          -4,
+          -8
+        ],
+        "max": [
+          46,
+          31,
+          17
+        ]
+      },
+      "launch": [
+        5.5,
+        15.6,
+        1.7
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "huashan-path",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20."
+    },
+    "huashan-path": {
+      "name": "huashan-path: flight volume over captured ground",
+      "out": "sim/maps/huashan-path.json",
+      "cell": 0.25,
+      "crop": {
+        "min": [
+          -36,
+          -4,
+          -8
+        ],
+        "max": [
+          46,
+          31,
+          17
+        ]
+      },
+      "launch": [
+        5.5,
+        15.6,
+        1.7
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "huashan-path",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20.",
+      "volume": "sim/maps/volumes/huashan-path.json",
+      "volumeNote": "Flight volume proposed by suggest_volume.mjs; awaiting review."
+    },
+    "sunny-meadow-raw": {
+      "name": "sunny-meadow (raw, before the flight volume)",
+      "out": "sim/maps/sunny-meadow-raw.json",
+      "cell": 0.25,
+      "crop": {
+        "min": [
+          -31,
+          -4,
+          -30
+        ],
+        "max": [
+          30,
+          18,
+          36
+        ]
+      },
+      "launch": [
+        -0.3,
+        5.5,
+        1.7
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "sunny-meadow",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20."
+    },
+    "sunny-meadow": {
+      "name": "sunny-meadow: flight volume over captured ground",
+      "out": "sim/maps/sunny-meadow.json",
+      "cell": 0.25,
+      "crop": {
+        "min": [
+          -31,
+          -4,
+          -30
+        ],
+        "max": [
+          30,
+          18,
+          36
+        ]
+      },
+      "launch": [
+        -0.3,
+        5.5,
+        1.7
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "sunny-meadow",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20.",
+      "volume": "sim/maps/volumes/sunny-meadow.json",
+      "volumeNote": "Flight volume proposed by suggest_volume.mjs; awaiting review."
+    },
+    "interlaken-square-raw": {
+      "name": "interlaken-square (raw, before the flight volume)",
+      "out": "sim/maps/interlaken-square-raw.json",
+      "cell": 0.3,
+      "crop": {
+        "min": [
+          -56,
+          -8,
+          -40
+        ],
+        "max": [
+          31,
+          21,
+          54
+        ]
+      },
+      "launch": [
+        -7.5,
+        -0.3,
+        0.9
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "interlaken-square",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20."
+    },
+    "interlaken-square": {
+      "name": "interlaken-square: flight volume over captured ground",
+      "out": "sim/maps/interlaken-square.json",
+      "cell": 0.3,
+      "crop": {
+        "min": [
+          -56,
+          -8,
+          -40
+        ],
+        "max": [
+          31,
+          21,
+          54
+        ]
+      },
+      "launch": [
+        -7.5,
+        -0.3,
+        0.9
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "interlaken-square",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20.",
+      "volume": "sim/maps/volumes/interlaken-square.json",
+      "volumeNote": "Flight volume proposed by suggest_volume.mjs; awaiting review."
+    },
+    "double-arch-raw": {
+      "name": "double-arch (raw, before the flight volume)",
+      "out": "sim/maps/double-arch-raw.json",
+      "cell": 0.4,
+      "crop": {
+        "min": [
+          -47,
+          -9,
+          -72
+        ],
+        "max": [
+          36,
+          55,
+          32
+        ]
+      },
+      "launch": [
+        -3.7,
+        -2.7,
+        -23.1
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "double-arch",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20."
+    },
+    "double-arch": {
+      "name": "double-arch: flight volume over captured ground",
+      "out": "sim/maps/double-arch.json",
+      "cell": 0.4,
+      "crop": {
+        "min": [
+          -47,
+          -9,
+          -72
+        ],
+        "max": [
+          36,
+          55,
+          32
+        ]
+      },
+      "launch": [
+        -3.7,
+        -2.7,
+        -23.1
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "double-arch",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20.",
+      "volume": "sim/maps/volumes/double-arch.json",
+      "volumeNote": "Flight volume proposed by suggest_volume.mjs; awaiting review."
+    },
+    "forest-lake-raw": {
+      "name": "forest-lake (raw, before the flight volume)",
+      "out": "sim/maps/forest-lake-raw.json",
+      "cell": 0.25,
+      "crop": {
+        "min": [
+          -9,
+          -12,
+          -9
+        ],
+        "max": [
+          11,
+          1,
+          9
+        ]
+      },
+      "launch": [
+        1.9,
+        -0.2,
+        -0.3
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "forest-lake",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20."
+    },
+    "forest-lake": {
+      "name": "forest-lake: flight volume over captured ground",
+      "out": "sim/maps/forest-lake.json",
+      "cell": 0.25,
+      "crop": {
+        "min": [
+          -9,
+          -12,
+          -9
+        ],
+        "max": [
+          11,
+          1,
+          9
+        ]
+      },
+      "launch": [
+        1.9,
+        -0.2,
+        -0.3
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "forest-lake",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20.",
+      "volume": "sim/maps/volumes/forest-lake.json",
+      "volumeNote": "Flight volume proposed by suggest_volume.mjs; awaiting review."
+    },
+    "autumn-woods-raw": {
+      "name": "autumn-woods (raw, before the flight volume)",
+      "out": "sim/maps/autumn-woods-raw.json",
+      "cell": 0.3,
+      "crop": {
+        "min": [
+          -27,
+          -11,
+          -42
+        ],
+        "max": [
+          24,
+          36,
+          41
+        ]
+      },
+      "launch": [
+        -1.7,
+        1.3,
+        2.3
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "autumn-woods",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20."
+    },
+    "autumn-woods": {
+      "name": "autumn-woods: flight volume over captured ground",
+      "out": "sim/maps/autumn-woods.json",
+      "cell": 0.3,
+      "crop": {
+        "min": [
+          -27,
+          -11,
+          -42
+        ],
+        "max": [
+          24,
+          36,
+          41
+        ]
+      },
+      "launch": [
+        -1.7,
+        1.3,
+        2.3
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "autumn-woods",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20.",
+      "volume": "sim/maps/volumes/autumn-woods.json",
+      "volumeNote": "Flight volume proposed by suggest_volume.mjs; awaiting review."
+    },
+    "verzasca-valley-raw": {
+      "name": "verzasca-valley (raw, before the flight volume)",
+      "out": "sim/maps/verzasca-valley-raw.json",
+      "cell": 0.35,
+      "crop": {
+        "min": [
+          -83,
+          -17,
+          -56
+        ],
+        "max": [
+          12,
+          33,
+          50
+        ]
+      },
+      "launch": [
+        -33.5,
+        -3.5,
+        -6.1
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "verzasca-valley",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20."
+    },
+    "verzasca-valley": {
+      "name": "verzasca-valley: flight volume over captured ground",
+      "out": "sim/maps/verzasca-valley.json",
+      "cell": 0.35,
+      "crop": {
+        "min": [
+          -83,
+          -17,
+          -56
+        ],
+        "max": [
+          12,
+          33,
+          50
+        ]
+      },
+      "launch": [
+        -33.5,
+        -3.5,
+        -6.1
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "verzasca-valley",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20.",
+      "volume": "sim/maps/volumes/verzasca-valley.json",
+      "volumeNote": "Flight volume proposed by suggest_volume.mjs; awaiting review."
+    },
+    "forest-trail": {
+      "name": "forest-trail: flight volume over captured ground",
+      "out": "sim/maps/forest-trail.json",
+      "cell": 0.25,
+      "crop": {
+        "min": [
+          -22,
+          -7,
+          -26
+        ],
+        "max": [
+          25,
+          27,
+          22
+        ]
+      },
+      "launch": [
+        -0.9,
+        5.3,
+        -0.5
+      ],
+      "terrainRadius": 4,
+      "agl": 8,
+      "ceiling": null,
+      "floodClearance": 0.45,
+      "waypointClearance": 0.8,
+      "waypoints": 220,
+      "maxEdge": 24,
+      "edgeRadius": 0.45,
+      "scale": 1,
+      "maxCells": 26000000,
+      "scene": "forest-trail",
+      "sealBelowGroundBy": 3,
+      "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+      "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20.",
+      "volume": "sim/maps/volumes/forest-trail.json",
+      "volumeNote": "Flight volume proposed by suggest_volume.mjs; awaiting review."
+    }
+  }
+}

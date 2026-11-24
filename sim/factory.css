@@ -1,0 +1,125 @@
+.factory main { position: relative; width: 100%; height: 100dvh; min-height: 320px; overflow: hidden; background: #141719; }
+#factoryCanvas { display: block; width: 100%; height: 100%; }
+.factory-header { position: absolute; inset: 0 0 auto; padding: 20px clamp(16px, 3vw, 42px) 28px; display: flex; align-items: start; justify-content: space-between; gap: 16px; background: linear-gradient(#101214d9, transparent); pointer-events: none; }
+.factory-header a, .factory-header details { pointer-events: auto; }
+.factory-header h1 { margin: 8px 0 3px; font-size: clamp(24px, 4vw, 42px); letter-spacing: -.045em; line-height: 1; color: #fff; }
+.factory-header p { margin: 6px 0; font-size: 13px; color: #e6e7e8; }
+.factory-header a, .factory-header summary { font-size: 13px; color: #eee; }
+.factory-header details { max-width: min(300px, 45%); border-radius: 8px; padding: 8px 10px; background: #121517ca; }
+.factory-header summary { cursor: pointer; margin: 0; }
+#factoryStatus { position: absolute; bottom: 84px; left: 50%; transform: translateX(-50%); background: #121517dd; border-radius: 8px; padding: 8px 14px; text-align: center; font-size: 13px; }
+.factory-bar { position: absolute; bottom: max(14px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 16px; width: max-content; max-width: calc(100% - 24px); padding: 8px 12px; border: 1px solid #ffffff38; border-radius: 12px; background: #16191deb; color: #f2f2f2; font-size: 13px; }
+.camera-options { display: inline-flex; gap: 2px; }
+.factory-bar button { background: transparent; color: inherit; }
+.camera-options button { border-color: transparent; }
+.camera-options button[aria-pressed=true] { background: #e1e6e7; color: #171d21; }
+.factory-bar label { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.factory-bar [hidden] { display: none; }
+.factory-bar input { accent-color: #84d5c6; }
+#cut { width: clamp(66px, 12vw, 155px); }
+#cutValue { min-width: 4ch; font-variant-numeric: tabular-nums; }
+@media (max-width: 650px) { #factoryStatus { bottom: 118px; } }
+
+/* Replay mode (factory-replay.js): a compact card top-left, an outcome
+   card when a flight lands, replay buttons in the camera bar. */
+.replay-card { position: absolute; top: 14px; left: 16px; max-width: min(380px, calc(100% - 32px)); padding: 10px 14px; border-radius: 10px; background: #121517d9; border: 1px solid #ffffff26; color: #eef0f1; font-size: 13px; line-height: 1.4; backdrop-filter: blur(6px); }
+.replay-card .tag { display: inline-block; font-weight: 700; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: #bbf7d0; background: #14532d; padding: 3px 7px; border-radius: 4px; margin-bottom: 6px; }
+.replay-card .tag.offline { color: #fed7aa; background: #7c2d12; }
+.replay-card .title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+.replay-card .title span { font-weight: 400; color: #a1a8b0; font-size: 13px; }
+.replay-card b { color: #fbbf24; }
+.replay-card .live { margin-top: 4px; font-variant-numeric: tabular-nums; color: #7dd3fc; font-size: 12px; }
+.replay-end { position: absolute; bottom: 78px; left: 50%; transform: translateX(-50%); max-width: min(560px, calc(100% - 32px)); padding: 16px 22px; border-radius: 14px; background: #121517e6; border: 1px solid #ffffff30; text-align: center; color: #eef0f1; box-shadow: 0 12px 40px #0008; animation: replay-in .35s ease-out; }
+.replay-end[hidden] { display: none; }
+.replay-end .outcome { font-size: 16px; font-weight: 700; }
+.replay-end .facts { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 16px; margin-top: 6px; font-size: 14px; }
+.replay-end .facts b { color: #fbbf24; }
+.replay-end .note { margin-top: 8px; font-size: 11px; color: #9aa3ab; }
+@keyframes replay-in { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+.replay-controls { display: inline-flex; gap: 2px; padding-right: 10px; margin-right: 2px; border-right: 1px solid #ffffff30; }
+.replay-controls [hidden] { display: none; }
+
+/* Inside the arena's "Full scan" view */
+.embedded .factory-header > div > a { display: none; }
+.embedded .factory-header h1 { font-size: clamp(20px, 3vw, 30px); }
+
+#factoryCanvas[data-navigation="ready"] { cursor: grab; touch-action: none; }
+#factoryCanvas[data-navigation="dragging"] { cursor: grabbing; touch-action: none; }
+#navHint { flex-basis: 100%; text-align: center; margin: -3px 0 0; font-size: 11px; color: #c3c8ca; }
+.touch-hint { display: none; }
+@media (pointer: coarse) {
+  .mouse-hint { display: none; }
+  .touch-hint { display: inline; }
+}
+
+/* Presentation mode (?clean=1): the flight, the story and the shots only. */
+.clean .factory-header { background: none; padding: 14px 16px; justify-content: flex-end; }
+.clean .factory-header > div { display: none; }
+.clean .factory-header details { font-size: 12px; opacity: .7; }
+.clean #track, .clean #chase, .clean #cutControl, .clean #trailControl, .clean #playback, .clean #navHint { display: none !important; }
+.clean .factory-bar { padding: 5px 8px; gap: 6px; font-size: 12px; }
+/* Presentation mode: one line while flying, one line at the end. */
+.clean .replay-card .tag, .clean .replay-card .title span, .clean .replay-card .live,
+.clean .replay-end .facts span:not(:first-child), .clean .replay-end .note,
+.clean #factoryStatus { display: none !important; }
+.clean .replay-card .title { font-size: 13px; opacity: .75; }
+/* Camera shots stay on the keyboard (O T B D); the bar keeps Replay / Next. */
+.clean .camera-options { display: none !important; }
+/* The end card is a small one-line badge: outcome · seeds through. */
+.clean .replay-end { padding: 6px 14px; border-radius: 999px; display: flex; align-items: baseline; gap: 10px; }
+.clean .replay-end[hidden] { display: none; }
+.clean .replay-end .facts { margin-top: 0; font-size: 13px; }
+
+/* Scan ↔ voxel wipe (src/factory-voxels.js): the glowing edge at the split. */
+.vox-edge { position: absolute; top: 0; left: 0; width: 3px; height: 100%; margin-left: -1.5px; background: #fff; box-shadow: 0 0 16px 3px #4de3ffb3, 0 0 2px 1px #fff; pointer-events: none; will-change: transform; }
+.vox-edge[hidden] { display: none; }
+.vox-edge::before, .vox-edge::after { position: absolute; bottom: 92px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; padding: 3px 7px; border-radius: 4px; background: #0b0d0ecc; }
+.vox-edge::before { content: "Scan"; right: 12px; color: #e6e7e8; }
+.vox-edge::after { content: "Simulator voxels"; left: 12px; color: #4de3ff; }
+
+/* The bird while it hunts (factory-replay.js). */
+.hunt-label { position: absolute; left: 0; top: 0; padding: 3px 8px; border-radius: 6px; background: #ff4b3e; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; box-shadow: 0 0 14px #ff4b3e99; pointer-events: none; }
+.hunt-label[hidden] { display: none; }
+
+/* Right-side control panel (src/factory-panel.js, ?panel=1, key P). */
+.scan-panel { display: none; position: absolute; top: 14px; right: 14px; width: 236px; max-height: calc(100% - 28px); overflow-y: auto; padding: 10px 12px 8px; border-radius: 10px; background: #121517e6; border: 1px solid #ffffff26; color: #eef0f1; font-size: 12px; line-height: 1.35; backdrop-filter: blur(6px); box-shadow: 0 10px 30px #0006; }
+.panel-open .scan-panel { display: block; }
+.scan-panel .sp-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px; }
+.scan-panel .sp-head b { font-size: 13px; color: #fff; }
+.scan-panel section { border-top: 1px solid #ffffff1a; padding: 8px 0 6px; }
+.scan-panel section:first-of-type { border-top: 0; }
+.scan-panel h3 { margin: 0 0 6px; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #9aa3ab; }
+.scan-panel button { padding: 4px 8px; font-size: 12px; border-radius: 6px; background: #ffffff0f; border: 1px solid #ffffff21; color: #eef0f1; }
+.scan-panel button:hover:not(:disabled) { border-color: #84d5c6; }
+.scan-panel button[aria-pressed=true] { background: #e1e6e7; color: #171d21; border-color: #e1e6e7; }
+.scan-panel button.on { border-color: #fbbf24; color: #fde68a; }
+.scan-panel [hidden] { display: none !important; }
+.scan-panel .sp-close { padding: 2px 7px; font-size: 11px; color: #a1a8b0; background: transparent; }
+.sp-seg { display: flex; flex-wrap: wrap; gap: 3px; }
+.sp-row { display: flex; align-items: center; gap: 6px; margin: 4px 0; }
+.sp-row > .sp-seg { flex: 1; }
+.sp-row > .sp-seg button { flex: 1; }
+.sp-label { width: 56px; flex: none; color: #a1a8b0; }
+.sp-row input[type=range] { flex: 1; min-width: 0; accent-color: #84d5c6; padding: 0; border: 0; background: none; }
+.sp-cutv { width: 38px; text-align: right; font-variant-numeric: tabular-nums; color: #c3c8ca; }
+.sp-check { cursor: pointer; }
+.sp-check input { accent-color: #84d5c6; margin: 0; }
+.sp-flights { display: flex; flex-direction: column; gap: 3px; }
+.scan-panel .sp-flight { display: grid; grid-template-columns: 8px 1fr; grid-template-rows: auto auto; column-gap: 7px; align-items: center; width: 100%; text-align: left; padding: 5px 8px; }
+.sp-flight .dot { grid-row: span 2; width: 8px; height: 8px; border-radius: 50%; }
+.sp-flight .what { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sp-flight .what b { color: #fff; }
+.sp-flight .how { font-size: 11px; color: #a1a8b0; }
+.scan-panel .sp-flight[aria-pressed=true] { background: #84d5c61f; color: #eef0f1; border-color: #84d5c6; }
+.scan-panel .sp-flight[aria-pressed=true] .how { color: #c3c8ca; }
+.sp-scrub { display: block; width: 100%; margin: 6px 0 2px; accent-color: #84d5c6; padding: 0; border: 0; background: none; }
+.sp-time { font-size: 11px; color: #7dd3fc; font-variant-numeric: tabular-nums; }
+.sp-keys { margin: 4px 0 0; padding-top: 6px; border-top: 1px solid #ffffff1a; font-size: 10.5px; color: #8b949b; }
+.sp-open { position: absolute; top: 14px; right: 14px; padding: 4px 10px; font-size: 11px; border-radius: 999px; background: #121517cc; border: 1px solid #ffffff26; color: #c3c8ca; opacity: .75; }
+.sp-open[hidden] { display: none; }
+.sp-open:hover { opacity: 1; }
+/* Keep the credits and the replay bar clear of the open panel. */
+.panel-open .factory-header { padding-right: 266px; }
+.has-panel:not(.panel-open) .factory-header { padding-right: 130px; }
+.panel-open.clean .factory-bar { display: none; }
+@media (max-width: 650px) { .scan-panel { width: calc(100% - 28px); max-height: 55%; top: auto; bottom: 14px; } .panel-open .factory-header { padding-right: 16px; } }

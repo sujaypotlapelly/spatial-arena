@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "canyon",
+  "build": {
+    "name": "Zohar canyon (barak9177, CC BY 4.0), SuperSplat collider, rescaled x8",
+    "out": "sim/maps/canyon.json",
+    "cell": 0.4,
+    "crop": {
+      "min": [
+        -60,
+        -52,
+        -84
+      ],
+      "max": [
+        124,
+        20,
+        36
+      ]
+    },
+    "launch": [
+      44,
+      8,
+      -16
+    ],
+    "terrainRadius": 4,
+    "agl": null,
+    "ceiling": null,
+    "floodClearance": 0.45,
+    "waypointClearance": 0.8,
+    "waypoints": 220,
+    "maxEdge": 24,
+    "edgeRadius": 0.45,
+    "unitsNote": "Scene units x8, treated as metres: chosen by eye with a correctly scaled drone in a lower channel; there the narrowest pinch is about 6 m. The collider's native 0.05-unit voxels become 0.4 m, so the grid cell is 0.4. The crop top (y = 20, the earlier 2.5-unit ceiling x8) is the altitude limit that seals the plateaus. Not independently calibrated.",
+    "scale": 8,
+    "scaleNote": "Amendment 2: x4 -> x8 at Sujay's visual choice; whole canyon, same ceiling rule scaled.",
+    "maxCells": 26000000
+  },
+  "registryOrder": 0
+}

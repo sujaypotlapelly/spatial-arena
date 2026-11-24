@@ -1,0 +1,21 @@
+{
+ "note": "Hidden route splits (sim/tools/arena/hidden_split.mjs). Each commitment is sha256 of the canonical body (scheme, environment, n, seed, generator, map, publicSets); only the seed is private until the reveal. The routes were not generated when the commitment was made.",
+ "splits": [
+  {
+   "environment": "factory",
+   "n": 24,
+   "scheme": "spatial-arena-hidden-split/1",
+   "commitment": "6f5316a95d6871309b471e53ee8c85a3c3fa70bef6ca95f735569ce5804ac8b2",
+   "generator": "4d758e7149e3414b832c58e9d00b93900b761702312c1aaa1202c244db9a5cd9",
+   "generatorFiles": [
+    "sim/tools/arena/hidden_split.mjs",
+    "sim/src/gym/reach.js"
+   ],
+   "map": "34b19badd2decf00c4994d49291508a792275b0933c3624f876b085858f2d5aa",
+   "publicSets": "5d9061ea10c79b293903399d2cc4b6707ab75b37194fb98bacf0a58212bba62c",
+   "committedAt": "2026-11-20T05:51:14.286Z",
+   "codeCommit": "09b25c4",
+   "revealed": null
+  }
+ ]
+}

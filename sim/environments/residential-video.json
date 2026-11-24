@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "residential-video",
+  "kind": "scan",
+  "scene": "residential",
+  "mapBuild": "residential-video",
+  "videoOnly": true,
+  "harness": {
+    "map": "sim/maps/residential-video.json",
+    "reach": {
+      "train": 0,
+      "dev": 0,
+      "heldout": 0,
+      "test": 0
+    },
+    "scene": "video only",
+    "routeText": "",
+    "units": "scene units",
+    "videoOnly": true
+  },
+  "admission": {
+    "stage": null,
+    "checkedAt": null,
+    "commit": null,
+    "gates": {},
+    "signoffs": {}
+  },
+  "registryOrder": 7
+}

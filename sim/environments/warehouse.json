@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "warehouse",
+  "kind": "boxes",
+  "scene": null,
+  "mapBuild": null,
+  "videoOnly": false,
+  "harness": {
+    "map": "sim/maps/warehouse.json",
+    "scenarioFile": "sim/scenarios/reach-warehouse.json",
+    "reach": {
+      "train": 12,
+      "dev": 24,
+      "heldout": 0,
+      "test": 24,
+      "seed": 907033365,
+      "idPrefix": "warehouse-",
+      "windOffset": 765000
+    },
+    "scene": "The building is a warehouse with six storage bays joined by doorways: partition walls, rows of shelving three metres high, crates and a low duct.",
+    "routeText": "Routes are 15-35 m long",
+    "units": "metres",
+    "addedBy": "sim/tools/maps/add_place.mjs"
+  },
+  "admission": {
+    "stage": 2,
+    "checkedAt": "2026-11-20",
+    "commit": "95840e3",
+    "gates": {
+      "licence": {
+        "stage": 0,
+        "status": "pass",
+        "detail": "Built in this repo from a box description; covered by the repo's own licence."
+      },
+      "scale": {
+        "stage": 1,
+        "status": "pass",
+        "detail": "Box places are written in metres."
+      },
+      "passage": {
+        "stage": 1,
+        "status": "pass",
+        "value": 0.9,
+        "detail": "Narrowest gap on the flight graph: 0.90 m (the drone is 0.50 m wide) at [4.4, 2.5, 22.9]."
+      },
+      "alignment": {
+        "stage": 1,
+        "status": "pass",
+        "detail": "No scan: the box description is the geometry."
+      },
+      "coverage": {
+        "stage": 1,
+        "status": "pass",
+        "detail": "No scan: every space is defined."
+      },
+      "scene-text": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "The building is a warehouse with six storage bays joined by doorways: partition walls, rows of shelving three metres high, crates and a low duct."
+      },
+      "routes": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "60 routes (12 train, 24 dev, 0 heldout, 24 test) match sim/scenarios/reach-warehouse.json."
+      },
+      "planner": {
+        "stage": 2,
+        "status": "pass",
+        "value": 1,
+        "detail": "100% of 24 dev routes (needs 90%)."
+      },
+      "straight": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.375,
+        "detail": "37.5% reached flying straight (at most 50%)."
+      },
+      "between": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.5833333333333334,
+        "detail": "Reactive avoider 58.3%, between straight 37.5% and planner 100%."
+      },
+      "replay": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "72 of 72 flights replay exactly."
+      }
+    },
+    "signoffs": {},
+    "readyIfApproved": 2
+  },
+  "registryOrder": 8
+}

@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "huashan-path",
+  "registry": {
+    "id": "huashan-path",
+    "title": "The Precipitous Huashan, Virtual Hiking",
+    "purpose": "Arena environment candidate: mountain path on a cliff: a steep rock face, a narrow paved path with snow and a railing",
+    "status": "added by sim/tools/env/add_scene.mjs; awaiting review",
+    "source": {
+      "hash": "aa909429",
+      "originalTitle": "The Precipitous Huashan, Virtual Hiking",
+      "sceneUrl": "https://superspl.at/scene/aa909429",
+      "viewerUrl": "https://superspl.at/s?id=aa909429",
+      "creator": "wu3d",
+      "creatorUrl": "https://superspl.at/user/wu3d",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"The Precipitous Huashan, Virtual Hiking\" by wu3d (https://superspl.at/scene/aa909429), licensed under CC BY 4.0.",
+      "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+    },
+    "assets": {
+      "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/aa909429/v1/meta.json",
+      "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/aa909429/v1/scene.voxel.json",
+      "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/aa909429/v1/scene.voxel.bin",
+      "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/aa909429/v1/xl.webp",
+      "format": "sog",
+      "publishedSizeBytes": 43956771,
+      "cacheDirectory": "cache/splat-scenes/huashan-path",
+      "collisionFormat": "supersplat-voxel-1.1",
+      "collisionResolution": null,
+      "collisionGridBounds": {
+        "min": [
+          -35.00000000000001,
+          -2.6000000000000005,
+          -7.800000000000001
+        ],
+        "max": [
+          45.6,
+          30.6,
+          16.2
+        ]
+      }
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          180
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "official-viewer-coordinate-convention; physical scale provisional",
+      "units": "source scene units; not independently calibrated metres",
+      "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+    },
+    "camera": {
+      "position": [
+        5.299999999999997,
+        30.6,
+        -7.800000000000001
+      ],
+      "target": [
+        5.299999999999997,
+        14,
+        4.199999999999999
+      ],
+      "fov": 70,
+      "sourceFrame": "engine world",
+      "status": "default overview from the collider bounds"
+    },
+    "flightBounds": null,
+    "routes": [],
+    "reviewActive": true,
+    "reviewDecision": "pending",
+    "reviewNote": "Picked from the PlayCanvas explore API as a candidate outdoor scene (mountains, forests, natural landscapes, small villages); look not yet approved."
+  },
+  "calibration": null,
+  "admission": {
+    "stage": null,
+    "checkedAt": "2026-11-20",
+    "commit": null,
+    "gates": {
+      "licence": {
+        "status": "pass",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-20 from https://superspl.at/scene/aa909429."
+      },
+      "attribution": {
+        "status": "pass",
+        "detail": "\"The Precipitous Huashan, Virtual Hiking\" by wu3d (https://superspl.at/scene/aa909429), licensed under CC BY 4.0."
+      },
+      "review": {
+        "status": "fail",
+        "detail": "Review decision “pending”: Picked from the PlayCanvas explore API as a candidate outdoor scene (mountains, forests, natural landscapes, small villages); look not yet approved."
+      }
+    },
+    "signoffs": {}
+  },
+  "registryOrder": 10
+}

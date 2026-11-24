@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "double-arch",
+  "build": {
+    "name": "double-arch: flight volume over captured ground",
+    "out": "sim/maps/double-arch.json",
+    "cell": 0.4,
+    "crop": {
+      "min": [
+        -47,
+        -9,
+        -72
+      ],
+      "max": [
+        36,
+        55,
+        32
+      ]
+    },
+    "launch": [
+      -3.7,
+      -2.7,
+      -23.1
+    ],
+    "terrainRadius": 4,
+    "agl": 8,
+    "ceiling": null,
+    "floodClearance": 0.45,
+    "waypointClearance": 0.8,
+    "waypoints": 220,
+    "maxEdge": 24,
+    "edgeRadius": 0.45,
+    "scale": 1,
+    "maxCells": 26000000,
+    "scene": "double-arch",
+    "sealBelowGroundBy": 3,
+    "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+    "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20.",
+    "volume": "sim/maps/volumes/double-arch.json",
+    "volumeNote": "Flight volume proposed by suggest_volume.mjs; awaiting review."
+  },
+  "registryOrder": 17
+}

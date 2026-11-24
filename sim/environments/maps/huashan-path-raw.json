@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "huashan-path-raw",
+  "build": {
+    "name": "huashan-path (raw, before the flight volume)",
+    "out": "sim/maps/huashan-path-raw.json",
+    "cell": 0.25,
+    "crop": {
+      "min": [
+        -36,
+        -4,
+        -8
+      ],
+      "max": [
+        46,
+        31,
+        17
+      ]
+    },
+    "launch": [
+      5.5,
+      15.6,
+      1.7
+    ],
+    "terrainRadius": 4,
+    "agl": 8,
+    "ceiling": null,
+    "floodClearance": 0.45,
+    "waypointClearance": 0.8,
+    "waypoints": 220,
+    "maxEdge": 24,
+    "edgeRadius": 0.45,
+    "scale": 1,
+    "maxCells": 26000000,
+    "scene": "huashan-path",
+    "sealBelowGroundBy": 3,
+    "unitsNote": "Scene units treated as metres at scale 1, without independent calibration.",
+    "autoNote": "Parameters chosen by sim/tools/env/add_scene.mjs from the collider and scan density on 2026-11-20."
+  },
+  "registryOrder": 10
+}

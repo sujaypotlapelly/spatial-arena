@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "hill-lodge",
+  "registry": {
+    "id": "hill-lodge",
+    "title": "Lodge on a hill",
+    "purpose": "Arena environment candidate: hillside property: a thatched lodge, terraced gardens, shrubs and trees on a slope",
+    "status": "approved; see admission",
+    "source": {
+      "hash": "c393e279",
+      "originalTitle": "Lodge on a hill",
+      "sceneUrl": "https://superspl.at/scene/c393e279",
+      "viewerUrl": "https://superspl.at/s?id=c393e279",
+      "creator": "zartan_3dfpv",
+      "creatorUrl": "https://superspl.at/user/zartan_3dfpv",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"Lodge on a hill\" by zartan_3dfpv (https://superspl.at/scene/c393e279), licensed under CC BY 4.0.",
+      "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+    },
+    "assets": {
+      "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/c393e279/v1/meta.json",
+      "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/c393e279/v1/scene.voxel.json",
+      "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/c393e279/v1/scene.voxel.bin",
+      "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/c393e279/v1/xl.webp",
+      "format": "sog",
+      "publishedSizeBytes": 45149557,
+      "cacheDirectory": "cache/splat-scenes/hill-lodge",
+      "collisionFormat": "supersplat-voxel-1.1",
+      "collisionResolution": null,
+      "collisionGridBounds": {
+        "min": [
+          -52.2,
+          -8.200000000000001,
+          -25.400000000000002
+        ],
+        "max": [
+          33,
+          7,
+          57.2
+        ]
+      }
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          180
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "official-viewer-coordinate-convention; physical scale provisional",
+      "units": "source scene units; not independently calibrated metres",
+      "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+    },
+    "camera": {
+      "position": [
+        -9.600000000000001,
+        7,
+        -25.400000000000002
+      ],
+      "target": [
+        -9.600000000000001,
+        -0.6000000000000005,
+        15.9
+      ],
+      "fov": 70,
+      "sourceFrame": "engine world",
+      "status": "default overview from the collider bounds"
+    },
+    "flightBounds": null,
+    "routes": [],
+    "reviewActive": true,
+    "reviewDecision": "approved",
+    "reviewNote": "Scene approved on 2026-11-20."
+  },
+  "calibration": null,
+  "admission": {
+    "stage": 0,
+    "checkedAt": "2026-11-20",
+    "commit": null,
+    "gates": {
+      "licence": {
+        "status": "pass",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-20 from https://superspl.at/scene/c393e279."
+      },
+      "attribution": {
+        "status": "pass",
+        "detail": "\"Lodge on a hill\" by zartan_3dfpv (https://superspl.at/scene/c393e279), licensed under CC BY 4.0."
+      },
+      "review": {
+        "status": "pass",
+        "detail": "Review decision “approved”: Scene approved on 2026-11-20."
+      }
+    },
+    "signoffs": {}
+  },
+  "registryOrder": 7
+}

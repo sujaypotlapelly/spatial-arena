@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Factory flight · Spatial Arena</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="factory.css">
+</head>
+<body class="factory">
+  <main>
+    <canvas id="factoryCanvas" aria-label="3D view of the abandoned factory"></canvas>
+    <header class="factory-header">
+      <div><a href="./">← Spatial Arena</a><h1>Factory flight</h1><p>DJI FPV &amp; White Eagle · scripted preview</p></div>
+      <details><summary>Credits</summary>
+        <p>Factory scan by <a href="https://superspl.at/user/schindelar3d">Christoph Schindelar</a>, from <a href="https://playcanvas.com/project/1480299">Iakov Sumygin’s PlayCanvas demo</a>.</p>
+        <p><a href="https://sketchfab.com/3d-models/white-eagle-animation-fast-fly-30203bf39e5145f19c79e83c550139d3">White Eagle</a> by GremorySaiyan and <a href="https://sketchfab.com/3d-models/dji-fpv-28321515f60346c0becb244ed094c1f8">DJI FPV</a> by Vitalii Sushko. Both <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Scaled and aligned for flight.</p>
+      </details>
+    </header>
+    <p id="factoryStatus" role="status">Loading factory scan…</p>
+    <div class="factory-bar" aria-label="Factory view controls">
+      <div class="camera-options" role="group" aria-label="Camera">
+        <button id="overview" data-shot="angled" aria-pressed="true">Angled</button>
+        <button id="top" data-shot="top" aria-pressed="false">Top-down</button>
+        <button id="track" data-shot="track" aria-pressed="false">Track flight</button>
+        <button id="followBird" data-shot="bird" aria-pressed="false" title="Keep the bird in the middle of the view (key B)">Follow bird</button>
+        <button id="followDrone" data-shot="drone" aria-pressed="false" title="Keep the drone in the middle of the view (key D)">Follow drone</button>
+        <button id="chase" data-shot="chase" aria-pressed="false">Chase</button>
+      </div>
+      <label id="cutControl" for="cut">Roof cut <input id="cut" type="range" min="-1.5" max="4.5" step=".1" value="2.3"><output id="cutValue" for="cut">2.3 m</output></label>
+      <label id="trailControl"><input id="trails" type="checkbox" checked> Trails</label>
+      <button id="playback">Pause flight</button>
+      <p id="navHint"><span class="mouse-hint">Drag to pan · Shift-drag to orbit · Scroll to zoom</span><span class="touch-hint">Drag to pan · Pinch to zoom · Twist to rotate</span> · Select a shot to reset</p>
+    </div>
+  </main>
+  <script type="module">
+    // ?embed=1: shown inside the arena's "Full scan" view; ?recording=parent
+    // replays the arena's current session instead of a file.
+    const q = new URLSearchParams(location.search);
+    if (q.get('embed')) document.body.classList.add('embedded');
+    // ?clean=1: presentation mode for the demo controller. Only the flight,
+    // the story caption, play buttons and camera shots stay on screen.
+    if (q.get('clean')) document.body.classList.add('clean');
+    // ?capture=1: frame-exact rendering through window.factoryCapture (see
+    // src/factory-replay.js); the replay only moves when told to.
+    const capture = !!q.get('capture');
+    // Keys are ignored only while typing (a slider or checkbox keeps them).
+    const typing = e => e.metaKey || e.ctrlKey || e.altKey || !!e.target?.matches?.('input:not([type=range]):not([type=checkbox]), select, textarea');
+    import('./src/factory.js').then(m => m.startFactory()).then(async ctx => {
+      // O overview · T top-down · B follow bird · D follow drone
+      const keyShots = { o: 'angled', t: 'top', b: 'bird', d: 'drone' };
+      addEventListener('keydown', e => {
+        if (typing(e)) return;
+        const shot = keyShots[e.key.toLowerCase()];
+        if (shot) ctx.selectCamera(shot);
+      });
+      // The simulator's voxel map under the scan. V plays one scan → voxels
+      // → scan wipe.
+      try {
+        ctx.voxels = (await import('./src/factory-voxels.js')).createVoxelView(ctx, { capture });
+        addEventListener('keydown', e => {
+          if (typing(e)) return;
+          if (e.key === 'v' || e.key === 'V') ctx.voxels.wipeOnce();
+        });
+      } catch (error) {
+        console.warn('Voxel view unavailable:', error);
+      }
+      // ?recording=recordings/<file>.json replays recorded Ripple episodes in the scan.
+      const rec = q.get('recording');
+      if (rec) await import('./src/factory-replay.js').then(r => r.startReplay(ctx, rec));
+      // ?panel=1 opens the right-side control panel; P shows or hides it.
+      try {
+        (await import('./src/factory-panel.js')).createPanel(ctx, { open: !!q.get('panel') });
+      } catch (error) {
+        console.warn('Control panel unavailable:', error);
+      }
+    }).catch(error => {
+      document.getElementById('factoryStatus').hidden = false;
+      document.getElementById('factoryStatus').textContent = 'Could not open the factory. ' + error.message;
+      document.querySelectorAll('.factory-bar input, .factory-bar button').forEach(el => el.disabled = true);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "id": "fire-inn",
+  "registry": {
+    "id": "fire-inn",
+    "title": "Burnt inn rescue drill",
+    "purpose": "Reach a marked inspection checkpoint at the burnt remains of the World’s End Inn. The captured damage is real; any rescue mission, smoke, or active fire added to this scene is simulated.",
+    "status": "geometric-route-candidates; awaiting visual alignment and model flight",
+    "reviewActive": false,
+    "reviewDecision": "approved-reserve",
+    "reviewNote": "Reserve scene for the rescue demonstration.",
+    "source": {
+      "hash": "8ee91366",
+      "originalTitle": "World's End Inn",
+      "sceneUrl": "https://superspl.at/scene/8ee91366",
+      "viewerUrl": "https://superspl.at/s?id=8ee91366",
+      "creator": "artfletch",
+      "creatorUrl": "https://superspl.at/user/artfletch",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"World’s End Inn\" by artfletch (https://superspl.at/scene/8ee91366), licensed under CC BY 4.0.",
+      "captureDescription": "The burnt remains of the World's End Pub by the river and fort at Tilbury, Essex.\n\nThe pub was destroyed by fire on 23rd September 2026.\n\nhttps://historicengland.org.uk/listing/the-list/list-entry/1111632\n\nDate: late 17th Century.\n\nPhotos taken in September 2026 and processed in Reality Capture and Lichtfeld Studio.",
+      "modifications": "Rescue checkpoint annotations and drone visualization; source scale retained pending independent calibration."
+    },
+    "assets": {
+      "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/8ee91366/v1/lod-meta.json",
+      "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/8ee91366/v1/scene.voxel.json",
+      "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/8ee91366/v1/scene.voxel.bin",
+      "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/8ee91366/v1/xl.webp",
+      "format": "ssog",
+      "publishedSizeBytes": 175696955,
+      "cacheDirectory": "cache/splat-scenes/fire-inn",
+      "collisionFormat": "supersplat-voxel-1.1",
+      "collisionResolution": 0.05,
+      "collisionGridBounds": {
+        "min": [
+          -75.2,
+          -3.8000000000000043,
+          -72.00000000000001
+        ],
+        "max": [
+          75.00000000000001,
+          22.999999999999996,
+          73.8
+        ]
+      }
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          180
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "official-viewer-coordinate-convention; physical scale provisional",
+      "units": "source scene units; not independently calibrated metres",
+      "note": "Current official SOG viewer rotates splats180degrees aroundZ. Published v1.1 collision and initial camera are already in engine world; source scale and coordinates retained."
+    },
+    "camera": {
+      "position": [
+        21.842103958129883,
+        12.755606651306152,
+        0.1757597029209137
+      ],
+      "target": [
+        -3.6468656086732647,
+        -0.03443865352157616,
+        -3.588123934705296
+      ],
+      "fov": 110,
+      "sourceFrame": "public SuperSplat viewer engine world",
+      "status": "author-published overview camera"
+    },
+    "flightBounds": {
+      "min": [
+        -16,
+        -1,
+        -18
+      ],
+      "max": [
+        17,
+        8,
+        12
+      ],
+      "status": "provisional local building crop; awaiting collider scout and visual route inspection"
+    },
+    "routes": [
+      {
+        "id": "fire-inn-scout-1",
+        "start": [
+          12,
+          3,
+          0
+        ],
+        "goal": [
+          -0.5,
+          3.5,
+          -11.5
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+        "diagnosticPath": [
+          [
+            12,
+            3,
+            0
+          ],
+          [
+            11.5,
+            5,
+            0
+          ],
+          [
+            9,
+            5.5,
+            1.5
+          ],
+          [
+            -0.5,
+            5.5,
+            1
+          ],
+          [
+            -0.5,
+            5,
+            -5
+          ],
+          [
+            -0.5,
+            3.5,
+            -11.5
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 27.224370821038175,
+          "straightDistance": 16.99264546796643,
+          "detourFactor": 1.6021266890055472,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "clearanceRadius": 0.35,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.35,
+            "samples": 1096,
+            "clear": true
+          }
+        }
+      },
+      {
+        "id": "fire-inn-scout-2",
+        "start": [
+          12,
+          3,
+          0
+        ],
+        "goal": [
+          -5,
+          4,
+          -12
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+        "diagnosticPath": [
+          [
+            12,
+            3,
+            0
+          ],
+          [
+            11.5,
+            5,
+            0
+          ],
+          [
+            9,
+            5.5,
+            1.5
+          ],
+          [
+            -5,
+            5,
+            1
+          ],
+          [
+            -5,
+            4,
+            -12
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 32.075843283640125,
+          "straightDistance": 20.83266665599966,
+          "detourFactor": 1.5396897484750236,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "clearanceRadius": 0.35,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.35,
+            "samples": 1289,
+            "clear": true
+          }
+        }
+      },
+      {
+        "id": "fire-inn-scout-3",
+        "start": [
+          12,
+          3,
+          0
+        ],
+        "goal": [
+          -6.5,
+          3.5,
+          -10.5
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+        "diagnosticPath": [
+          [
+            12,
+            3,
+            0
+          ],
+          [
+            11.5,
+            5,
+            0
+          ],
+          [
+            9,
+            5.5,
+            1.5
+          ],
+          [
+            -5,
+            5,
+            1
+          ],
+          [
+            -5,
+            5,
+            -0.5
+          ],
+          [
+            -5,
+            4,
+            -0.5
+          ],
+          [
+            -6.5,
+            4,
+            -2
+          ],
+          [
+            -6.5,
+            4,
+            -10.5
+          ],
+          [
+            -6.5,
+            3.5,
+            -10.5
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 32.65875881679447,
+          "straightDistance": 21.277922830953212,
+          "detourFactor": 1.5348659301125689,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "clearanceRadius": 0.35,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.35,
+            "samples": 1316,
+            "clear": true
+          }
+        }
+      }
+    ],
+    "routeScout": {
+      "tool": "sim/tools/maps/scout_splat_routes.mjs",
+      "reportPath": "cache/splat-scenes/fire-inn/route-scout-clearance.json",
+      "cell": 0.5,
+      "scoutAnchor": [
+        10,
+        2,
+        0
+      ],
+      "freeSupportedCells": 17343,
+      "reachableSupportedCells": 17309,
+      "cameraAnchorSnapDistance": 2.23606797749979,
+      "physicalScaleCalibrated": false,
+      "clearanceRadius": 0.35,
+      "note": "The author camera is a high overview; routes were scouted from an explicit local ground-level anchor[10, 2, 0], then snapped to[12, 3, 0]. Diagnostic paths are sampled connectivity checks, not model commands or recordings."
+    }
+  },
+  "calibration": null,
+  "admission": {
+    "stage": null,
+    "checkedAt": null,
+    "commit": null,
+    "gates": {},
+    "signoffs": {}
+  },
+  "registryOrder": 5
+}

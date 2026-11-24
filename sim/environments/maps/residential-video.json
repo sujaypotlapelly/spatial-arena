@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "residential-video",
+  "build": {
+    "name": "Utlida cottages, scan collider without the altitude geofence (video path checks only; not a benchmark map)",
+    "out": "sim/maps/residential-video.json",
+    "cell": 0.25,
+    "crop": {
+      "min": [
+        -18,
+        -1,
+        -29
+      ],
+      "max": [
+        20,
+        13,
+        28
+      ]
+    },
+    "launch": [
+      0,
+      3.8,
+      -17
+    ],
+    "terrainRadius": 6,
+    "agl": null,
+    "ceiling": null,
+    "floodClearance": 0.45,
+    "waypointClearance": 0.8,
+    "waypoints": 90,
+    "maxEdge": 10,
+    "edgeRadius": 0.45,
+    "unitsNote": "Scene units; roughly metres (the rear porch roof sits about 2.5 units above its floor) but not independently calibrated.",
+    "scene": "residential"
+  },
+  "registryOrder": 3
+}

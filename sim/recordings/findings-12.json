@@ -1,0 +1,616 @@
+{
+  "generatedAt": "2026-11-14T02:31:42.256Z",
+  "groupBy": "key",
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 20261113,
+    "unit": "episode (paired: scenario)"
+  },
+  "files": [
+    {
+      "path": "sim/recordings/ripple-harness-AD.json",
+      "offline": false,
+      "exportedAt": "2026-11-14T02:16:52.214Z",
+      "evaluatedAt": "2026-11-14T02:16:52.212Z",
+      "trainingEpisodes": 0
+    },
+    {
+      "path": "sim/recordings/ripple-demo.json",
+      "offline": false,
+      "exportedAt": "2026-11-14T02:23:02.777Z",
+      "evaluatedAt": "2026-11-14T02:23:02.776Z",
+      "trainingEpisodes": 8
+    },
+    {
+      "path": "sim/recordings/batch/h12-rep2.json",
+      "offline": false,
+      "exportedAt": "2026-11-14T02:29:31.232Z",
+      "evaluatedAt": "2026-11-14T02:29:31.229Z",
+      "trainingEpisodes": 0
+    }
+  ],
+  "excluded": [],
+  "totals": {
+    "files": 3,
+    "scenarios": 12,
+    "decisions": 192,
+    "trials": 768
+  },
+  "scenarioConflicts": [],
+  "baseline": "raw",
+  "conditions": {
+    "shortest": {
+      "label": "Shortest-path comparator",
+      "model": false,
+      "nFiles": 3,
+      "nScenarios": 12,
+      "nDecisions": 36,
+      "nTrials": 144,
+      "success": {
+        "value": 0.08333333333333333,
+        "ci": [
+          0.034722222222222224,
+          0.1388888888888889
+        ],
+        "n": 36
+      },
+      "solved": 0.08333333333333333,
+      "family": null,
+      "behavior": null,
+      "danger": null,
+      "prediction": null,
+      "invalid": 0,
+      "medianLatencyS": null,
+      "toolCallsPerDecision": null,
+      "hosts": [],
+      "perFile": [
+        {
+          "file": "sim/recordings/ripple-harness-AD.json",
+          "decisions": 12,
+          "success": 0.08333333333333333
+        },
+        {
+          "file": "sim/recordings/ripple-demo.json",
+          "decisions": 12,
+          "success": 0.08333333333333333
+        },
+        {
+          "file": "sim/recordings/batch/h12-rep2.json",
+          "decisions": 12,
+          "success": 0.08333333333333333
+        }
+      ]
+    },
+    "raw": {
+      "label": "A · Raw coordinates",
+      "model": true,
+      "nFiles": 3,
+      "nScenarios": 12,
+      "nDecisions": 36,
+      "nTrials": 144,
+      "success": {
+        "value": 0.7777777777777778,
+        "ci": [
+          0.6734375,
+          0.8680555555555556
+        ],
+        "n": 36
+      },
+      "solved": 0.8611111111111112,
+      "family": {
+        "value": 0.5,
+        "ci": [
+          0.3333333333333333,
+          0.6666666666666666
+        ],
+        "n": 36
+      },
+      "behavior": {
+        "value": 0.3611111111111111,
+        "ci": [
+          0.2222222222222222,
+          0.5277777777777778
+        ],
+        "n": 36
+      },
+      "danger": {
+        "value": 9.135714285714284,
+        "ci": [
+          7.42125,
+          10.857142857142858
+        ],
+        "n": 28
+      },
+      "prediction": {
+        "value": 7.383333333333332,
+        "ci": [
+          6.166597222222222,
+          8.741805555555551
+        ],
+        "n": 36
+      },
+      "invalid": 0,
+      "medianLatencyS": 3.1545,
+      "toolCallsPerDecision": 0,
+      "hosts": [
+        "GMICloud",
+        "PrimeIntellect"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/ripple-harness-AD.json",
+          "decisions": 12,
+          "success": 0.7708333333333334
+        },
+        {
+          "file": "sim/recordings/ripple-demo.json",
+          "decisions": 12,
+          "success": 0.7708333333333334
+        },
+        {
+          "file": "sim/recordings/batch/h12-rep2.json",
+          "decisions": 12,
+          "success": 0.7916666666666666
+        }
+      ]
+    },
+    "think": {
+      "label": "B · Raw + thinking",
+      "model": true,
+      "nFiles": 2,
+      "nScenarios": 12,
+      "nDecisions": 24,
+      "nTrials": 96,
+      "success": {
+        "value": 0.6875,
+        "ci": [
+          0.5520833333333334,
+          0.8125
+        ],
+        "n": 24
+      },
+      "solved": 0.8333333333333334,
+      "family": {
+        "value": 0.5833333333333334,
+        "ci": [
+          0.375,
+          0.7916666666666666
+        ],
+        "n": 24
+      },
+      "behavior": {
+        "value": 0.4166666666666667,
+        "ci": [
+          0.25,
+          0.625
+        ],
+        "n": 24
+      },
+      "danger": {
+        "value": 7.127272727272728,
+        "ci": [
+          3.954318181818181,
+          11.446363636363632
+        ],
+        "n": 11
+      },
+      "prediction": {
+        "value": 6.409090909090909,
+        "ci": [
+          4.808977272727272,
+          7.977272727272726
+        ],
+        "n": 22
+      },
+      "invalid": 2,
+      "medianLatencyS": 160.858,
+      "toolCallsPerDecision": 0,
+      "hosts": [
+        "PrimeIntellect",
+        "Together"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/ripple-harness-AD.json",
+          "decisions": 12,
+          "success": 0.6666666666666666
+        },
+        {
+          "file": "sim/recordings/ripple-demo.json",
+          "decisions": 12,
+          "success": 0.7083333333333334
+        }
+      ]
+    },
+    "tools": {
+      "label": "C · Geometry tools",
+      "model": true,
+      "nFiles": 3,
+      "nScenarios": 12,
+      "nDecisions": 36,
+      "nTrials": 144,
+      "success": {
+        "value": 0.5972222222222222,
+        "ci": [
+          0.4722222222222222,
+          0.7222222222222222
+        ],
+        "n": 36
+      },
+      "solved": 0.6666666666666666,
+      "family": {
+        "value": 0.5277777777777778,
+        "ci": [
+          0.3611111111111111,
+          0.6944444444444444
+        ],
+        "n": 36
+      },
+      "behavior": {
+        "value": 0.2222222222222222,
+        "ci": [
+          0.1111111111111111,
+          0.3611111111111111
+        ],
+        "n": 36
+      },
+      "danger": {
+        "value": 9.583333333333336,
+        "ci": [
+          8.055486111111115,
+          11.211180555555554
+        ],
+        "n": 36
+      },
+      "prediction": {
+        "value": 6.422222222222223,
+        "ci": [
+          5.308194444444445,
+          7.58888888888889
+        ],
+        "n": 36
+      },
+      "invalid": 0,
+      "medianLatencyS": 4.3285,
+      "toolCallsPerDecision": 1.6944444444444444,
+      "hosts": [
+        "PrimeIntellect"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/ripple-harness-AD.json",
+          "decisions": 12,
+          "success": 0.6041666666666666
+        },
+        {
+          "file": "sim/recordings/ripple-demo.json",
+          "decisions": 12,
+          "success": 0.5833333333333334
+        },
+        {
+          "file": "sim/recordings/batch/h12-rep2.json",
+          "decisions": 12,
+          "success": 0.6041666666666666
+        }
+      ]
+    },
+    "structured": {
+      "label": "D · Structured steps",
+      "model": true,
+      "nFiles": 3,
+      "nScenarios": 12,
+      "nDecisions": 36,
+      "nTrials": 144,
+      "success": {
+        "value": 0.6875,
+        "ci": [
+          0.5694444444444444,
+          0.8055555555555556
+        ],
+        "n": 36
+      },
+      "solved": 0.7222222222222222,
+      "family": {
+        "value": 0.4722222222222222,
+        "ci": [
+          0.3055555555555556,
+          0.6388888888888888
+        ],
+        "n": 36
+      },
+      "behavior": {
+        "value": 0.3333333333333333,
+        "ci": [
+          0.19444444444444445,
+          0.5
+        ],
+        "n": 36
+      },
+      "danger": {
+        "value": 7.721875000000001,
+        "ci": [
+          6.274140624999999,
+          9.23453125
+        ],
+        "n": 32
+      },
+      "prediction": {
+        "value": 6.472222222222222,
+        "ci": [
+          5.294444444444444,
+          7.708611111111111
+        ],
+        "n": 36
+      },
+      "invalid": 0,
+      "medianLatencyS": 3.532,
+      "toolCallsPerDecision": 0,
+      "hosts": [
+        "GMICloud",
+        "PrimeIntellect"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/ripple-harness-AD.json",
+          "decisions": 12,
+          "success": 0.7291666666666666
+        },
+        {
+          "file": "sim/recordings/ripple-demo.json",
+          "decisions": 12,
+          "success": 0.6041666666666666
+        },
+        {
+          "file": "sim/recordings/batch/h12-rep2.json",
+          "decisions": 12,
+          "success": 0.7291666666666666
+        }
+      ]
+    },
+    "feedback": {
+      "label": "E · Raw + learned strategy",
+      "model": true,
+      "nFiles": 1,
+      "nScenarios": 12,
+      "nDecisions": 12,
+      "nTrials": 48,
+      "success": {
+        "value": 0.6666666666666666,
+        "ci": [
+          0.4583333333333333,
+          0.8541666666666666
+        ],
+        "n": 12
+      },
+      "solved": 0.8333333333333334,
+      "family": {
+        "value": 0.5,
+        "ci": [
+          0.25,
+          0.752083333333322
+        ],
+        "n": 12
+      },
+      "behavior": {
+        "value": 0.25,
+        "ci": [
+          0,
+          0.5
+        ],
+        "n": 12
+      },
+      "danger": {
+        "value": 7.454545454545454,
+        "ci": [
+          5.154545454545454,
+          9.918181818181818
+        ],
+        "n": 11
+      },
+      "prediction": {
+        "value": 6.858333333333333,
+        "ci": [
+          5.208333333333333,
+          8.691666666666665
+        ],
+        "n": 12
+      },
+      "invalid": 0,
+      "medianLatencyS": 2.7875,
+      "toolCallsPerDecision": 0,
+      "hosts": [
+        "PrimeIntellect",
+        "GMICloud"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/ripple-demo.json",
+          "decisions": 12,
+          "success": 0.6666666666666666
+        }
+      ]
+    },
+    "tools_structured": {
+      "label": "F · Tools + structured",
+      "model": true,
+      "nFiles": 1,
+      "nScenarios": 12,
+      "nDecisions": 12,
+      "nTrials": 48,
+      "success": {
+        "value": 0.7291666666666666,
+        "ci": [
+          0.5208333333333334,
+          0.9166666666666666
+        ],
+        "n": 12
+      },
+      "solved": 0.8333333333333334,
+      "family": {
+        "value": 0.3333333333333333,
+        "ci": [
+          0.08333333333333333,
+          0.5833333333333334
+        ],
+        "n": 12
+      },
+      "behavior": {
+        "value": 0.25,
+        "ci": [
+          0,
+          0.5
+        ],
+        "n": 12
+      },
+      "danger": {
+        "value": 8.541666666666666,
+        "ci": [
+          6.55,
+          10.52583333333333
+        ],
+        "n": 12
+      },
+      "prediction": {
+        "value": 6.425,
+        "ci": [
+          4.0914583333333345,
+          8.808541666666665
+        ],
+        "n": 12
+      },
+      "invalid": 0,
+      "medianLatencyS": 5.0995,
+      "toolCallsPerDecision": 2.1666666666666665,
+      "hosts": [
+        "PrimeIntellect"
+      ],
+      "perFile": [
+        {
+          "file": "sim/recordings/batch/h12-rep2.json",
+          "decisions": 12,
+          "success": 0.7291666666666666
+        }
+      ]
+    }
+  },
+  "comparisons": {
+    "shortest": {
+      "nScenarios": 12,
+      "success": {
+        "value": -0.6944444444444443,
+        "ci": [
+          -0.8888888888888888,
+          -0.4791666666666667
+        ],
+        "n": 12,
+        "distinguishable": true
+      },
+      "family": null
+    },
+    "think": {
+      "nScenarios": 12,
+      "success": {
+        "value": -0.09027777777777775,
+        "ci": [
+          -0.24305555555555555,
+          0.052170138888888426
+        ],
+        "n": 12,
+        "distinguishable": false
+      },
+      "family": {
+        "value": 0.08333333333333338,
+        "ci": [
+          -0.15277777777777773,
+          0.3333333333333333
+        ],
+        "n": 12,
+        "distinguishable": false
+      }
+    },
+    "tools": {
+      "nScenarios": 12,
+      "success": {
+        "value": -0.18055555555555558,
+        "ci": [
+          -0.3541666666666667,
+          -0.03472222222222223
+        ],
+        "n": 12,
+        "distinguishable": true
+      },
+      "family": {
+        "value": 0.027777777777777814,
+        "ci": [
+          -0.22222222222222218,
+          0.27777777777777785
+        ],
+        "n": 12,
+        "distinguishable": false
+      }
+    },
+    "structured": {
+      "nScenarios": 12,
+      "success": {
+        "value": -0.09027777777777775,
+        "ci": [
+          -0.18749999999999997,
+          0.006944444444444457
+        ],
+        "n": 12,
+        "distinguishable": false
+      },
+      "family": {
+        "value": -0.027777777777777762,
+        "ci": [
+          -0.19444444444444445,
+          0.13888888888888892
+        ],
+        "n": 12,
+        "distinguishable": false
+      }
+    },
+    "feedback": {
+      "nScenarios": 12,
+      "success": {
+        "value": -0.11111111111111109,
+        "ci": [
+          -0.3819444444444444,
+          0.1527777777777778
+        ],
+        "n": 12,
+        "distinguishable": false
+      },
+      "family": {
+        "value": 3.700743415417188e-17,
+        "ci": [
+          -0.27777777777777773,
+          0.27777777777777785
+        ],
+        "n": 12,
+        "distinguishable": false
+      }
+    },
+    "tools_structured": {
+      "nScenarios": 12,
+      "success": {
+        "value": -0.048611111111111105,
+        "ci": [
+          -0.11805555555555557,
+          0.02777777777777778
+        ],
+        "n": 12,
+        "distinguishable": false
+      },
+      "family": {
+        "value": -0.16666666666666663,
+        "ci": [
+          -0.3888888888888889,
+          0.08333333333333337
+        ],
+        "n": 12,
+        "distinguishable": false
+      }
+    }
+  }
+}

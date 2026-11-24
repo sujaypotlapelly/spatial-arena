@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "forest-trail",
+  "registry": {
+    "id": "forest-trail",
+    "title": "Forest Scan",
+    "purpose": "Arena environment candidate: forest trail: dense trees, undergrowth and a narrow path",
+    "status": "approved; see admission",
+    "source": {
+      "hash": "259c0051",
+      "originalTitle": "Forest Scan",
+      "sceneUrl": "https://superspl.at/scene/259c0051",
+      "viewerUrl": "https://superspl.at/s?id=259c0051",
+      "creator": "draftmode",
+      "creatorUrl": "https://superspl.at/user/draftmode",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"Forest Scan\" by draftmode (https://superspl.at/scene/259c0051), licensed under CC BY 4.0.",
+      "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+    },
+    "assets": {
+      "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/259c0051/v1/meta.json",
+      "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/259c0051/v1/scene.voxel.json",
+      "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/259c0051/v1/scene.voxel.bin",
+      "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/259c0051/v1/xl.webp",
+      "format": "sog",
+      "publishedSizeBytes": 31462402,
+      "cacheDirectory": "cache/splat-scenes/forest-trail",
+      "collisionFormat": "supersplat-voxel-1.1",
+      "collisionResolution": null,
+      "collisionGridBounds": {
+        "min": [
+          -21.4,
+          -4.200000000000001,
+          -25.000000000000004
+        ],
+        "max": [
+          24.800000000000004,
+          27,
+          21.999999999999996
+        ]
+      }
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          180
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "official-viewer-coordinate-convention; physical scale provisional",
+      "units": "source scene units; not independently calibrated metres",
+      "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+    },
+    "camera": {
+      "position": [
+        1.7000000000000028,
+        27,
+        -25.000000000000004
+      ],
+      "target": [
+        1.7000000000000028,
+        11.399999999999999,
+        -1.5000000000000036
+      ],
+      "fov": 70,
+      "sourceFrame": "engine world",
+      "status": "default overview from the collider bounds"
+    },
+    "flightBounds": null,
+    "routes": [],
+    "reviewActive": true,
+    "reviewDecision": "approved",
+    "reviewNote": "Scene approved on 2026-11-20."
+  },
+  "calibration": null,
+  "admission": {
+    "stage": 0,
+    "checkedAt": "2026-11-20",
+    "commit": null,
+    "gates": {
+      "licence": {
+        "status": "pass",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-20 from https://superspl.at/scene/259c0051."
+      },
+      "attribution": {
+        "status": "pass",
+        "detail": "\"Forest Scan\" by draftmode (https://superspl.at/scene/259c0051), licensed under CC BY 4.0."
+      },
+      "review": {
+        "status": "pass",
+        "detail": "Review decision “approved”: Scene approved on 2026-11-20."
+      }
+    },
+    "signoffs": {}
+  },
+  "registryOrder": 9
+}

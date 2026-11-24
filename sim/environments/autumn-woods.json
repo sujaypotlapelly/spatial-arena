@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "id": "autumn-woods",
+  "kind": "scan",
+  "scene": "autumn-woods",
+  "mapBuild": "autumn-woods",
+  "videoOnly": false,
+  "harness": {
+    "map": "sim/maps/autumn-woods.json",
+    "scenarioFile": "sim/scenarios/reach-autumn-woods.json",
+    "reach": {
+      "seed": 20925348,
+      "idPrefix": "autumn-woods-",
+      "windOffset": 6674000
+    },
+    "scene": "The area is a 3D scan of a real beech forest in autumn: tree trunks, fallen leaves and a forest path, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.",
+    "routeText": "Routes are 15-35 m long",
+    "units": "scene units (roughly metres, not calibrated)",
+    "version": "arena",
+    "missions": {
+      "search": {
+        "kind": "find-beacon",
+        "timeLimitSeconds": 90,
+        "train": 12,
+        "dev": 24,
+        "test": 48,
+        "detectionRange": 5,
+        "minDist": 15,
+        "maxDist": 35,
+        "seed": 20925349,
+        "windBase": 9674000,
+        "surface": "sky",
+        "targetMask": "sim/maps/volumes/autumn-woods-targets.json"
+      }
+    }
+  },
+  "admission": {
+    "stage": null,
+    "checkedAt": "2026-11-20",
+    "commit": "95840e3",
+    "gates": {
+      "licence": {
+        "stage": 0,
+        "status": "pass",
+        "value": "CC BY 4.0",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-20 from https://superspl.at/scene/8615117a."
+      },
+      "attribution": {
+        "stage": 0,
+        "status": "pass",
+        "detail": "\"Autumn in the woods (Windberg, Freital/Germany)\" by hollmar (https://superspl.at/scene/8615117a), licensed under CC BY 4.0."
+      },
+      "review": {
+        "stage": 0,
+        "status": "fail",
+        "detail": "Review decision “pending”: Picked from the PlayCanvas explore API as a candidate outdoor scene (mountains, forests, natural landscapes, small villages); look not yet approved."
+      },
+      "scale": {
+        "stage": 1,
+        "status": "info",
+        "detail": "Not measured. Recorded so far: Scene units treated as metres at scale 1, without independent calibration. (Shown for information; not enforced.)"
+      },
+      "passage": {
+        "stage": 1,
+        "status": "pass",
+        "value": 0.92,
+        "detail": "Narrowest gap on the flight graph: 0.92 m (the drone is 0.50 m wide) at [-23.2, 13.1, -1.6]."
+      },
+      "alignment": {
+        "stage": 1,
+        "status": "fail",
+        "value": 0.441,
+        "detail": "44.1% of 4041 sampled surface cells of the scan's own collider (the altitude fence and sealed hollows excluded) have scan points within 0.60 m (needs 90%)."
+      },
+      "coverage": {
+        "stage": 1,
+        "status": "fail",
+        "value": 0.768,
+        "detail": "76.8% of 220 waypoints have captured scan ground below them (needs 90%). Captured means at least 12 scan points within 2 m (5% of this scan's median, 237). 15 waypoints sit over ground with no scan surface within 2.5 m (ground we sealed)."
+      },
+      "scene-text": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "The area is a 3D scan of a real beech forest in autumn: tree trunks, fallen leaves and a forest path, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles."
+      },
+      "routes": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "108 routes (12 train, 24 dev, 24 heldout, 48 test) match sim/scenarios/reach-autumn-woods.json."
+      },
+      "planner": {
+        "stage": 2,
+        "status": "pass",
+        "value": 1,
+        "detail": "100% of 24 dev routes (needs 90%)."
+      },
+      "straight": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.16666666666666666,
+        "detail": "16.7% reached flying straight (at most 50%)."
+      },
+      "between": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.7916666666666666,
+        "detail": "Reactive avoider 79.2%, between straight 16.7% and planner 100%."
+      },
+      "replay": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "72 of 72 flights replay exactly."
+      },
+      "missions-search": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "Sets match sim/scenarios/mission-autumn-woods-search.json. Each target used once. Oracle completed 4 of 4 development missions."
+      },
+      "targets-captured": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0,
+        "detail": "84 of 84 targets have at least 12 scan points within 2 m (5% of this scan's median, 237)."
+      },
+      "targets-sky": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0,
+        "detail": "84 of 84 targets are in their column's topmost free space."
+      }
+    },
+    "signoffs": {},
+    "readyIfApproved": 0
+  },
+  "registryOrder": 25
+}

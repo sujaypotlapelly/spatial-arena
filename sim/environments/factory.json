@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "id": "factory",
+  "kind": "scan",
+  "scene": "factory",
+  "mapBuild": null,
+  "videoOnly": false,
+  "harness": {
+    "map": "sim/maps/factory-full.json",
+    "scenarioFile": "sim/scenarios/reach-factory.json",
+    "reach": {},
+    "scene": "The building is a 3D scan of a real factory: halls, rooms, pillars, machinery and clutter.",
+    "routeText": "Routes are 15-35 m long",
+    "units": "metres",
+    "missions": {
+      "search": {
+        "kind": "find-beacon",
+        "timeLimitSeconds": 90,
+        "train": 12,
+        "dev": 24,
+        "test": 48,
+        "detectionRange": 5,
+        "minDist": 15,
+        "maxDist": 35,
+        "seed": 20261120,
+        "windBase": 850000
+      },
+      "delivery": {
+        "kind": "package-delivery",
+        "timeLimitSeconds": 90,
+        "padRadius": 0.3,
+        "releaseHeight": 1,
+        "parcelRadius": 0.1,
+        "maxHoldSpeed": 0.35,
+        "requiredHoldSeconds": 2,
+        "requireNoContactDuringHold": true,
+        "gravity": 9.81,
+        "landingHeightTolerance": 0.2,
+        "train": 12,
+        "dev": 24,
+        "test": 48,
+        "minDist": 15,
+        "maxDist": 35,
+        "seed": 20261121,
+        "windBase": 860000
+      }
+    }
+  },
+  "admission": {
+    "stage": 0,
+    "checkedAt": "2026-11-20",
+    "commit": "95840e3",
+    "gates": {
+      "licence": {
+        "stage": 0,
+        "status": "info",
+        "detail": "The source credits the scan and collider creators. No redistribution license for the derived factory maps has been identified. (Shown for information; not enforced.)"
+      },
+      "attribution": {
+        "stage": 0,
+        "status": "pass",
+        "detail": "Factory Gaussian-splat scan by Christoph Schindelar. Collision mesh from Iakov Sumygin’s PlayCanvas project."
+      },
+      "review": {
+        "stage": 0,
+        "status": "pass",
+        "detail": "Review decision “existing-approved”: Existing factory stays active as the earthquake-response drill."
+      },
+      "scale": {
+        "stage": 1,
+        "status": "info",
+        "detail": "Not measured. Recorded so far: existing-replay-alignment (Shown for information; not enforced.)"
+      },
+      "passage": {
+        "stage": 1,
+        "status": "pass",
+        "value": 1,
+        "detail": "Narrowest gap on the flight graph: 1.00 m (the drone is 0.50 m wide) at [-30.0, 0.6, 8.5]."
+      },
+      "alignment": {
+        "stage": 1,
+        "status": "not-checked",
+        "detail": "Not checked: the scene's collider isn't cached here (or the map isn't built from a SuperSplat collider)."
+      },
+      "coverage": {
+        "stage": 1,
+        "status": "not-checked",
+        "detail": "Not checked: the scene's collider isn't cached here (or the map isn't built from a SuperSplat collider)."
+      },
+      "scene-text": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "The building is a 3D scan of a real factory: halls, rooms, pillars, machinery and clutter."
+      },
+      "routes": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "108 routes (12 train, 24 dev, 24 heldout, 48 test) match sim/scenarios/reach-factory.json."
+      },
+      "planner": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.9583333333333334,
+        "detail": "95.8% of 24 dev routes (needs 90%)."
+      },
+      "straight": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.041666666666666664,
+        "detail": "4.2% reached flying straight (at most 50%)."
+      },
+      "between": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.4583333333333333,
+        "detail": "Reactive avoider 45.8%, between straight 4.2% and planner 95.8%."
+      },
+      "replay": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "72 of 72 flights replay exactly."
+      },
+      "missions-search": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "Sets match sim/scenarios/mission-factory-search.json. Each target used once. Oracle completed 4 of 4 development missions."
+      },
+      "missions-delivery": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "Sets match sim/scenarios/mission-factory-delivery.json. Each target used once. Oracle completed 4 of 4 development missions."
+      }
+    },
+    "signoffs": {},
+    "readyIfApproved": 0
+  },
+  "registryOrder": 0
+}

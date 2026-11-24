@@ -1,0 +1,56 @@
+/* Demo controller: one top bar, every view below it in its own frame. */
+.demo-page { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+
+.demo-bar {
+  flex: none; display: flex; align-items: stretch; gap: 16px;
+  height: 52px; padding: 0 14px;
+  background: #0a0f1d; border-bottom: 1px solid var(--line);
+}
+.demo-brand { align-self: center; font-weight: 700; font-size: 15px; white-space: nowrap; }
+
+.demo-tabs { display: flex; align-items: stretch; gap: 2px; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.demo-tabs::-webkit-scrollbar { display: none; }
+.demo-group {
+  align-self: center; padding: 0 4px 0 12px; margin-left: 6px; border-left: 1px solid var(--line);
+  font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #64748b;
+}
+.demo-group:first-child { border-left: 0; margin-left: 0; padding-left: 0; }
+.demo-group:empty { padding-left: 4px; }
+.demo-tab {
+  display: flex; align-items: center; gap: 8px;
+  background: none; border: 0; border-bottom: 2px solid transparent; border-radius: 0;
+  padding: 0 12px; color: var(--muted); text-align: left; white-space: nowrap;
+}
+.demo-tab:hover:not(:disabled) { color: var(--text); border-color: transparent; border-bottom-color: #334155; }
+.demo-tab[aria-selected="true"] { color: var(--text); border-bottom-color: var(--accent); }
+.demo-tab .key {
+  display: grid; place-items: center; width: 18px; height: 18px; flex: none;
+  border: 1px solid #334155; border-radius: 4px;
+  font: 600 11px/1 ui-monospace, monospace; color: var(--muted);
+}
+.demo-tab[aria-selected="true"] .key { border-color: var(--accent); color: var(--accent); }
+.demo-tab .name { font-size: 13px; font-weight: 600; }
+.demo-tab .dot { width: 6px; height: 6px; border-radius: 50%; background: transparent; flex: none; }
+.demo-tab .dot.loading { background: var(--warn); animation: demo-pulse 1s ease-in-out infinite; }
+@keyframes demo-pulse { 50% { opacity: .3; } }
+
+.demo-tools { display: flex; align-items: center; gap: 10px; flex: none; }
+.demo-jumps { display: flex; gap: 6px; align-items: center; }
+.demo-jumps[hidden] { display: none; }
+.demo-jumps button { padding: 4px 10px; font-size: 12px; }
+.demo-jumps .label { font-size: 11px; color: var(--muted); }
+.demo-open { color: var(--muted); text-decoration: none; font-size: 16px; padding: 4px 6px; border-radius: 4px; }
+.demo-open:hover { color: var(--text); background: #1e293b; }
+
+.demo-frames { position: relative; flex: 1; min-height: 0; }
+/* Inactive frames stay laid out at full size (so canvases keep their
+   dimensions and the factory scan stays loaded) but are not shown. */
+.demo-frames iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+  background: var(--bg); visibility: hidden;
+}
+.demo-frames iframe.active { visibility: visible; z-index: 1; }
+
+@media (max-width: 1300px) {
+  .demo-brand { display: none; }
+}

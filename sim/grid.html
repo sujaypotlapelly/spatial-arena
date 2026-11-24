@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Scenario Grid · Spatial Arena</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/",
+          "@sparkjsdev/spark": "https://cdn.jsdelivr.net/npm/@sparkjsdev/spark@2.4.0/dist/spark.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body class="grid-page">
+    <header class="grid-bar">
+      <a href="./" id="backLink">← Spatial Arena</a>
+      <h1>Scenario grid</h1>
+      <label>Environment
+        <select id="envSelect">
+          <option value="maps/building.json">Office building (greybox)</option>
+          <option value="maps/factory.json">Factory scan · north hall</option>
+          <option value="maps/factory-full.json">Factory scan · full building</option>
+        </select>
+      </label>
+      <label>Scenarios
+        <select id="sourceSelect">
+          <option value="heldout">Held-out set</option>
+          <option value="random">Random</option>
+        </select>
+      </label>
+      <label>Flown by <select id="flyerSelect"></select></label>
+      <button id="btnPrev" title="Previous 4 held-out scenarios">◀</button>
+      <span id="pageNote" class="muted"></span>
+      <button id="btnNext" title="Next 4 held-out scenarios">▶</button>
+      <button id="btnShuffle" title="Draw 4 new random solvable scenarios">Shuffle</button>
+      <button id="btnReplay">Replay</button>
+      <label>Speed
+        <select id="speed"><option value="1">1×</option><option value="3" selected>3×</option><option value="6">6×</option></select>
+      </label>
+      <label title="Move on to the next four when all have finished"><input type="checkbox" id="auto" /> Auto-advance</label>
+    </header>
+    <p id="gridStatus" class="grid-status" role="status">Loading…</p>
+    <main class="grid-cells" id="cells"></main>
+    <script type="module" src="src/grid.js"></script>
+  </body>
+</html>

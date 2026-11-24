@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "calico",
+  "registry": {
+    "id": "calico",
+    "title": "Calico Basin rescue reserve",
+    "purpose": "Backup desert terrain for a marked rescue checkpoint; scout before using in the review.",
+    "status": "backup",
+    "source": {
+      "hash": "5d517144",
+      "originalTitle": "Calico Basin at sunrise, Red Rock Canyon, Las Vegas NV",
+      "sceneUrl": "https://superspl.at/scene/5d517144",
+      "viewerUrl": "https://superspl.at/s?id=5d517144",
+      "creator": "tosolini",
+      "creatorUrl": "https://superspl.at/user/tosolini",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"Calico Basin at sunrise, Red Rock Canyon, Las Vegas NV\" by tosolini (https://superspl.at/scene/5d517144), licensed under CC BY 4.0.",
+      "modifications": "Rescue checkpoint annotations and drone visualization; crop/scale changes must be recorded when made."
+    },
+    "assets": {
+      "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/5d517144/v1/lod-meta.json",
+      "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/5d517144/v1/scene.voxel.json",
+      "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/5d517144/v1/scene.voxel.bin",
+      "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/5d517144/v1/xl.webp",
+      "format": "ssog",
+      "publishedSizeBytes": 156623847,
+      "cacheDirectory": "cache/splat-scenes/calico",
+      "collisionFormat": "supersplat-voxel-1.1",
+      "collisionResolution": 0.05,
+      "collisionGridBounds": {
+        "min": [
+          -75.8,
+          -9.8,
+          -62.400000000000006
+        ],
+        "max": [
+          56.2,
+          25.000000000000004,
+          35.400000000000006
+        ]
+      }
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          180
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "official-viewer-coordinate-convention; physical scale provisional",
+      "units": "source scene units; not independently calibrated metres",
+      "note": "Current official SOG viewer rotates the gsplat entity 180 degrees around Z. Published v1.1 collision is already in engine coordinates. Camera settings below are used directly in that engine world."
+    },
+    "camera": {
+      "position": [
+        1.1138761043548584,
+        2.3263051509857178,
+        -7.154256820678711
+      ],
+      "target": [
+        -0.37785394631845315,
+        1.9782026554382262,
+        -5.868346206167808
+      ],
+      "fov": 75,
+      "sourceFrame": "public SuperSplat viewer engine world",
+      "status": "author-published initial camera"
+    },
+    "flightBounds": {
+      "min": [
+        -20,
+        -4,
+        -22
+      ],
+      "max": [
+        15,
+        8,
+        10
+      ],
+      "status": "provisional local crop for route scouting; not a measured free volume"
+    },
+    "routes": [],
+    "reviewActive": false,
+    "reviewDecision": "rejected",
+    "reviewNote": "Archived because the canyon already covers this terrain."
+  },
+  "calibration": null,
+  "admission": {
+    "stage": null,
+    "checkedAt": null,
+    "commit": null,
+    "gates": {},
+    "signoffs": {}
+  },
+  "registryOrder": 3
+}

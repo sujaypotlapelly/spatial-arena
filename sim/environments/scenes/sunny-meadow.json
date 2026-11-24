@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "sunny-meadow",
+  "registry": {
+    "id": "sunny-meadow",
+    "title": "Sunny Meadow",
+    "purpose": "Arena environment candidate: meadow: open grass, a row of trees and the edge of a field",
+    "status": "approved; see admission",
+    "source": {
+      "hash": "3aacb9d5",
+      "originalTitle": "Sunny Meadow",
+      "sceneUrl": "https://superspl.at/scene/3aacb9d5",
+      "viewerUrl": "https://superspl.at/s?id=3aacb9d5",
+      "creator": "alienhd",
+      "creatorUrl": "https://superspl.at/user/alienhd",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"Sunny Meadow\" by alienhd (https://superspl.at/scene/3aacb9d5), licensed under CC BY 4.0.",
+      "modifications": "Collider converted to a flight map; altitude band, sealed hollows and a flight volume added; drone and targets added. Scan unchanged."
+    },
+    "assets": {
+      "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/3aacb9d5/v1/meta.json",
+      "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/3aacb9d5/v1/scene.voxel.json",
+      "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/3aacb9d5/v1/scene.voxel.bin",
+      "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/3aacb9d5/v1/xl.webp",
+      "format": "sog",
+      "publishedSizeBytes": 59239960,
+      "cacheDirectory": "cache/splat-scenes/sunny-meadow",
+      "collisionFormat": "supersplat-voxel-1.1",
+      "collisionResolution": null,
+      "collisionGridBounds": {
+        "min": [
+          -30.800000000000004,
+          -0.20000000000000284,
+          -29.799999999999997
+        ],
+        "max": [
+          29.799999999999997,
+          21.2,
+          35.2
+        ]
+      }
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          180
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "official-viewer-coordinate-convention; physical scale provisional",
+      "units": "source scene units; not independently calibrated metres",
+      "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates."
+    },
+    "camera": {
+      "position": [
+        -0.5000000000000036,
+        21.2,
+        -29.799999999999997
+      ],
+      "target": [
+        -0.5000000000000036,
+        10.499999999999998,
+        2.700000000000003
+      ],
+      "fov": 70,
+      "sourceFrame": "engine world",
+      "status": "default overview from the collider bounds"
+    },
+    "flightBounds": null,
+    "routes": [],
+    "reviewActive": true,
+    "reviewDecision": "approved",
+    "reviewNote": "Scene approved on 2026-11-20."
+  },
+  "calibration": null,
+  "admission": {
+    "stage": 0,
+    "checkedAt": "2026-11-20",
+    "commit": null,
+    "gates": {
+      "licence": {
+        "status": "pass",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-20 from https://superspl.at/scene/3aacb9d5."
+      },
+      "attribution": {
+        "status": "pass",
+        "detail": "\"Sunny Meadow\" by alienhd (https://superspl.at/scene/3aacb9d5), licensed under CC BY 4.0."
+      },
+      "review": {
+        "status": "pass",
+        "detail": "Review decision “approved”: Scene approved on 2026-11-20."
+      }
+    },
+    "signoffs": {}
+  },
+  "registryOrder": 11
+}

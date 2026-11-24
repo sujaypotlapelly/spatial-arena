@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "canyon-v5",
+  "build": {
+    "name": "Zohar canyon (barak9177, CC BY 4.0), SuperSplat collider, rescaled x8, scan hollows sealed",
+    "out": "sim/maps/canyon-v5.json",
+    "cell": 0.4,
+    "crop": {
+      "min": [
+        -60,
+        -52,
+        -84
+      ],
+      "max": [
+        124,
+        20,
+        36
+      ]
+    },
+    "launch": [
+      44,
+      8,
+      -16
+    ],
+    "terrainRadius": 4,
+    "agl": null,
+    "ceiling": null,
+    "floodClearance": 0.45,
+    "waypointClearance": 0.8,
+    "waypoints": 220,
+    "maxEdge": 24,
+    "edgeRadius": 0.45,
+    "unitsNote": "Scene units x8, treated as metres: chosen by eye with a correctly scaled drone in a lower channel; there the narrowest pinch is about 6 m. The collider's native 0.05-unit voxels become 0.4 m, so the grid cell is 0.4. The crop top (y = 20, the earlier 2.5-unit ceiling x8) is the altitude limit that seals the plateaus. Not independently calibrated.",
+    "scale": 8,
+    "scaleNote": "Amendment 2: x4 -> x8 at Sujay's visual choice; whole canyon, same ceiling rule scaled.",
+    "maxCells": 26000000,
+    "scene": "canyon",
+    "sealBelowGroundBy": 3,
+    "hollowNote": "v5: free cells more than 3 m below the floor of their column's topmost free interval are sealed. These are closed pockets under the real canyon floor (missed surfaces in the scan); v4 placed 28 of 48 canyon test hikers in them.",
+    "floor": -12,
+    "floorNote": "v5: the splat has essentially no points below y = -1.5 scan units (-12 m at x8) anywhere in the canyon (0.0% of opaque points vs 2.5% at -1.5 and 33.6% at -1.0), so the collider's open space below -12 m is uncaptured void and is sealed."
+  },
+  "registryOrder": 2
+}

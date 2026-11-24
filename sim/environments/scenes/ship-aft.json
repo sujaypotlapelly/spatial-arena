@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "id": "ship-aft",
+  "registry": {
+    "id": "ship-aft",
+    "title": "Shipboard rescue drill",
+    "purpose": "Reach a marked checkpoint through the SS United States AFT Lines Room. The scan depicts a real ship interior, not active sinking or flooding.",
+    "status": "geometric-route-candidates; awaiting visual alignment and model flight",
+    "reviewActive": false,
+    "reviewDecision": "cancelled",
+    "reviewNote": "Archived on 2026-11-15. Recordings from this scene are excluded from the results.",
+    "source": {
+      "hash": "eb9df574",
+      "originalTitle": "SS United States Cruise Ship - AFT Lines Room",
+      "sceneUrl": "https://superspl.at/scene/eb9df574",
+      "viewerUrl": "https://superspl.at/s?id=eb9df574",
+      "creator": "seventysevenguy",
+      "creatorUrl": "https://superspl.at/user/seventysevenguy",
+      "captureCredit": "Anatum Geomobile",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"SS United States Cruise Ship - AFT Lines Room\" by seventysevenguy; scan created by Anatum Geomobile using XGRIDS PortalCAM. Source: https://superspl.at/scene/eb9df574 . Licensed under CC BY 4.0.",
+      "modifications": "Rescue checkpoint annotations and drone visualization; source scale retained pending independent calibration."
+    },
+    "assets": {
+      "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/eb9df574/v1/lod-meta.json",
+      "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/eb9df574/v1/scene.voxel.json",
+      "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/eb9df574/v1/scene.voxel.bin",
+      "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/eb9df574/v1/xl.webp",
+      "format": "ssog",
+      "publishedSizeBytes": 205112192,
+      "cacheDirectory": "cache/splat-scenes/ship-aft",
+      "collisionFormat": "supersplat-voxel-1.1",
+      "collisionResolution": 0.05,
+      "collisionGridBounds": {
+        "min": [
+          1.8000000000000003,
+          -54.800000000000004,
+          -164.8
+        ],
+        "max": [
+          28.8,
+          -49.400000000000006,
+          -109
+        ]
+      }
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          180
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "official-viewer-coordinate-convention; physical scale provisional",
+      "units": "source scene units; not independently calibrated metres",
+      "note": "Published SOG loader rotates splats180degrees aroundZ. Published v1.1 collision and initial camera are already in engine world. Negative Y/Z coordinates are retained without recentering."
+    },
+    "camera": {
+      "position": [
+        18.740947723388672,
+        -51.23908996582031,
+        -153.62318420410156
+      ],
+      "target": [
+        18.14287454312788,
+        -51.82375874364301,
+        -156.9848066478489
+      ],
+      "fov": 101,
+      "sourceFrame": "public SuperSplat viewer engine world",
+      "status": "author-published initial camera"
+    },
+    "flightBounds": {
+      "min": [
+        8,
+        -54,
+        -163
+      ],
+      "max": [
+        27,
+        -49.8,
+        -143
+      ],
+      "status": "provisional crop around author camera; awaiting collider scout and visual route inspection"
+    },
+    "routes": [
+      {
+        "id": "ship-aft-scout-1",
+        "start": [
+          18.8,
+          -51.2,
+          -153.8
+        ],
+        "goal": [
+          12,
+          -51.6,
+          -159.4
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+        "diagnosticPath": [
+          [
+            18.8,
+            -51.2,
+            -153.8
+          ],
+          [
+            12,
+            -51.6,
+            -155
+          ],
+          [
+            12,
+            -51.6,
+            -159.4
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 11.316646586316239,
+          "straightDistance": 8.818163074019438,
+          "detourFactor": 1.2833337840686994,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "clearanceRadius": 0.35,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.35,
+            "samples": 456,
+            "clear": true
+          }
+        }
+      },
+      {
+        "id": "ship-aft-scout-2",
+        "start": [
+          18.8,
+          -51.2,
+          -153.8
+        ],
+        "goal": [
+          23.200000000000003,
+          -52,
+          -159.4
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+        "diagnosticPath": [
+          [
+            18.8,
+            -51.2,
+            -153.8
+          ],
+          [
+            22.8,
+            -51.2,
+            -155.4
+          ],
+          [
+            22.8,
+            -51.2,
+            -157.8
+          ],
+          [
+            22.8,
+            -51.6,
+            -159.4
+          ],
+          [
+            23.200000000000003,
+            -52,
+            -159.4
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 8.923059520903903,
+          "straightDistance": 7.1665891468675635,
+          "detourFactor": 1.2450915404860448,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "clearanceRadius": 0.35,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.35,
+            "samples": 363,
+            "clear": true
+          }
+        }
+      },
+      {
+        "id": "ship-aft-scout-3",
+        "start": [
+          18.8,
+          -51.2,
+          -153.8
+        ],
+        "goal": [
+          24,
+          -50.4,
+          -156.6
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+        "diagnosticPath": [
+          [
+            18.8,
+            -51.2,
+            -153.8
+          ],
+          [
+            22.8,
+            -50.8,
+            -155.4
+          ],
+          [
+            24.400000000000002,
+            -50.8,
+            -155.8
+          ],
+          [
+            24.400000000000002,
+            -50.8,
+            -156.6
+          ],
+          [
+            24,
+            -50.4,
+            -156.6
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 7.341589205753074,
+          "straightDistance": 5.959865770300527,
+          "detourFactor": 1.2318380125837756,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "clearanceRadius": 0.35,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.35,
+            "samples": 299,
+            "clear": true
+          }
+        }
+      }
+    ],
+    "routeScout": {
+      "tool": "sim/tools/maps/scout_splat_routes.mjs",
+      "reportPath": "cache/splat-scenes/ship-aft/route-scout-clearance.json",
+      "cell": 0.4,
+      "freeSupportedCells": 4336,
+      "reachableSupportedCells": 4336,
+      "cameraAnchorSnapDistance": 0.19047052916400425,
+      "physicalScaleCalibrated": false,
+      "clearanceRadius": 0.35,
+      "note": "Three unobstructed diagnostic paths around obstacles; direct segments are blocked. Paths are geometric connectivity checks only, not model commands or flight recordings."
+    }
+  },
+  "calibration": null,
+  "admission": {
+    "stage": null,
+    "checkedAt": null,
+    "commit": null,
+    "gates": {},
+    "signoffs": {}
+  },
+  "registryOrder": 4
+}

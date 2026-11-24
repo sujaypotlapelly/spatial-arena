@@ -1,0 +1,575 @@
+{
+  "schemaVersion": 1,
+  "id": "factory-room-access",
+  "sceneId": "factory",
+  "title": "Factory earthquake drill: marked-room checkpoint",
+  "objective": "Fly through the existing building to a known marked checkpoint. The marker represents a room-access objective; it is not a detected person.",
+  "storyStatus": "Proposed earthquake-response drill over an existing factory scan; no earthquake damage or search target is claimed in the source scan.",
+  "primaryRoute": "H22",
+  "primaryComparison": [
+    "h22-live",
+    "h22-program"
+  ],
+  "supportingRecordings": [
+    "h22-reactive",
+    "h13-live-success",
+    "t7-program-v7",
+    "t7-program-v8"
+  ],
+  "goalRadius": 1,
+  "units": "existing simulator metres",
+  "control": {
+    "level": "C3",
+    "decisionIntervalSeconds": 1,
+    "physicsDtSeconds": 0.016666666666666666,
+    "droneRadius": 0.25,
+    "perception": "Position, velocity, known goal and ten directional free-space readings; no full map supplied to model or frozen program",
+    "action": "World-frame velocity",
+    "success": "Drone centre enters radius1m around the known goal; exact crossing checked from physics state"
+  },
+  "routes": [
+    {
+      "id": "H22",
+      "scenario": {
+        "id": "H22",
+        "start": "south-centre-low-5",
+        "goal": "south-east-low-3",
+        "straight_m": 17,
+        "graph_m": 67.1,
+        "seeds": [
+          830211,
+          830212
+        ]
+      },
+      "start": [
+        -15.9,
+        0.6,
+        8.4
+      ],
+      "goal": [
+        -1.4,
+        0.6,
+        -0.4
+      ],
+      "checks": {
+        "startFreeAtDroneRadius": true,
+        "goalFreeAtDroneRadius": true,
+        "straightPathClearAtDroneRadius": false,
+        "graphReference": {
+          "purpose": "Geometry check only; not supplied to C3 controller",
+          "nodeIds": [
+            "south-centre-low-5",
+            "south-centre-low-6",
+            "mid-centre-high-8",
+            "mid-centre-high-7",
+            "mid-centre-low-4",
+            "north-centre-high-3",
+            "north-centre-high-6",
+            "north-centre-low-3",
+            "north-centre-high-4",
+            "mid-centre-high-5",
+            "perch",
+            "mid-centre-high-6",
+            "mid-centre-low-5",
+            "south-east-low-3"
+          ],
+          "positions": [
+            [
+              -15.9,
+              0.6,
+              8.4
+            ],
+            [
+              -17.4,
+              0.6,
+              3.1
+            ],
+            [
+              -15.6,
+              1.6,
+              -0.9
+            ],
+            [
+              -15.9,
+              0.9,
+              -2.9
+            ],
+            [
+              -15.4,
+              0.6,
+              -10.4
+            ],
+            [
+              -14.4,
+              0.9,
+              -20.9
+            ],
+            [
+              -11.1,
+              1.4,
+              -22.4
+            ],
+            [
+              -9.1,
+              0.1,
+              -24.6
+            ],
+            [
+              -9.9,
+              1.4,
+              -16.1
+            ],
+            [
+              -9.6,
+              1.6,
+              -11.9
+            ],
+            [
+              -9.4,
+              0.6,
+              -8.4
+            ],
+            [
+              -5.1,
+              0.9,
+              -3.9
+            ],
+            [
+              -5.9,
+              0.6,
+              -1.4
+            ],
+            [
+              -1.4,
+              0.6,
+              -0.4
+            ]
+          ],
+          "sampleStepMetres": 0.025,
+          "sampleCount": 2703,
+          "unsafeSamplesAtDroneRadius": 0,
+          "pathLengthMetres": 67.10587633246472
+        }
+      }
+    },
+    {
+      "id": "H13",
+      "scenario": {
+        "id": "H13",
+        "start": "mid-west-low-4",
+        "goal": "mid-east-low-4",
+        "straight_m": 34,
+        "graph_m": 45.4,
+        "seeds": [
+          830121,
+          830122
+        ]
+      },
+      "start": [
+        -31.4,
+        0.4,
+        -12.4
+      ],
+      "goal": [
+        2.6,
+        0.6,
+        -12.9
+      ],
+      "checks": {
+        "startFreeAtDroneRadius": true,
+        "goalFreeAtDroneRadius": true,
+        "straightPathClearAtDroneRadius": false,
+        "graphReference": {
+          "purpose": "Geometry check only; not supplied to C3 controller",
+          "nodeIds": [
+            "mid-west-low-4",
+            "mid-west-high-5",
+            "mid-west-low-2",
+            "north-west-high-3",
+            "north-centre-high-3",
+            "north-centre-high-6",
+            "north-centre-high-5",
+            "north-east-low-4",
+            "north-east-high-1",
+            "mid-east-low-4"
+          ],
+          "positions": [
+            [
+              -31.4,
+              0.4,
+              -12.4
+            ],
+            [
+              -28.1,
+              1.6,
+              -13.9
+            ],
+            [
+              -24.9,
+              0.4,
+              -15.9
+            ],
+            [
+              -21.4,
+              1.1,
+              -22.4
+            ],
+            [
+              -14.4,
+              0.9,
+              -20.9
+            ],
+            [
+              -11.1,
+              1.4,
+              -22.4
+            ],
+            [
+              -5.4,
+              1.1,
+              -23.1
+            ],
+            [
+              -2.4,
+              0.4,
+              -21.1
+            ],
+            [
+              1.1,
+              1.6,
+              -16.4
+            ],
+            [
+              2.6,
+              0.6,
+              -12.9
+            ]
+          ],
+          "sampleStepMetres": 0.025,
+          "sampleCount": 1828,
+          "unsafeSamplesAtDroneRadius": 0,
+          "pathLengthMetres": 45.356805630135455
+        }
+      }
+    },
+    {
+      "id": "T7",
+      "scenario": {
+        "id": "T7",
+        "start": "mid-east-high-1",
+        "goal": "mid-west-low-3",
+        "straight_m": 24.5,
+        "graph_m": 50.4,
+        "seeds": [
+          810061,
+          810062
+        ]
+      },
+      "start": [
+        -4.1,
+        0.9,
+        -5.4
+      ],
+      "goal": [
+        -28.1,
+        0.4,
+        -10.4
+      ],
+      "checks": {
+        "startFreeAtDroneRadius": true,
+        "goalFreeAtDroneRadius": true,
+        "straightPathClearAtDroneRadius": false,
+        "graphReference": {
+          "purpose": "Geometry check only; not supplied to C3 controller",
+          "nodeIds": [
+            "mid-east-high-1",
+            "perch",
+            "mid-centre-high-5",
+            "north-centre-high-4",
+            "north-centre-low-3",
+            "north-centre-high-6",
+            "north-centre-high-3",
+            "north-west-high-3",
+            "mid-west-low-2",
+            "mid-west-low-3"
+          ],
+          "positions": [
+            [
+              -4.1,
+              0.9,
+              -5.4
+            ],
+            [
+              -9.4,
+              0.6,
+              -8.4
+            ],
+            [
+              -9.6,
+              1.6,
+              -11.9
+            ],
+            [
+              -9.9,
+              1.4,
+              -16.1
+            ],
+            [
+              -9.1,
+              0.1,
+              -24.6
+            ],
+            [
+              -11.1,
+              1.4,
+              -22.4
+            ],
+            [
+              -14.4,
+              0.9,
+              -20.9
+            ],
+            [
+              -21.4,
+              1.1,
+              -22.4
+            ],
+            [
+              -24.9,
+              0.4,
+              -15.9
+            ],
+            [
+              -28.1,
+              0.4,
+              -10.4
+            ]
+          ],
+          "sampleStepMetres": 0.025,
+          "sampleCount": 2030,
+          "unsafeSamplesAtDroneRadius": 0,
+          "pathLengthMetres": 50.43913909220706
+        }
+      }
+    }
+  ],
+  "geometry": {
+    "map": {
+      "path": "sim/maps/factory-full.json",
+      "sha256": "d8d5925e35ee48121b2a9b24f80a5dda38f6f253057786077dda3bfbb6f3b386"
+    },
+    "snapshot": {
+      "path": "runs/rescue/factory-room-demo/scene/factory-full.json",
+      "sha256": "d8d5925e35ee48121b2a9b24f80a5dda38f6f253057786077dda3bfbb6f3b386",
+      "source": "sim/maps/factory-full.json"
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotationDegrees": [
+          -90,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "glbColliderToWorld": {
+        "position": [
+          -4.695,
+          0.438,
+          11.397
+        ],
+        "rotationDegrees": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "mapAndFrames": "Already in world coordinates; apply neither offset nor splat rotation again"
+    },
+    "voxelCellMetres": 0.25,
+    "bounds": {
+      "min": [
+        -36.5,
+        -2.25,
+        -28.75
+      ],
+      "max": [
+        24.75,
+        4.5,
+        14.75
+      ]
+    },
+    "sourceSplat": "https://code.playcanvas.com/temp/factory/lod-meta.json",
+    "sourceCollider": "https://playcanv.as/apps/b466da14/files/assets/284536691/1/Factory_collider.glb",
+    "modifications": [
+      "The source collider is surface-voxelized at0.25m; the initial builder seals its trimmed south edge.",
+      "Collision grid of factory.json with 9 doorways opened to 1.6 x 1.9 m (the collider left them ~0.75-1 m wide, too narrow to fly reliably); waypoint graph rebuilt by tools/maps/build_scan_graph.mjs so the south rooms are reachable."
+    ],
+    "openedDoorways": [
+      {
+        "at": [
+          -27.6,
+          0.8,
+          -8.9
+        ],
+        "along": [
+          0,
+          1
+        ],
+        "width": 1.6,
+        "top": 1.9
+      },
+      {
+        "at": [
+          -9.4,
+          0.8,
+          -9.6
+        ],
+        "along": [
+          0,
+          1
+        ],
+        "width": 1.6,
+        "top": 1.9
+      },
+      {
+        "at": [
+          -3.25,
+          0.8,
+          -9.6
+        ],
+        "along": [
+          0,
+          1
+        ],
+        "width": 1.6,
+        "top": 1.9
+      },
+      {
+        "at": [
+          10.6,
+          0.8,
+          -9.6
+        ],
+        "along": [
+          0,
+          1
+        ],
+        "width": 1.6,
+        "top": 1.9
+      },
+      {
+        "at": [
+          -15.62,
+          0.63,
+          -9.18
+        ],
+        "along": [
+          0,
+          1
+        ],
+        "width": 1.6,
+        "top": 1.9
+      },
+      {
+        "at": [
+          -16.12,
+          0.83,
+          -2.67
+        ],
+        "along": [
+          0,
+          1
+        ],
+        "width": 1.6,
+        "top": 1.9
+      },
+      {
+        "at": [
+          -30.07,
+          0.13,
+          8.13
+        ],
+        "along": [
+          -1,
+          0
+        ],
+        "width": 1.6,
+        "top": 1.9
+      },
+      {
+        "at": [
+          -32.62,
+          0.13,
+          9.52
+        ],
+        "along": [
+          0,
+          1
+        ],
+        "width": 1.6,
+        "top": 1.9
+      },
+      {
+        "at": [
+          -30.66,
+          0.13,
+          11.38
+        ],
+        "along": [
+          1,
+          0
+        ],
+        "width": 1.6,
+        "top": 1.9
+      }
+    ],
+    "builders": [
+      {
+        "path": "runs/rescue/factory-room-demo/source/sim/tools/maps/build_factory_map.mjs",
+        "sha256": "51069201d29d943ce5eb78fdb96bfd8683db0bb4740f1134265d19abe296d273",
+        "source": "sim/tools/maps/build_factory_map.mjs"
+      },
+      {
+        "path": "runs/rescue/factory-room-demo/source/sim/tools/maps/build_scan_graph.mjs",
+        "sha256": "ee862f9efb3931946906e647c21fef7ab4f2071b7f8d5b667cf1fe941de2010c",
+        "source": "sim/tools/maps/build_scan_graph.mjs"
+      }
+    ],
+    "visualCollisionMismatch": "Splat retains photographed door geometry. The simulation deliberately opens nine collision doorways; do not call this an untouched scanned collider."
+  },
+  "visualGeometry": {
+    "surface": {
+      "path": "runs/rescue/factory-room-demo/scene/factory-voxel-surface.json",
+      "sha256": "efa834062f02c4b39f63019d560b6fb8d67ced551ab33358faf0b2f72e628ea8",
+      "source": "runs/rescue/voxel-exports/factory.json"
+    },
+    "occupancy": {
+      "path": "runs/rescue/factory-room-demo/scene/factory-occupancy.json",
+      "sha256": "415fb6957cea7b253c391792b99fee71ce5fee9aec1c8b866b9a7068518dd48e",
+      "source": "runs/rescue/voxel-exports/factory-occupancy.json"
+    },
+    "surfaceCells": 102684,
+    "occupiedCells": 164363,
+    "positionsFormat": "Flat world-space [x,y,z,...] centres; draw cubes with edge length cell0.25; optional roof/section cuts affect rendering only",
+    "sourceValidation": "Every exported surface position independently matches voxelSurface(exact simulation map); no floor cells inserted"
+  },
+  "credits": {
+    "scan": "Christoph Schindelar",
+    "collider": "Iakov Sumygin PlayCanvas project",
+    "license": null,
+    "note": "Existing project assets; no new license grant established. Preserve original credits and project permissions."
+  },
+  "limitations": [
+    "Room name/door-specific annotation requires visual confirmation. H22 goal is a known coordinate, not semantic perception.",
+    "Examples are selected for demonstration; a paired outcome is not evidence of aggregate improvement.",
+    "T7 rewrite comes from cap2/run1, while H22 frozen controller is cap2/run3 v7.",
+    "No new inference calls or newly recorded live model flight were made for this packet."
+  ]
+}

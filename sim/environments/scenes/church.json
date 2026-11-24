@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "id": "church",
+  "registry": {
+    "id": "church",
+    "title": "Ruins rescue drill",
+    "purpose": "Reach a marked checkpoint through the roofless church ruins. Do not imply the scan depicts an actual earthquake.",
+    "status": "geometric-route-candidates; awaiting visual alignment and model flight",
+    "source": {
+      "hash": "310abb3c",
+      "originalTitle": "church ruins",
+      "sceneUrl": "https://superspl.at/scene/310abb3c",
+      "viewerUrl": "https://superspl.at/s?id=310abb3c",
+      "creator": "priceburnett",
+      "creatorUrl": "https://superspl.at/user/priceburnett",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"church ruins\" by priceburnett (https://superspl.at/scene/310abb3c), licensed under CC BY 4.0.",
+      "modifications": "Rescue checkpoint annotations and drone visualization; crop/scale changes must be recorded when made."
+    },
+    "assets": {
+      "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/310abb3c/v1/lod-meta.json",
+      "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/310abb3c/v1/scene.voxel.json",
+      "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/310abb3c/v1/scene.voxel.bin",
+      "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/310abb3c/v1/xl.webp",
+      "format": "ssog",
+      "publishedSizeBytes": 103631954,
+      "cacheDirectory": "cache/splat-scenes/church",
+      "collisionFormat": "supersplat-voxel-1.1",
+      "collisionResolution": 0.05,
+      "collisionGridBounds": {
+        "min": [
+          -54.4,
+          -1.5999999999999996,
+          -41.2
+        ],
+        "max": [
+          50.20000000000001,
+          27.4,
+          42.2
+        ]
+      }
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          180
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "official-viewer-coordinate-convention; physical scale provisional",
+      "units": "source scene units; not independently calibrated metres",
+      "note": "Current official SOG viewer rotates the gsplat entity 180 degrees around Z. Published v1.1 collision is already in engine coordinates. Camera settings below are used directly in that engine world."
+    },
+    "camera": {
+      "position": [
+        25.699451446533203,
+        10.14479923248291,
+        3.0113890171051025
+      ],
+      "target": [
+        22.544123678911262,
+        8.90201389931087,
+        2.3047162790393134
+      ],
+      "fov": 75,
+      "sourceFrame": "public SuperSplat viewer engine world",
+      "status": "author-published initial camera"
+    },
+    "flightBounds": {
+      "min": [
+        12,
+        5,
+        -10
+      ],
+      "max": [
+        34,
+        15,
+        14
+      ],
+      "status": "provisional local crop for route scouting; not a measured free volume"
+    },
+    "routes": [
+      {
+        "id": "church-scout-1",
+        "start": [
+          25.799999999999997,
+          10.399999999999999,
+          3.1999999999999993
+        ],
+        "goal": [
+          27,
+          8.6,
+          -0.40000000000000036
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+        "diagnosticPath": [
+          [
+            25.799999999999997,
+            10.399999999999999,
+            3.1999999999999993
+          ],
+          [
+            24.6,
+            8,
+            3.1999999999999993
+          ],
+          [
+            24.6,
+            7.4,
+            0.7999999999999989
+          ],
+          [
+            27,
+            8.6,
+            -0.40000000000000036
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 8.096532639710153,
+          "straightDistance": 4.2,
+          "detourFactor": 1.9277458665976555,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.3,
+            "samples": 328,
+            "clear": true
+          }
+        }
+      },
+      {
+        "id": "church-scout-2",
+        "start": [
+          25.799999999999997,
+          10.399999999999999,
+          3.1999999999999993
+        ],
+        "goal": [
+          24.6,
+          7.4,
+          0.7999999999999989
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+        "diagnosticPath": [
+          [
+            25.799999999999997,
+            10.399999999999999,
+            3.1999999999999993
+          ],
+          [
+            24.6,
+            8,
+            3.1999999999999993
+          ],
+          [
+            24.6,
+            7.4,
+            0.7999999999999989
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 5.157144948370341,
+          "straightDistance": 4.0249223594996195,
+          "detourFactor": 1.2813029638195257,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.3,
+            "samples": 209,
+            "clear": true
+          }
+        }
+      },
+      {
+        "id": "church-scout-3",
+        "start": [
+          25.799999999999997,
+          10.399999999999999,
+          3.1999999999999993
+        ],
+        "goal": [
+          25.2,
+          7.4,
+          9.2
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; no model flight recorded; physical scale uncalibrated",
+        "diagnosticPath": [
+          [
+            25.799999999999997,
+            10.399999999999999,
+            3.1999999999999993
+          ],
+          [
+            25.2,
+            8.6,
+            9.2
+          ],
+          [
+            25.2,
+            7.4,
+            9.2
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 7.492853089020908,
+          "straightDistance": 6.734983296193093,
+          "detourFactor": 1.1125273455772633,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.3,
+            "samples": 302,
+            "clear": true
+          }
+        }
+      }
+    ],
+    "routeScout": {
+      "tool": "sim/tools/maps/scout_splat_routes.mjs",
+      "reportPath": "cache/splat-scenes/church/route-scout.json",
+      "cell": 0.6,
+      "freeSupportedCells": 2530,
+      "reachableSupportedCells": 1635,
+      "cameraAnchorSnapDistance": 0.3328836827093734,
+      "physicalScaleCalibrated": false,
+      "note": "Points and diagnostics are in engine world. Paths only establish sampled geometric connectivity; they are not model commands or replay recordings."
+    },
+    "reviewActive": false,
+    "reviewDecision": "rejected",
+    "reviewNote": "Archived after scene review."
+  },
+  "calibration": null,
+  "admission": {
+    "stage": null,
+    "checkedAt": null,
+    "commit": null,
+    "gates": {},
+    "signoffs": {}
+  },
+  "registryOrder": 1
+}

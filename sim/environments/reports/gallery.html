@@ -1,0 +1,167 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Environment gallery</title><style>
+:root{--bg:#fbfbfa;--panel:#fff;--ink:#1d2224;--muted:#5d6669;--line:#dfe3e3;--ok:#14532d;--wait:#9a3412;--bad:#8f1d14;--accent:#22577a}
+@media (prefers-color-scheme:dark){:root{--bg:#141718;--panel:#1c2022;--ink:#e6e9ea;--muted:#9aa4a7;--line:#2f3538;--ok:#a6e3b8;--wait:#fdba74;--bad:#ffb4aa;--accent:#8cc4e8}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,sans-serif}main{max-width:1200px;margin:0 auto;padding:24px 16px 80px}
+h1{margin:0 0 4px}.lede{color:var(--muted);max-width:820px}a{color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px;margin-top:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;border-top:4px solid var(--line)}.card.ok{border-top-color:var(--ok)}.card.wait{border-top-color:var(--wait)}.card.bad{border-top-color:var(--bad)}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:6px}.pics figure{margin:0}.pics img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:8px;background:var(--line);display:block}figcaption{font-size:12px;color:var(--muted)}
+h2{font-size:18px;margin:10px 0 2px}.t{font-weight:400;color:var(--muted);font-size:14px}.status{margin:2px 0 6px;font-weight:600}.ok .status{color:var(--ok)}.wait .status{color:var(--wait)}.bad .status{color:var(--bad)}
+table{width:100%;border-collapse:collapse;font-size:14px}td{padding:3px 0;border-bottom:1px solid var(--line)}td:last-child{text-align:right}
+.links{font-size:14px}.attr{font-size:12px;color:var(--muted)}.how{font-size:13px}code{font-size:12px}
+</style></head><body><main><h1>Environment gallery</h1>
+<p class="lede">Every scanned environment in the arena: how it looks, where the drone may fly (only over ground the scan captured), and how far it got through the admission gates. Green: stage 2 or higher. Amber: passes the technical gates and waits for a person to approve the look. Red: something fails. Nothing appears in the film or article below stage 3; nothing carries a number below stage 4.</p>
+<div class="grid"><article class="card ok" id="residential5">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/5f41cc74/v3/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure></div>
+<h2>residential5 <span class="t">Utlida 1:80</span></h2>
+<p class="status">Stage 2 · valid</p>
+<p>The area is a 3D scan of a real rural property: two timber cottages, a garage, trees, fences and a garden, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over the houses or trees.</p>
+<table><tr><td>Scan collider backed by points</td><td>99%</td></tr><tr><td>Flight space over captured ground</td><td>100%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 25% / 63%</td></tr><tr><td>Search missions</td><td>None</td></tr></table>
+<p class="links"><a href="residential5.html">Report card</a> · <a href="https://superspl.at/scene/5f41cc74">Original scan</a></p>
+<p class="attr">&quot;Utlida 1:80&quot; — 3D capture and Gaussian Splat by Jakob Safwan / Overblick Studio, https://www.overblickstudio.se . Source: https://superspl.at/scene/5f41cc74 . Licensed under CC BY 4.0.</p>
+
+</article><article class="card ok" id="canyon5b">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/7aa4d3d4/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure><figure><img loading="lazy" src="stills/canyon5b-drone-eye.jpg" alt=""><figcaption>Our render, drone's eye at launch</figcaption></figure></div>
+<h2>canyon5b <span class="t">Zohar Riverbad, Dead sea, Israel</span></h2>
+<p class="status">Stage 2 · valid</p>
+<p>The terrain is a 3D scan of a real desert canyon (a dry riverbed): rock walls, boulders and uneven ground, open to the sky. A flight ceiling (an altitude geofence) acts like a roof, so the drone cannot climb over the canyon walls.</p>
+<table><tr><td>Scan collider backed by points</td><td>94%</td></tr><tr><td>Flight space over captured ground</td><td>98%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 29% / 67%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="canyon5b.html">Report card</a> · <a href="volume-canyon-v5b.html">Flight volume</a> · <a href="https://superspl.at/scene/7aa4d3d4">Original scan</a></p>
+<p class="attr">&quot;Zohar Riverbad, Dead sea, Israel&quot; by barak9177 (https://superspl.at/scene/7aa4d3d4), licensed under CC BY 4.0.</p>
+
+</article><article class="card ok" id="hill-lodge">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/c393e279/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure></div>
+<h2>hill-lodge <span class="t">Lodge on a hill</span></h2>
+<p class="status">Stage 2 · valid</p>
+<p>The area is a 3D scan of a real hillside property: a thatched lodge, terraced gardens, shrubs and trees on a slope, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.</p>
+<table><tr><td>Scan collider backed by points</td><td>96%</td></tr><tr><td>Flight space over captured ground</td><td>100%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 25% / 71%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="hill-lodge.html">Report card</a> · <a href="volume-hill-lodge.html">Flight volume</a> · <a href="https://superspl.at/scene/c393e279">Original scan</a></p>
+<p class="attr">&quot;Lodge on a hill&quot; by zartan_3dfpv (https://superspl.at/scene/c393e279), licensed under CC BY 4.0.</p>
+
+</article><article class="card ok" id="sunny-meadow">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/3aacb9d5/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure></div>
+<h2>sunny-meadow <span class="t">Sunny Meadow</span></h2>
+<p class="status">Stage 2 · valid</p>
+<p>The area is a 3D scan of a real meadow: open grass, a row of trees and the edge of a field, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.</p>
+<table><tr><td>Scan collider backed by points</td><td>97%</td></tr><tr><td>Flight space over captured ground</td><td>100%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 25% / 29%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="sunny-meadow.html">Report card</a> · <a href="volume-sunny-meadow.html">Flight volume</a> · <a href="https://superspl.at/scene/3aacb9d5">Original scan</a></p>
+<p class="attr">&quot;Sunny Meadow&quot; by alienhd (https://superspl.at/scene/3aacb9d5), licensed under CC BY 4.0.</p>
+
+</article><article class="card ok" id="verzasca-valley">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/fb6b9fae/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure><figure><img loading="lazy" src="stills/verzasca-valley-drone-eye.jpg" alt=""><figcaption>Our render, drone's eye at launch</figcaption></figure></div>
+<h2>verzasca-valley <span class="t">Verzasca River - Ponte dei Salti, Switzerland</span></h2>
+<p class="status">Stage 2 · valid</p>
+<p>The area is a 3D scan of a real alpine river valley: a stone footbridge over a rocky river, stone paths, trees and steep banks, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.</p>
+<table><tr><td>Scan collider backed by points</td><td>97%</td></tr><tr><td>Flight space over captured ground</td><td>99%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 8% / 33%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="verzasca-valley.html">Report card</a> · <a href="volume-verzasca-valley.html">Flight volume</a> · <a href="https://superspl.at/scene/fb6b9fae">Original scan</a></p>
+<p class="attr">&quot;Verzasca River - Ponte dei Salti, Switzerland&quot; by tosolini (https://superspl.at/scene/fb6b9fae), licensed under CC BY 4.0.</p>
+
+</article><article class="card ok" id="forest-trail">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/259c0051/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure></div>
+<h2>forest-trail <span class="t">Forest Scan</span></h2>
+<p class="status">Stage 2 · valid</p>
+<p>The area is a 3D scan of a real forest trail: dense trees, undergrowth and a narrow path, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.</p>
+<table><tr><td>Scan collider backed by points</td><td>98%</td></tr><tr><td>Flight space over captured ground</td><td>97%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 29% / 79%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="forest-trail.html">Report card</a> · <a href="volume-forest-trail.html">Flight volume</a> · <a href="https://superspl.at/scene/259c0051">Original scan</a></p>
+<p class="attr">&quot;Forest Scan&quot; by draftmode (https://superspl.at/scene/259c0051), licensed under CC BY 4.0.</p>
+
+</article><article class="card bad" id="factory">
+<div class="pics"></div>
+<h2>factory <span class="t">Factory earthquake drill</span></h2>
+<p class="status">Stage 0 · candidate · not passing: alignment, coverage</p>
+<p>The building is a 3D scan of a real factory: halls, rooms, pillars, machinery and clutter.</p>
+<table><tr><td>Scan collider backed by points</td><td>None</td></tr><tr><td>Flight space over captured ground</td><td>None</td></tr><tr><td>Planner / straight / avoider</td><td>96% / 4% / 46%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="factory.html">Report card</a> · <a href="https://playcanvas.com/project/1480299">Original scan</a></p>
+<p class="attr">Factory Gaussian-splat scan by Christoph Schindelar. Collision mesh from Iakov Sumygin’s PlayCanvas project.</p>
+
+</article><article class="card bad" id="canyon">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/7aa4d3d4/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure></div>
+<h2>canyon <span class="t">Zohar Riverbad, Dead sea, Israel</span></h2>
+<p class="status">Stage 0 · candidate · not passing: alignment, coverage, targets-captured, targets-sky</p>
+<p>The terrain is a 3D scan of a real desert canyon (a dry riverbed): rock walls, boulders and uneven ground, open to the sky. A flight ceiling (an altitude geofence) acts like a roof, so the drone cannot climb over the canyon walls.</p>
+<table><tr><td>Scan collider backed by points</td><td>69%</td></tr><tr><td>Flight space over captured ground</td><td>56%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 21% / 42%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="canyon.html">Report card</a> · <a href="https://superspl.at/scene/7aa4d3d4">Original scan</a></p>
+<p class="attr">&quot;Zohar Riverbad, Dead sea, Israel&quot; by barak9177 (https://superspl.at/scene/7aa4d3d4), licensed under CC BY 4.0.</p>
+
+</article><article class="card bad" id="residential">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/5f41cc74/v3/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure></div>
+<h2>residential <span class="t">Utlida 1:80</span></h2>
+<p class="status">Stage 1 · integrated · not passing: targets-sky</p>
+<p>The area is a 3D scan of a real rural property: two timber cottages, a garage, trees, fences and a garden, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over the houses or trees.</p>
+<table><tr><td>Scan collider backed by points</td><td>99%</td></tr><tr><td>Flight space over captured ground</td><td>100%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 25% / 67%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="residential.html">Report card</a> · <a href="https://superspl.at/scene/5f41cc74">Original scan</a></p>
+<p class="attr">&quot;Utlida 1:80&quot; — 3D capture and Gaussian Splat by Jakob Safwan / Overblick Studio, https://www.overblickstudio.se . Source: https://superspl.at/scene/5f41cc74 . Licensed under CC BY 4.0.</p>
+
+</article><article class="card bad" id="factory5">
+<div class="pics"></div>
+<h2>factory5 <span class="t">Factory earthquake drill</span></h2>
+<p class="status">Stage 0 · candidate · not passing: alignment, coverage</p>
+<p>The building is a 3D scan of a real factory: halls, rooms, pillars, machinery and clutter.</p>
+<table><tr><td>Scan collider backed by points</td><td>None</td></tr><tr><td>Flight space over captured ground</td><td>None</td></tr><tr><td>Planner / straight / avoider</td><td>96% / 4% / 38%</td></tr><tr><td>Search missions</td><td>None</td></tr></table>
+<p class="links"><a href="factory5.html">Report card</a> · <a href="https://playcanvas.com/project/1480299">Original scan</a></p>
+<p class="attr">Factory Gaussian-splat scan by Christoph Schindelar. Collision mesh from Iakov Sumygin’s PlayCanvas project.</p>
+
+</article><article class="card bad" id="canyon5">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/7aa4d3d4/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure></div>
+<h2>canyon5 <span class="t">Zohar Riverbad, Dead sea, Israel</span></h2>
+<p class="status">Stage 0 · candidate · not passing: alignment, coverage, targets-captured</p>
+<p>The terrain is a 3D scan of a real desert canyon (a dry riverbed): rock walls, boulders and uneven ground, open to the sky. A flight ceiling (an altitude geofence) acts like a roof, so the drone cannot climb over the canyon walls.</p>
+<table><tr><td>Scan collider backed by points</td><td>62%</td></tr><tr><td>Flight space over captured ground</td><td>48%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 29% / 46%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="canyon5.html">Report card</a> · <a href="https://superspl.at/scene/7aa4d3d4">Original scan</a></p>
+<p class="attr">&quot;Zohar Riverbad, Dead sea, Israel&quot; by barak9177 (https://superspl.at/scene/7aa4d3d4), licensed under CC BY 4.0.</p>
+
+</article><article class="card bad" id="daregahan-gorge">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/8652a3e8/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure><figure><img loading="lazy" src="stills/daregahan-gorge-drone-eye.jpg" alt=""><figcaption>Our render, drone's eye at launch</figcaption></figure></div>
+<h2>daregahan-gorge <span class="t">Iran's Beauty - Yazd - Daregahan</span></h2>
+<p class="status">Awaiting your review · technically stage 0 · not passing: alignment, coverage, straight</p>
+<p>The area is a 3D scan of a real mountain gorge: rock walls, a stream bed, boulders and plants, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.</p>
+<table><tr><td>Scan collider backed by points</td><td>33%</td></tr><tr><td>Flight space over captured ground</td><td>68%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 54% / 79%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="daregahan-gorge.html">Report card</a> · <a href="volume-daregahan-gorge.html">Flight volume</a> · <a href="https://superspl.at/scene/8652a3e8">Original scan</a></p>
+<p class="attr">&quot;Iran's Beauty - Yazd - Daregahan&quot; by parsamahdavi48 (https://superspl.at/scene/8652a3e8), licensed under CC BY 4.0.</p>
+<p class="how">To approve: <code>node sim/tools/env/approve.mjs daregahan-gorge --by reviewer-name</code></p>
+</article><article class="card bad" id="huashan-path">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/aa909429/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure></div>
+<h2>huashan-path <span class="t">The Precipitous Huashan, Virtual Hiking</span></h2>
+<p class="status">Awaiting your review · technically stage 0 · not passing: alignment, targets-captured</p>
+<p>The area is a 3D scan of a real mountain path on a cliff: a steep rock face, a narrow paved path with snow and a railing, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.</p>
+<table><tr><td>Scan collider backed by points</td><td>51%</td></tr><tr><td>Flight space over captured ground</td><td>93%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 21% / 58%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="huashan-path.html">Report card</a> · <a href="volume-huashan-path.html">Flight volume</a> · <a href="https://superspl.at/scene/aa909429">Original scan</a></p>
+<p class="attr">&quot;The Precipitous Huashan, Virtual Hiking&quot; by wu3d (https://superspl.at/scene/aa909429), licensed under CC BY 4.0.</p>
+<p class="how">To approve: <code>node sim/tools/env/approve.mjs huashan-path --by reviewer-name</code></p>
+</article><article class="card bad" id="interlaken-square">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/16a90551/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure></div>
+<h2>interlaken-square <span class="t">Dorfplatz Interlaken Switzerland</span></h2>
+<p class="status">Awaiting your review · technically stage 0 · not passing: alignment</p>
+<p>The area is a 3D scan of a real village square: a church, houses, trees and a paved square, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.</p>
+<table><tr><td>Scan collider backed by points</td><td>56%</td></tr><tr><td>Flight space over captured ground</td><td>92%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 29% / 58%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="interlaken-square.html">Report card</a> · <a href="volume-interlaken-square.html">Flight volume</a> · <a href="https://superspl.at/scene/16a90551">Original scan</a></p>
+<p class="attr">&quot;Dorfplatz Interlaken Switzerland&quot; by dewaisol (https://superspl.at/scene/16a90551), licensed under CC BY 4.0.</p>
+<p class="how">To approve: <code>node sim/tools/env/approve.mjs interlaken-square --by reviewer-name</code></p>
+</article><article class="card bad" id="double-arch">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/91fafbc3/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure><figure><img loading="lazy" src="stills/double-arch-drone-eye.jpg" alt=""><figcaption>Our render, drone's eye at launch</figcaption></figure></div>
+<h2>double-arch <span class="t">Arches National Park - Double Arch</span></h2>
+<p class="status">Awaiting your review · technically stage 0 · not passing: alignment, straight</p>
+<p>The area is a 3D scan of a real desert rock landscape: two natural sandstone arches, boulders and a sandy trail, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.</p>
+<table><tr><td>Scan collider backed by points</td><td>22%</td></tr><tr><td>Flight space over captured ground</td><td>97%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 58% / 83%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="double-arch.html">Report card</a> · <a href="volume-double-arch.html">Flight volume</a> · <a href="https://superspl.at/scene/91fafbc3">Original scan</a></p>
+<p class="attr">&quot;Arches National Park - Double Arch&quot; by virtualworldtours (https://superspl.at/scene/91fafbc3), licensed under CC BY 4.0.</p>
+<p class="how">To approve: <code>node sim/tools/env/approve.mjs double-arch --by reviewer-name</code></p>
+</article><article class="card bad" id="forest-lake">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/d5e57a5b/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure><figure><img loading="lazy" src="stills/forest-lake-drone-eye.jpg" alt=""><figcaption>Our render, drone's eye at launch</figcaption></figure></div>
+<h2>forest-lake <span class="t">Taşçılar Göleti</span></h2>
+<p class="status">Awaiting your review · technically stage 1 · not passing: planner, between</p>
+<p>The area is a 3D scan of a real small lake in a forest: water, a shoreline track, banks and surrounding trees, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.</p>
+<table><tr><td>Scan collider backed by points</td><td>94%</td></tr><tr><td>Flight space over captured ground</td><td>91%</td></tr><tr><td>Planner / straight / avoider</td><td>0% / 0% / 0%</td></tr><tr><td>Search missions</td><td>None</td></tr></table>
+<p class="links"><a href="forest-lake.html">Report card</a> · <a href="volume-forest-lake.html">Flight volume</a> · <a href="https://superspl.at/scene/d5e57a5b">Original scan</a></p>
+<p class="attr">&quot;Taşçılar Göleti&quot; by eakturk (https://superspl.at/scene/d5e57a5b), licensed under CC BY 4.0.</p>
+<p class="how">To approve: <code>node sim/tools/env/approve.mjs forest-lake --by reviewer-name</code></p>
+</article><article class="card bad" id="autumn-woods">
+<div class="pics"><figure><img loading="lazy" src="https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/8615117a/v1/xl.webp" alt=""><figcaption>Owner's image</figcaption></figure><figure><img loading="lazy" src="stills/autumn-woods-drone-eye.jpg" alt=""><figcaption>Our render, drone's eye at launch</figcaption></figure></div>
+<h2>autumn-woods <span class="t">Autumn in the woods (Windberg, Freital/Germany)</span></h2>
+<p class="status">Awaiting your review · technically stage 0 · not passing: alignment, coverage</p>
+<p>The area is a 3D scan of a real beech forest in autumn: tree trunks, fallen leaves and a forest path, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.</p>
+<table><tr><td>Scan collider backed by points</td><td>44%</td></tr><tr><td>Flight space over captured ground</td><td>77%</td></tr><tr><td>Planner / straight / avoider</td><td>100% / 17% / 79%</td></tr><tr><td>Search missions</td><td>84, pinned</td></tr></table>
+<p class="links"><a href="autumn-woods.html">Report card</a> · <a href="volume-autumn-woods.html">Flight volume</a> · <a href="https://superspl.at/scene/8615117a">Original scan</a></p>
+<p class="attr">&quot;Autumn in the woods (Windberg, Freital/Germany)&quot; by hollmar (https://superspl.at/scene/8615117a), licensed under CC BY 4.0.</p>
+<p class="how">To approve: <code>node sim/tools/env/approve.mjs autumn-woods --by reviewer-name</code></p>
+</article></div></main></body></html>

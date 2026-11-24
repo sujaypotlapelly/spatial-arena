@@ -1,0 +1,15 @@
+{
+  "note": "Frozen controller programs the arena ships as data. Each file is a byte-identical copy of a git-ignored run file in the main checkout; the sha256 is checked by arena/test/determinism.test.mjs.",
+  "programs": [
+    {
+      "id": "ripple-v7",
+      "file": "ripple-cap2-run3-v7.js",
+      "source": "runs/reach/cap2/run3/best.js (identical to runs/reach/cap2/run3/v7.js)",
+      "sha256": "c68c4c9383fa7a2c3d75a44d12a66a836a0bb02b2b48f9abd5e289906ee7799f",
+      "author": "Ripple, in the code-as-policy practice loop (sim/tools/reach_cap.mjs), run 3 of the cap2 batch, version 7 of 8",
+      "practice": "8 of 12 training routes reached, scores by version 0, 2, 1, 5, 2, 1, 8, 7 (runs/reach/cap2/run3/curve.json)",
+      "heldout": "44% of 144 held-out flights reached, against 22% for the hand-written reactive avoider (docs/HARNESS_CHANGELOG.md, 2026-11-15)",
+      "copied": "2026-11-19"
+    }
+  ]
+}

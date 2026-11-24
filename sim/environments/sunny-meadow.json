@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "id": "sunny-meadow",
+  "kind": "scan",
+  "scene": "sunny-meadow",
+  "mapBuild": "sunny-meadow",
+  "videoOnly": false,
+  "harness": {
+    "map": "sim/maps/sunny-meadow.json",
+    "scenarioFile": "sim/scenarios/reach-sunny-meadow.json",
+    "reach": {
+      "seed": 21066586,
+      "idPrefix": "sunny-meadow-",
+      "windOffset": 7293000
+    },
+    "scene": "The area is a 3D scan of a real meadow: open grass, a row of trees and the edge of a field, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles.",
+    "routeText": "Routes are 15-35 m long",
+    "units": "scene units (roughly metres, not calibrated)",
+    "version": "arena",
+    "missions": {
+      "search": {
+        "kind": "find-beacon",
+        "timeLimitSeconds": 90,
+        "train": 12,
+        "dev": 24,
+        "test": 48,
+        "detectionRange": 5,
+        "minDist": 15,
+        "maxDist": 35,
+        "seed": 21066587,
+        "windBase": 10293000,
+        "surface": "sky",
+        "targetMask": "sim/maps/volumes/sunny-meadow-targets.json"
+      }
+    }
+  },
+  "admission": {
+    "stage": 2,
+    "checkedAt": "2026-11-20",
+    "commit": "9780b10",
+    "gates": {
+      "licence": {
+        "stage": 0,
+        "status": "pass",
+        "value": "CC BY 4.0",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-20 from https://superspl.at/scene/3aacb9d5."
+      },
+      "attribution": {
+        "stage": 0,
+        "status": "pass",
+        "detail": "\"Sunny Meadow\" by alienhd (https://superspl.at/scene/3aacb9d5), licensed under CC BY 4.0."
+      },
+      "review": {
+        "stage": 0,
+        "status": "pass",
+        "detail": "Review decision “approved”: Scene approved on 2026-11-20."
+      },
+      "scale": {
+        "stage": 1,
+        "status": "info",
+        "detail": "Not measured. Recorded so far: Scene units treated as metres at scale 1, without independent calibration. (Shown for information; not enforced.)"
+      },
+      "passage": {
+        "stage": 1,
+        "status": "pass",
+        "value": 0.93,
+        "detail": "Narrowest gap on the flight graph: 0.93 m (the drone is 0.50 m wide) at [4.7, 4.2, 20.4]."
+      },
+      "alignment": {
+        "stage": 1,
+        "status": "pass",
+        "value": 0.968,
+        "detail": "96.8% of 6216 sampled surface cells of the scan's own collider (the altitude fence and sealed hollows excluded) have scan points within 0.50 m (needs 90%)."
+      },
+      "coverage": {
+        "stage": 1,
+        "status": "pass",
+        "value": 1,
+        "detail": "100% of 220 waypoints have captured scan ground below them (needs 90%). Captured means at least 271 scan points within 2 m (5% of this scan's median, 5422). 0 waypoints sit over ground with no scan surface within 2.5 m (ground we sealed)."
+      },
+      "scene-text": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "The area is a 3D scan of a real meadow: open grass, a row of trees and the edge of a field, open to the sky. An altitude geofence a few metres above the ground acts like a roof, so the drone cannot climb over tall obstacles."
+      },
+      "routes": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "108 routes (12 train, 24 dev, 24 heldout, 48 test) match sim/scenarios/reach-sunny-meadow.json."
+      },
+      "planner": {
+        "stage": 2,
+        "status": "pass",
+        "value": 1,
+        "detail": "100% of 24 dev routes (needs 90%)."
+      },
+      "straight": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.25,
+        "detail": "25% reached flying straight (at most 50%)."
+      },
+      "between": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0.2916666666666667,
+        "detail": "Reactive avoider 29.2%, between straight 25% and planner 100%."
+      },
+      "replay": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "72 of 72 flights replay exactly."
+      },
+      "missions-search": {
+        "stage": 2,
+        "status": "pass",
+        "detail": "Sets match sim/scenarios/mission-sunny-meadow-search.json. Each target used once. Oracle completed 4 of 4 development missions."
+      },
+      "targets-captured": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0,
+        "detail": "84 of 84 targets have at least 271 scan points within 2 m (5% of this scan's median, 5422)."
+      },
+      "targets-sky": {
+        "stage": 2,
+        "status": "pass",
+        "value": 0,
+        "detail": "84 of 84 targets are in their column's topmost free space."
+      }
+    },
+    "signoffs": {},
+    "readyIfApproved": 2
+  },
+  "registryOrder": 17
+}

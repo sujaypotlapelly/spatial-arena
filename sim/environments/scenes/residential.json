@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "id": "residential",
+  "registry": {
+    "id": "residential",
+    "title": "Residential delivery",
+    "purpose": "Fly through the garden and deliver a package beside the smaller cottage at the back.",
+    "status": "rear-cottage pad visually confirmed and geometry checked; two actual Ripple-written parcel deliveries replay exactly",
+    "reviewActive": true,
+    "reviewDecision": "selected-for-residential-delivery",
+    "reviewNote": "Selected on 2026-11-15 for the garden delivery task.",
+    "source": {
+      "hash": "5f41cc74",
+      "version": 3,
+      "originalTitle": "Utlida 1:80",
+      "sceneUrl": "https://superspl.at/scene/5f41cc74",
+      "viewerUrl": "https://superspl.at/s?id=5f41cc74",
+      "creator": "overblickstudio",
+      "creatorUrl": "https://superspl.at/user/overblickstudio",
+      "captureCredit": "Jakob Safwan / Overblick Studio",
+      "captureCreditUrl": "https://www.overblickstudio.se",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"Utlida 1:80\" — 3D capture and Gaussian Splat by Jakob Safwan / Overblick Studio, https://www.overblickstudio.se . Source: https://superspl.at/scene/5f41cc74 . Licensed under CC BY 4.0.",
+      "captureDescription": "Test 2 — Utlida\n\nCaptured area: ~2,350 m²\nStructures: 2 cottages + 1 garage\nWeather: Cloudy\nCurrent coverage: ~65%\n\nCapture\n\nImages: 1,038\n\nAerial: DJI Mini 5 Pro\nGround: Panasonic Lumix S1R\n\nGaussian Splat\n\nTraining: 100,000 iterations\n\nThis is the second capture test of Utlida 1:80, combining aerial and ground-based photography to create a large-scale Gaussian Splat of the property and its surroundings.\n\nNext step\n\nThe next iteration will aim for 100% capture coverage, together with GIS and measurement control to achieve the most accurate real-world scale and spatial alignment possible.\n\nAttribution is required\n\n3D capture and Gaussian Splat by Jakob Safwan / Overblick Studio\noverblickstudio.se\n\nIf this model is used in a public project, demo, application, video, publication, website or other published work, please clearly credit the original 3D capture to Jakob Safwan / www.overblickstudio.se",
+      "coverage": "Creator reports approximately 65% coverage; 2 cottages and 1 garage over approximately 2350 square metres.",
+      "modifications": "Delivery checkpoint annotations and drone visualization. Source scale retained pending independent physical calibration."
+    },
+    "assets": {
+      "splatUrl": "https://d28zzqy0iyovbz.cloudfront.net/5f41cc74/v3/lod-meta.json",
+      "collisionUrl": "https://d28zzqy0iyovbz.cloudfront.net/5f41cc74/v3/scene.voxel.json",
+      "collisionBinaryUrl": "https://d28zzqy0iyovbz.cloudfront.net/5f41cc74/v3/scene.voxel.bin",
+      "posterUrl": "https://s3-eu-west-1.amazonaws.com/images.playcanvas.com/splat/5f41cc74/v3/xl.webp",
+      "format": "ssog",
+      "publishedSizeBytes": 149331720,
+      "cacheDirectory": "cache/splat-scenes/residential",
+      "collisionFormat": "supersplat-voxel-1.1",
+      "collisionResolution": 0.05,
+      "collisionGridBounds": {
+        "min": [
+          -38.6,
+          -3,
+          -54.4
+        ],
+        "max": [
+          47.6,
+          29.800000000000004,
+          45.20000000000001
+        ]
+      }
+    },
+    "transform": {
+      "splat": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          180
+        ],
+        "scale": 1
+      },
+      "collision": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": 1
+      },
+      "status": "official-viewer-coordinate-convention; physical scale provisional",
+      "units": "source scene units; not independently calibrated metres",
+      "note": "The SOG visual entity uses Z180 import rotation; v1.1 collider already uses engine coordinates. Do not rotate collider a second time."
+    },
+    "camera": {
+      "position": [
+        -0.2913541793823242,
+        10.1322021484375,
+        -16.714109420776367
+      ],
+      "target": [
+        -4.862727569175797,
+        5.457662769259163,
+        -1.9890328761940257
+      ],
+      "fov": 90,
+      "sourceFrame": "public SuperSplat viewer engine world",
+      "status": "whole-property overview for the longer rear-cottage delivery"
+    },
+    "flightBounds": {
+      "min": [
+        -18,
+        -1,
+        -29
+      ],
+      "max": [
+        20,
+        11,
+        28
+      ],
+      "status": "local flight crop enlarged behind the main cottage for the second-cottage delivery mission"
+    },
+    "routes": [
+      {
+        "id": "residential-scout-1",
+        "start": [
+          0,
+          3.8,
+          -17
+        ],
+        "goal": [
+          -10.8,
+          4.3999999999999995,
+          -12.8
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; delivery mission and actual door alignment pending; no flight recorded",
+        "diagnosticPath": [
+          [
+            0,
+            3.8,
+            -17
+          ],
+          [
+            -13.2,
+            5.6,
+            -15.8
+          ],
+          [
+            -13.2,
+            6.199999999999999,
+            -13.4
+          ],
+          [
+            -12,
+            5.6,
+            -12.2
+          ],
+          [
+            -11.4,
+            5.6,
+            -12.2
+          ],
+          [
+            -10.8,
+            4.3999999999999995,
+            -12.8
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 19.71965530680528,
+          "straightDistance": 11.60344776348823,
+          "detourFactor": 1.6994651683489936,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "clearanceRadius": 0.35,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.35,
+            "samples": 795,
+            "clear": true
+          }
+        }
+      },
+      {
+        "id": "residential-scout-2",
+        "start": [
+          0,
+          3.8,
+          -17
+        ],
+        "goal": [
+          -11.4,
+          4.3999999999999995,
+          -10.400000000000002
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; delivery mission and actual door alignment pending; no flight recorded",
+        "diagnosticPath": [
+          [
+            0,
+            3.8,
+            -17
+          ],
+          [
+            -13.2,
+            5.6,
+            -15.8
+          ],
+          [
+            -13.2,
+            6.199999999999999,
+            -13.4
+          ],
+          [
+            -12,
+            6.199999999999999,
+            -11.600000000000001
+          ],
+          [
+            -12,
+            5.6,
+            -10.400000000000002
+          ],
+          [
+            -11.4,
+            4.3999999999999995,
+            -10.400000000000002
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 20.69657379941351,
+          "straightDistance": 13.186356585501548,
+          "detourFactor": 1.5695445262089665,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "clearanceRadius": 0.35,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.35,
+            "samples": 835,
+            "clear": true
+          }
+        }
+      },
+      {
+        "id": "residential-scout-3",
+        "start": [
+          0,
+          3.8,
+          -17
+        ],
+        "goal": [
+          -16.2,
+          6.199999999999999,
+          -3.8000000000000007
+        ],
+        "droneRadius": 0.25,
+        "goalRadius": 0.6,
+        "timeLimitSeconds": 90,
+        "status": "geometric-connectivity-only; delivery mission and actual door alignment pending; no flight recorded",
+        "diagnosticPath": [
+          [
+            0,
+            3.8,
+            -17
+          ],
+          [
+            -16.8,
+            5.6,
+            -15.8
+          ],
+          [
+            -16.8,
+            6.199999999999999,
+            -3.8000000000000007
+          ],
+          [
+            -16.2,
+            6.199999999999999,
+            -3.8000000000000007
+          ]
+        ],
+        "checks": {
+          "startClear": true,
+          "goalClear": true,
+          "directPathClear": false,
+          "pathClear": true,
+          "pathLength": 29.553703692892196,
+          "straightDistance": 21.034257771549722,
+          "detourFactor": 1.405027171097314,
+          "sampleStep": 0.1,
+          "supportWithin": 3,
+          "clearanceRadius": 0.35,
+          "independentSweep": {
+            "step": 0.025,
+            "clearanceRadius": 0.35,
+            "samples": 1187,
+            "clear": true
+          }
+        }
+      }
+    ],
+    "routeScout": {
+      "tool": "sim/tools/maps/scout_splat_routes.mjs",
+      "reportPath": "cache/splat-scenes/residential/route-scout.json",
+      "cell": 0.6,
+      "freeSupportedCells": 15622,
+      "reachableSupportedCells": 14953,
+      "anchor": [
+        -0.3,
+        2,
+        -16.7
+      ],
+      "cameraAnchorSnapDistance": 1.849324200890693,
+      "clearanceRadius": 0.35,
+      "physicalScaleCalibrated": false,
+      "note": "Paths establish sampled geometric connectivity only; no route hints are available to a controller. Goals are unconfirmed checkpoint candidates, not labelled doors.",
+      "command": "node sim/tools/maps/scout_splat_routes.mjs --scene residential --anchor \"[-0.3,2,-16.7]\" --cell .6 --radius .35 --out cache/splat-scenes/residential/route-scout.json"
+    },
+    "mission": {
+      "kind": "package-delivery",
+      "definitionPath": "sim/scenes/residential-delivery-mission.json",
+      "summary": "Fly through the garden and deliver a package beside the smaller cottage at the back.",
+      "previewPad": {
+        "position": [
+          -2.55,
+          5.7,
+          22.2
+        ],
+        "radius": 0.3
+      }
+    },
+    "authorCamera": {
+      "position": [
+        -0.2913541793823242,
+        10.1322021484375,
+        -16.714109420776367
+      ],
+      "target": [
+        -4.862727569175797,
+        5.457662769259163,
+        -1.9890328761940257
+      ],
+      "fov": 90,
+      "sourceFrame": "public SuperSplat viewer engine world",
+      "status": "author-published overview camera; delivery close view pending"
+    },
+    "reviewCameras": {
+      "back": {
+        "position": [
+          -1,
+          8,
+          12
+        ],
+        "target": [
+          -2.55,
+          6.2,
+          22.2
+        ],
+        "fov": 65
+      },
+      "front": {
+        "position": [
+          -2.5,
+          8,
+          -10
+        ],
+        "target": [
+          -7.7,
+          5.8,
+          -4.1
+        ],
+        "fov": 70,
+        "status": "porch delivery review camera"
+      }
+    }
+  },
+  "calibration": null,
+  "admission": {
+    "stage": 0,
+    "checkedAt": "2026-11-20",
+    "commit": null,
+    "gates": {
+      "licence": {
+        "status": "pass",
+        "detail": "CC BY 4.0, matching the owner metadata retrieved 2026-11-16 from https://superspl.at/scene/5f41cc74."
+      },
+      "attribution": {
+        "status": "pass",
+        "detail": "\"Utlida 1:80\" — 3D capture and Gaussian Splat by Jakob Safwan / Overblick Studio, https://www.overblickstudio.se . Source: https://superspl.at/scene/5f41cc74 . Licensed under CC BY 4.0."
+      },
+      "review": {
+        "status": "pass",
+        "detail": "Review decision “selected-for-residential-delivery”: Selected on 2026-11-15 for the garden delivery task."
+      }
+    },
+    "signoffs": {}
+  },
+  "registryOrder": 6
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "canyon",
+  "status": "mission recorded: final relative-terrain Ripple controller found the proxy on both fresh demonstration seeds; exact replays",
+  "interpretation": "Find a hidden beacon representing a lost hiker. The simulation checks range and line of sight; it does not perform image-based person recognition.",
+  "controllerInputs": "position, velocity, local clearances, time, contact count, search rules; target position is absent until found",
+  "mission": {
+    "id": "canyon-hidden-hiker-1",
+    "kind": "find-beacon",
+    "start": [
+      5.5,
+      1,
+      -2
+    ],
+    "targetPosition": [
+      -3.5,
+      -1,
+      -5.5
+    ],
+    "detectionRange": 6,
+    "timeLimitSeconds": 90
+  },
+  "units": "source scene units; physical scale is uncalibrated",
+  "provenance": "Start and target are from the existing canyon geometric scout. Diagnostic paths are not controller inputs. Existing Reach recordings do not count as search runs."
+}

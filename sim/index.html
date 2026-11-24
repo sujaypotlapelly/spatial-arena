@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spatial Arena</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/",
+          "@sparkjsdev/spark": "https://cdn.jsdelivr.net/npm/@sparkjsdev/spark@2.4.0/dist/spark.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main class="layout">
+      <section class="stage" id="stage">
+        <div class="hud">
+          <div class="hud-title" id="hudTitle">Ready</div>
+          <div class="hud-row" id="hudRow"></div>
+        </div>
+        <div class="recorded" id="recordedTag" hidden>RECORDED SESSION · re-simulated from saved decisions</div>
+        <div class="banner" id="banner"></div>
+        <div class="caption" id="caption" hidden></div>
+        <div class="legend">
+          <span><i style="background:#34d399"></i>reached</span>
+          <span><i style="background:#f43f5e"></i>caught</span>
+          <span><i style="background:#f59e0b"></i>crashed</span>
+          <span><i style="background:#94a3b8"></i>timeout</span>
+          <span><i style="background:#7dd3fc"></i>flying</span>
+        </div>
+        <div class="viewbar">
+          <button data-cam="overview">Overview</button>
+          <button data-cam="follow" class="toggle">Chase cam</button>
+          <label>Speed
+            <select id="speed"><option value="1">1×</option><option value="3">3×</option><option value="6" selected>6×</option><option value="12">12×</option></select>
+          </label>
+          <label class="wp-toggle" title="Show the flight graph: every waypoint and the edges between them (key W)"><input type="checkbox" data-layer="waypoints" /> Waypoints</label>
+          <label><input type="checkbox" data-layer="colliders" /> Colliders</label>
+          <label><input type="checkbox" data-layer="greybox" checked /> Greybox</label>
+          <label id="splatToggle" hidden><input type="checkbox" data-layer="splat" checked /> Splat</label>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <header>
+          <h1>Spatial Arena</h1>
+          <div class="env-row">
+            <label>Environment
+              <select id="envSelect">
+                <option value="maps/building.json">Office building (greybox)</option>
+                <option value="maps/factory.json">Factory scan · north hall</option>
+                <option value="maps/factory-full.json">Factory scan · full building</option>
+              </select>
+            </label>
+            <div class="view-toggle" id="viewToggle" role="group" aria-label="View" hidden>
+              <button data-view="sim" aria-pressed="true" title="The simulator's own view: collision voxels, routes and belief markers">Simulator</button>
+              <button data-view="scan" aria-pressed="false" title="The same flights re-simulated inside the photoreal Gaussian-splat scan">Full scan</button>
+            </div>
+            <a class="grid-link" id="gridLink" href="grid.html" title="Four scenarios side by side: start, goal, bird start and behavior vary">Scenario grid ×4 ↗</a>
+          </div>
+          <p class="sub">An attacker designs solvable bird ambushes, a defender plans the drone's route, and the simulator decides what actually happened.</p>
+          <div class="status" id="status" role="status">Checking model connection…</div>
+        </header>
+
+        <div class="steps">
+          <button id="btnBaseline"><b>1</b> Run baseline</button>
+          <button id="btnAttack"><b>2</b> Generate attack</button>
+          <button id="btnAdapt"><b>3</b> Adapt strategy</button>
+          <button id="btnEval"><b>4</b> Run unseen evaluation</button>
+        </div>
+        <div class="controls small">
+          <button id="btnDemo" class="primary" title="Play the three demo beats: Ripple's first attempt, how the bird actually behaved, and the rematch after feedback">▶ Demo</button>
+          <button id="btnLearn" class="primary" title="Watch Ripple learn: the baseline, every training episode in order with a live tally, the strategy it froze, and how it does on unseen scenarios">▶ Learning</button>
+          <button id="btnLive" title="Fly one of the learned policy's strongest held-out decisions live, with a new seed where it gets through">Fly live</button>
+          <button id="btnStop" disabled>Stop</button>
+          <button id="btnExport">Save results</button>
+          <label class="filebtn">Load recording<input type="file" id="fileLoad" accept="application/json" hidden /></label>
+          <button id="btnReset">Reset</button>
+        </div>
+        <div class="progress" id="progress" role="status"></div>
+
+        <section>
+          <h2>Did feedback help? <span class="muted" id="curveNote"></span></h2>
+          <div id="rematch" class="muted small-text">The rematch runs after training: the first failed episode, re-flown with the frozen strategy.</div>
+          <svg id="curve" viewBox="0 0 320 100" preserveAspectRatio="none"></svg>
+        </section>
+
+        <section>
+          <h2>Held-out evaluation <span class="muted" id="evalNote">12 unseen scenarios × 4 seeds</span></h2>
+          <div id="evalTable" class="muted small-text">Not run yet.</div>
+          <div id="evalGrid"></div>
+        </section>
+
+        <section>
+          <h2>Frozen strategy</h2>
+          <div id="strategy" class="strategy muted small-text">Not frozen yet. It is written after the training episodes.</div>
+        </section>
+
+        <section>
+          <h2>Episodes <span class="muted" id="epNote"></span></h2>
+          <ol id="episodes" class="rounds"></ol>
+        </section>
+
+        <section class="policies">
+          <h2>Decision detail <span class="muted" id="detailNote"></span></h2>
+          <div class="policy" id="detailDefender"></div>
+          <div class="policy" id="detailAttack"></div>
+        </section>
+
+        <section>
+          <h2>Model usage</h2>
+          <div id="ledger" class="muted small-text"></div>
+        </section>
+      </aside>
+    </main>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
